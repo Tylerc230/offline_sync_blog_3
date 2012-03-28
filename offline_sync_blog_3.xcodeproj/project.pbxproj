@@ -39,18 +39,18 @@
 		70777F1F15238BD3007F5C87 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		70777F2115238BD3007F5C87 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		70777F2315238BD3007F5C87 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		70777F2715238BD3007F5C87 /* offline_sync_blog_3-Info.plist */ = {isa = PBXFileReference; path = "offline_sync_blog_3-Info.plist"; sourceTree = "<group>"; };
+		70777F2715238BD3007F5C87 /* offline_sync_blog_3-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "offline_sync_blog_3-Info.plist"; sourceTree = "<group>"; };
 		70777F2915238BD3007F5C87 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		70777F2B15238BD3007F5C87 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		70777F2D15238BD3007F5C87 /* offline_sync_blog_3-Prefix.pch */ = {isa = PBXFileReference; path = "offline_sync_blog_3-Prefix.pch"; sourceTree = "<group>"; };
-		70777F2E15238BD3007F5C87 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		70777F2D15238BD3007F5C87 /* offline_sync_blog_3-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "offline_sync_blog_3-Prefix.pch"; sourceTree = "<group>"; };
+		70777F2E15238BD3007F5C87 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		70777F2F15238BD3007F5C87 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		70777F3215238BD3007F5C87 /* offline_sync_blog_3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = offline_sync_blog_3.xcdatamodel; sourceTree = "<group>"; };
 		70777F3915238BD3007F5C87 /* offline_sync_blog_3Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = offline_sync_blog_3Tests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		70777F3A15238BD3007F5C87 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		70777F4315238BD3007F5C87 /* offline_sync_blog_3Tests-Info.plist */ = {isa = PBXFileReference; path = "offline_sync_blog_3Tests-Info.plist"; sourceTree = "<group>"; };
+		70777F4315238BD3007F5C87 /* offline_sync_blog_3Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "offline_sync_blog_3Tests-Info.plist"; sourceTree = "<group>"; };
 		70777F4515238BD3007F5C87 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		70777F4715238BD3007F5C87 /* offline_sync_blog_3Tests.h */ = {isa = PBXFileReference; path = offline_sync_blog_3Tests.h; sourceTree = "<group>"; };
+		70777F4715238BD3007F5C87 /* offline_sync_blog_3Tests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = offline_sync_blog_3Tests.h; sourceTree = "<group>"; };
 		70777F4815238BD3007F5C87 /* offline_sync_blog_3Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = offline_sync_blog_3Tests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
