@@ -7,14 +7,15 @@
 //
 
 #import "offline_sync_blog_3Tests.h"
+#import "Post.h"
+#import "CoreData+MagicalRecord.h"
 
 @implementation offline_sync_blog_3Tests
 
 - (void)setUp
 {
     [super setUp];
-    
-    // Set-up code here.
+    syncStorageManager_ = [[SyncStorageManager alloc] init];
 }
 
 - (void)tearDown
@@ -24,9 +25,10 @@
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testGUIDCreation
 {
-    STFail(@"Unit tests are not implemented yet in offline_sync_blog_3Tests");
+	Post *newPost = [Post MR_createEntity];
+	STAssertNotNil(newPost.guid, @"GUID should be created when entity created");
 }
 
 @end

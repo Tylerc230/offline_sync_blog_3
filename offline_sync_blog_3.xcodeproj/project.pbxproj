@@ -29,6 +29,7 @@
 		70777F9D1523C811007F5C87 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 70777F9B1523C811007F5C87 /* Post.m */; };
 		70777FA01523C811007F5C87 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 70777F9F1523C811007F5C87 /* Comment.m */; };
 		70777FA11523C811007F5C87 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 70777F9F1523C811007F5C87 /* Comment.m */; };
+		70777FA21523CB06007F5C87 /* offline_sync_blog_3.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 70777F3115238BD3007F5C87 /* offline_sync_blog_3.xcdatamodeld */; };
 		A2E8D1A7C4E14DD499A6FC58 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 419E5BCA83464321ABC86C71 /* libPods.a */; };
 		EF611AA32C4C49F3A77D59AA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 419E5BCA83464321ABC86C71 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -341,6 +342,7 @@
 				70777F991523C811007F5C87 /* SyncObject.m in Sources */,
 				70777F9D1523C811007F5C87 /* Post.m in Sources */,
 				70777FA11523C811007F5C87 /* Comment.m in Sources */,
+				70777FA21523CB06007F5C87 /* offline_sync_blog_3.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
