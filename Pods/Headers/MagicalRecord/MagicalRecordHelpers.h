@@ -1,0 +1,1 @@
+../../MagicalRecord/Source/MagicalRecordHelpers.h

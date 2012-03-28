@@ -1,0 +1,1 @@
+../../MagicalRecord/Source/Categories/NSManagedObjectModel+MagicalRecord.h
