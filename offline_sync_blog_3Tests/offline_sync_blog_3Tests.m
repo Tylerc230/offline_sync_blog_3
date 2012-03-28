@@ -8,7 +8,6 @@
 
 #import "offline_sync_blog_3Tests.h"
 #import "Post.h"
-#import "CoreData+MagicalRecord.h"
 
 @implementation offline_sync_blog_3Tests
 
@@ -20,8 +19,7 @@
 
 - (void)tearDown
 {
-    // Tear-down code here.
-    
+	syncStorageManager_ = nil;
     [super tearDown];
 }
 

@@ -22,16 +22,11 @@
 		70777F4615238BD3007F5C87 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 70777F4415238BD3007F5C87 /* InfoPlist.strings */; };
 		70777F4915238BD3007F5C87 /* offline_sync_blog_3Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 70777F4815238BD3007F5C87 /* offline_sync_blog_3Tests.m */; };
 		70777F911523BF9D007F5C87 /* SyncStorageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 70777F901523BF9D007F5C87 /* SyncStorageManager.m */; };
-		70777F921523BF9D007F5C87 /* SyncStorageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 70777F901523BF9D007F5C87 /* SyncStorageManager.m */; };
 		70777F981523C811007F5C87 /* SyncObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 70777F971523C811007F5C87 /* SyncObject.m */; };
-		70777F991523C811007F5C87 /* SyncObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 70777F971523C811007F5C87 /* SyncObject.m */; };
 		70777F9C1523C811007F5C87 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 70777F9B1523C811007F5C87 /* Post.m */; };
-		70777F9D1523C811007F5C87 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 70777F9B1523C811007F5C87 /* Post.m */; };
 		70777FA01523C811007F5C87 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 70777F9F1523C811007F5C87 /* Comment.m */; };
-		70777FA11523C811007F5C87 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 70777F9F1523C811007F5C87 /* Comment.m */; };
 		70777FA21523CB06007F5C87 /* offline_sync_blog_3.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 70777F3115238BD3007F5C87 /* offline_sync_blog_3.xcdatamodeld */; };
 		A2E8D1A7C4E14DD499A6FC58 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 419E5BCA83464321ABC86C71 /* libPods.a */; };
-		EF611AA32C4C49F3A77D59AA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 419E5BCA83464321ABC86C71 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,7 +91,6 @@
 				70777F3C15238BD3007F5C87 /* UIKit.framework in Frameworks */,
 				70777F3D15238BD3007F5C87 /* Foundation.framework in Frameworks */,
 				70777F3E15238BD3007F5C87 /* CoreData.framework in Frameworks */,
-				EF611AA32C4C49F3A77D59AA /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,10 +332,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				70777F4915238BD3007F5C87 /* offline_sync_blog_3Tests.m in Sources */,
-				70777F921523BF9D007F5C87 /* SyncStorageManager.m in Sources */,
-				70777F991523C811007F5C87 /* SyncObject.m in Sources */,
-				70777F9D1523C811007F5C87 /* Post.m in Sources */,
-				70777FA11523C811007F5C87 /* Comment.m in Sources */,
 				70777FA21523CB06007F5C87 /* offline_sync_blog_3.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
