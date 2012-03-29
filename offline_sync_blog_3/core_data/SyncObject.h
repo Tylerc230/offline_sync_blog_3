@@ -23,4 +23,7 @@ typedef enum {
 @property (nonatomic) NSTimeInterval lastModified;
 @property (nonatomic) BOOL isGloballyDeleted;
 
++ (NSArray *)findAllByGUID:(NSArray *)guids;
+- (void)updateWithJSON:(NSDictionary *)json;
+
 @end

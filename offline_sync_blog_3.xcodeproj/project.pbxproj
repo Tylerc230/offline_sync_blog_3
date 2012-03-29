@@ -26,6 +26,7 @@
 		70777F9C1523C811007F5C87 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 70777F9B1523C811007F5C87 /* Post.m */; };
 		70777FA01523C811007F5C87 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 70777F9F1523C811007F5C87 /* Comment.m */; };
 		70777FA21523CB06007F5C87 /* offline_sync_blog_3.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 70777F3115238BD3007F5C87 /* offline_sync_blog_3.xcdatamodeld */; };
+		70777FA51523E71C007F5C87 /* SyncStoreManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 70777FA41523E71C007F5C87 /* SyncStoreManagerTests.m */; };
 		A2E8D1A7C4E14DD499A6FC58 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 419E5BCA83464321ABC86C71 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +68,8 @@
 		70777F9B1523C811007F5C87 /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Post.m; path = core_data/Post.m; sourceTree = "<group>"; };
 		70777F9E1523C811007F5C87 /* Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Comment.h; path = core_data/Comment.h; sourceTree = "<group>"; };
 		70777F9F1523C811007F5C87 /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Comment.m; path = core_data/Comment.m; sourceTree = "<group>"; };
+		70777FA31523E71C007F5C87 /* SyncStoreManagerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SyncStoreManagerTests.h; sourceTree = "<group>"; };
+		70777FA41523E71C007F5C87 /* SyncStoreManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SyncStoreManagerTests.m; sourceTree = "<group>"; };
 		973FA2A9F5FC4024BF85C4BD /* Pods.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -158,6 +161,8 @@
 			children = (
 				70777F4715238BD3007F5C87 /* offline_sync_blog_3Tests.h */,
 				70777F4815238BD3007F5C87 /* offline_sync_blog_3Tests.m */,
+				70777FA31523E71C007F5C87 /* SyncStoreManagerTests.h */,
+				70777FA41523E71C007F5C87 /* SyncStoreManagerTests.m */,
 				70777F4215238BD3007F5C87 /* Supporting Files */,
 			);
 			path = offline_sync_blog_3Tests;
@@ -333,6 +338,7 @@
 			files = (
 				70777F4915238BD3007F5C87 /* offline_sync_blog_3Tests.m in Sources */,
 				70777FA21523CB06007F5C87 /* offline_sync_blog_3.xcdatamodeld in Sources */,
+				70777FA51523E71C007F5C87 /* SyncStoreManagerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

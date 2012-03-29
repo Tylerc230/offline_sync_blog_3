@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#define kSyncCompleteNotif @"SyncCompleteNotif"
 
 @interface SyncStorageManager : NSObject
-
+- (void)syncNow;
 @end

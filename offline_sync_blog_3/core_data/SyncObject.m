@@ -24,10 +24,26 @@
 	return (__bridge_transfer NSString *)string;
 }
 
++ (NSArray *)findAllByGUID:(NSArray *)guids
+{
+	NSPredicate *modifiedGuidsPredicate = [NSPredicate predicateWithFormat:@"guid IN %@", guids];
+	NSArray *updatedManagedObjects = [self findAllWithPredicate:modifiedGuidsPredicate];
+	return updatedManagedObjects;
+}
+
+- (void)updateWithJSON:(NSDictionary *)jsonObject
+{
+	self.guid = [jsonObject objectForKey:@"guid"];
+	self.lastModified = [[jsonObject objectForKey:@"lastModified"] doubleValue];
+	self.isGloballyDeleted = [[jsonObject objectForKey:@"isGloballyDeleted"] boolValue];
+}
+
 - (void) awakeFromInsert
 {
 	[super awakeFromInsert];
 	self.guid = [SyncObject createGUID];
 }
+
+
 
 @end
