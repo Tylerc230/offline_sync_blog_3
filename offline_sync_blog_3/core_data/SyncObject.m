@@ -16,4 +16,18 @@
 @dynamic lastModified;
 @dynamic isGloballyDeleted;
 
++ (NSString *)createGUID
+{
+	CFUUIDRef theUUID = CFUUIDCreate(NULL);
+	CFStringRef string = CFUUIDCreateString(NULL, theUUID);
+	CFRelease(theUUID);
+	return (__bridge_transfer NSString *)string;
+}
+
+- (void) awakeFromInsert
+{
+	[super awakeFromInsert];
+	self.guid = [SyncObject createGUID];
+}
+
 @end

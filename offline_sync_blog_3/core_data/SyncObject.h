@@ -12,6 +12,12 @@
 
 @interface SyncObject : NSManagedObject
 
+typedef enum {
+	SOSynced,
+	SONeedsSync,
+	SOTempObject
+}SyncObjectStatus;
+
 @property (nonatomic, retain) NSString * guid;
 @property (nonatomic) int16_t syncStatus;
 @property (nonatomic) NSTimeInterval lastModified;
