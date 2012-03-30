@@ -31,6 +31,20 @@
 	return updatedManagedObjects;
 }
 
++ (NSArray *)findUnsyncedObjects
+{
+	return [SyncObject findByAttribute:@"syncStatus" withValue:[NSNumber numberWithInt:SONeedsSync]];
+}
+
++ (NSArray *)jsonRepresentationOfObjects:(NSArray *)objects
+{
+	NSMutableArray * jsonObjects = [NSMutableArray arrayWithCapacity:objects.count];
+	for (SyncObject *managedObject in objects) {
+		[jsonObjects addObject:[managedObject toJson]];
+	}
+	return jsonObjects;
+}
+
 - (void)updateWithJSON:(NSDictionary *)jsonObject
 {
 	self.guid = [jsonObject objectForKey:@"guid"];
@@ -38,10 +52,19 @@
 	self.isGloballyDeleted = [[jsonObject objectForKey:@"isGloballyDeleted"] boolValue];
 }
 
-- (void) awakeFromInsert
+- (void)awakeFromInsert
 {
 	[super awakeFromInsert];
 	self.guid = [SyncObject createGUID];
+}
+
+- (NSMutableDictionary *)toJson
+{
+	NSMutableDictionary *object = [NSMutableDictionary dictionaryWithCapacity:20];
+	[object setObject:self.guid forKey:@"guid"];
+	[object setObject:[NSNumber numberWithDouble:self.lastModified] forKey:@"lastModified"];
+	[object setObject:[NSNumber numberWithBool:self.isGloballyDeleted] forKey:@"isGloballyDeleted"];
+	return object;
 }
 
 

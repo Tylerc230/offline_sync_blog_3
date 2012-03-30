@@ -24,6 +24,9 @@ typedef enum {
 @property (nonatomic) BOOL isGloballyDeleted;
 
 + (NSArray *)findAllByGUID:(NSArray *)guids;
++ (NSArray *)findUnsyncedObjects;
++ (NSArray *)jsonRepresentationOfObjects:(NSArray *)objects;
 - (void)updateWithJSON:(NSDictionary *)json;
+- (NSMutableDictionary *)toJson;
 
 @end
