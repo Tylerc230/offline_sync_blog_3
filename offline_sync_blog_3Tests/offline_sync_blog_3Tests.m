@@ -14,7 +14,7 @@
 - (void)setUp
 {
     [super setUp];
-    syncStorageManager_ = [[SyncStorageManager alloc] init];
+    syncStorageManager_ = [[SyncStorageManager alloc] initWithBaseURL:@"http://www.example.com"];
 }
 
 - (void)tearDown

@@ -7,12 +7,14 @@
 //
 
 #import "SyncStoreManagerTests.h"
+#import "ExampleSyncManager.h"
 #import "Post.h"
+
 @implementation SyncStoreManagerTests
 - (void)setUp
 {
     [super setUp];
-    syncStorageManager_ = [[SyncStorageManager alloc] init];
+    syncStorageManager_ = [[ExampleSyncManager alloc] initWithBaseURL:@"http://www.example.com"];
 }
 
 - (void)tearDown
@@ -23,7 +25,7 @@
 
 - (void)testSync
 {
-	Post *newPost = [Post createEntity];
+	Post *newPost = [Post MR_createEntity];
 	[syncStorageManager_ syncNow];
 	
 	STAssertEquals(newPost.syncStatus, SOSynced, @"Entity should have a status of 'synced' after doing a sync");
