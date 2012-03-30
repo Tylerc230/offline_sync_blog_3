@@ -10,5 +10,6 @@
 #define kSyncCompleteNotif @"SyncCompleteNotif"
 
 @interface SyncStorageManager : NSObject
+- (id)initWithBaseURL:(NSString *)baseURL;
 - (void)syncNow;
 @end

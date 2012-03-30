@@ -23,6 +23,7 @@
 	if (self = [super init]) {
 		[MagicalRecordHelpers setupCoreDataStack];
 		self.httpClient = [AFHTTPClient clientWithBaseURL:[NSURL URLWithString:baseURL]];
+		self.httpClient.parameterEncoding = AFJSONParameterEncoding;
 	}
 	return self;
 }
@@ -48,10 +49,11 @@
 #pragma mark - sync
 - (void)syncAllEntities
 {
-	NSArray *modifiedEntities = [SyncObject findByAttribute:@"syncStatus" withValue:[NSNumber numberWithInt:SONeedsSync]];
+	NSArray *modifiedEntities = [SyncObject findUnsyncedObjects];
+	NSArray *jsonRepresentation = [SyncObject jsonRepresentationOfObjects:modifiedEntities];
 	NSTimeInterval lastSyncTime = [self lastSyncTime];
 	NSDictionary *payload = [NSDictionary dictionaryWithObjectsAndKeys:
-							 modifiedEntities, @"modifiedEntities",
+							 jsonRepresentation, @"modifiedEntities",
 							 [NSNumber numberWithDouble:lastSyncTime], @"lastSyncTime",
 							 nil];
 	[self syncPayload:payload];
@@ -65,20 +67,27 @@
 						  [self syncSucceededWithResponse:responseObject];
 					  }
 					  failure:^(AFHTTPRequestOperation *op, NSError *error) {
-
+						  [self syncFailedWithResponse:error];
 					  }];
 }
 
-- (void)syncSucceededWithResponse:(NSDictionary *) responseObject
+#pragma mark - sync response
+- (void)syncSucceededWithResponse:(NSData *) responseObject
 {
-	NSArray *modifiedEntities = [responseObject objectForKey:@"modifiedEntities"];
-	[self updateWithJSON:modifiedEntities];
+	NSString * stringForm = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+//	NSArray *modifiedEntities = [responseObject objectForKey:@"modifiedEntities"];
+//	[self updateWithJSON:modifiedEntities];
 	[[NSNotificationCenter defaultCenter] postNotificationName:kSyncCompleteNotif object:self];
+}
+
+- (void)syncFailedWithResponse:(NSError *)error
+{
+	
 }
 
 #pragma mark - object creation
 
-- (SyncObject *)createManagedObject
+- (SyncObject *)createManagedObject:(NSString *)className
 {
 	return nil;
 }
@@ -94,7 +103,8 @@
 		NSString * guid = [jsonObject objectForKey:@"guid"];
 		SyncObject * managedObject = [managedObjectsByGuid objectForKey:guid];
 		if (!managedObject) {
-			managedObject = [self createManagedObject];
+			NSString * className = [jsonObject objectForKey:@"className"];
+			managedObject = [self createManagedObject:className];
 		}
 		[managedObject updateWithJSON:jsonObject];
 	}

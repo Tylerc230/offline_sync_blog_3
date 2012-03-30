@@ -25,7 +25,6 @@
 		70777FA21523CB06007F5C87 /* offline_sync_blog_3.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 70777F3115238BD3007F5C87 /* offline_sync_blog_3.xcdatamodeld */; };
 		70777FA51523E71C007F5C87 /* SyncStoreManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 70777FA41523E71C007F5C87 /* SyncStoreManagerTests.m */; };
 		70777FA91524DFC4007F5C87 /* ExampleSyncManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 70777FA81524DFC4007F5C87 /* ExampleSyncManager.m */; };
-		70777FAA1524DFC4007F5C87 /* ExampleSyncManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 70777FA81524DFC4007F5C87 /* ExampleSyncManager.m */; };
 		70777FB01524E097007F5C87 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 70777FAD1524E097007F5C87 /* Comment.m */; };
 		70777FB11524E097007F5C87 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 70777FAD1524E097007F5C87 /* Comment.m */; };
 		70777FB21524E097007F5C87 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 70777FAF1524E097007F5C87 /* Post.m */; };
@@ -365,7 +364,6 @@
 				70777F4915238BD3007F5C87 /* offline_sync_blog_3Tests.m in Sources */,
 				70777FA21523CB06007F5C87 /* offline_sync_blog_3.xcdatamodeld in Sources */,
 				70777FA51523E71C007F5C87 /* SyncStoreManagerTests.m in Sources */,
-				70777FAA1524DFC4007F5C87 /* ExampleSyncManager.m in Sources */,
 				70777FB11524E097007F5C87 /* Comment.m in Sources */,
 				70777FB31524E097007F5C87 /* Post.m in Sources */,
 				70777FB71524E0AE007F5C87 /* SyncObject.m in Sources */,
