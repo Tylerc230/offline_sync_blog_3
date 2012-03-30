@@ -1,7 +1,9 @@
 PODS:
   - AFNetworking (0.9.1)
   - MagicalRecord (1.8.3)
+  - OCMock (1.77.1)
 
 DEPENDENCIES:
   - AFNetworking
   - MagicalRecord
+  - OCMock
