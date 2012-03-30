@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1171" systemVersion="11D50b" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Comment" representedClassName="Comment" parentEntity="SyncObject" syncable="YES">
+        <attribute name="comment" optional="YES" attributeType="String" defaultValueString="comment body" syncable="YES"/>
         <relationship name="post" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Post" inverseName="comments" inverseEntity="Post" syncable="YES"/>
     </entity>
     <entity name="Post" representedClassName="Post" parentEntity="SyncObject" syncable="YES">
+        <attribute name="body" optional="YES" attributeType="String" defaultValueString="Post Body" syncable="YES"/>
+        <attribute name="title" attributeType="String" defaultValueString="post title" syncable="YES"/>
         <relationship name="comments" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Comment" inverseName="post" inverseEntity="Comment" syncable="YES"/>
     </entity>
     <entity name="SyncObject" representedClassName="SyncObject" isAbstract="YES" syncable="YES">
@@ -13,8 +16,8 @@
         <attribute name="syncStatus" optional="YES" attributeType="Integer 16" minValueString="0" maxValueString="2" defaultValueString="1" syncable="YES"/>
     </entity>
     <elements>
+        <element name="Comment" positionX="-432" positionY="-4563" width="128" height="75"/>
+        <element name="Post" positionX="-704" positionY="-4515" width="128" height="90"/>
         <element name="SyncObject" positionX="-657" positionY="-4680" width="128" height="105"/>
-        <element name="Post" positionX="-756" positionY="-4437" width="128" height="60"/>
-        <element name="Comment" positionX="-522" positionY="-4437" width="128" height="60"/>
     </elements>
 </model>

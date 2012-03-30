@@ -13,6 +13,8 @@
 
 @interface Post : SyncObject
 
+@property (nonatomic, retain) NSString *title;
+@property (nonatomic, retain) NSString *body;
 @property (nonatomic, retain) NSSet *comments;
 @end
 

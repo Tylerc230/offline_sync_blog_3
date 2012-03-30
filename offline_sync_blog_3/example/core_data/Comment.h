@@ -14,6 +14,7 @@
 
 @interface Comment : SyncObject
 
+@property (nonatomic, retain) NSString *comment;
 @property (nonatomic, retain) Post *post;
 
 @end

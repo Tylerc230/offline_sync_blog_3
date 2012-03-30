@@ -12,5 +12,15 @@
 @implementation Post
 
 @dynamic comments;
+@dynamic title;
+@dynamic body;
+
+- (NSMutableDictionary *)toJson
+{
+	NSMutableDictionary *object = [super toJson];
+	[object setObject:self.title forKey:@"title"];
+	[object setObject:self.body forKey:@"body"];
+	return object;
+}
 
 @end

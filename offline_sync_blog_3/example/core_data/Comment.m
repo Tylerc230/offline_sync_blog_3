@@ -13,5 +13,6 @@
 @implementation Comment
 
 @dynamic post;
+@dynamic comment;
 
 @end
