@@ -7,7 +7,8 @@
 //
 
 #import "AppDelegate.h"
-
+#import "ExampleSyncManager.h"
+#import "Post.h"
 @implementation AppDelegate
 
 @synthesize window = _window;
@@ -17,6 +18,10 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+	ExampleSyncManager *syncManager = [[ExampleSyncManager alloc] initWithBaseURL:@"http://www.casselmanconsulting.com"];
+	Post *newPost = [Post MR_createEntity];
+	[syncManager syncNow];
+	
     return YES;
 }
 
