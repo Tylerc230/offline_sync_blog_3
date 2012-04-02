@@ -8,6 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #define kSyncCompleteNotif @"SyncCompleteNotif"
+#define kModifiedEntitiesKey @"modifiedEntities"
+#define kLastSyncTimeKey @"lastSyncTime"
+#define kClassNameKey @"className"
+
+
 
 @interface SyncStorageManager : NSObject
 - (id)initWithBaseURL:(NSString *)baseURL;

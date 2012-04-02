@@ -15,6 +15,14 @@
 @dynamic title;
 @dynamic body;
 
+
+- (void)updateWithJSON:(NSDictionary *)jsonObject
+{
+	[super updateWithJSON:jsonObject];
+	self.body = [jsonObject objectForKey:kBodyKey];
+	self.title = [jsonObject objectForKey:kTitleKey];
+}
+
 - (NSMutableDictionary *)toJson
 {
 	NSMutableDictionary *object = [super toJson];

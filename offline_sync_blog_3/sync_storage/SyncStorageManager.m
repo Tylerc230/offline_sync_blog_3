@@ -11,10 +11,6 @@
 #import "SyncObject.h"
 #import "AFHTTPClient.h"
 
-#define kModifiedEntitiesKey @"modifiedEntities"
-#define kLastSyncTimeKey @"lastSyncTime"
-#define kClassNameKey @"className"
-
 @interface SyncStorageManager ()
 @property (nonatomic, strong) AFHTTPClient *httpClient;
 @end
@@ -48,7 +44,11 @@
 
 - (NSTimeInterval)lastSyncTime
 {
-	return [[[SyncObject findAllSortedBy:kLastModifiedKey ascending:NO] objectAtIndex:0] lastModified];
+	NSArray *allObjects = [SyncObject findAllSortedBy:kLastModifiedKey ascending:NO];
+	if (allObjects.count == 0) {
+		return 0;
+	}
+	return [[allObjects objectAtIndex:0] lastModified];
 }
 
 #pragma mark - sync
