@@ -38,7 +38,7 @@
 #pragma mark - public methods
 - (void)syncNow
 {
-	[[NSManagedObjectContext MR_context] MR_save];
+	[[NSManagedObjectContext MR_contextForCurrentThread] MR_save];
 	[self syncAllEntities];
 }
 
@@ -110,6 +110,7 @@
 		}
 		[managedObject updateWithJSON:jsonObject];
 	}
+	[[NSManagedObjectContext MR_contextForCurrentThread] save];
 }
 
 - (NSArray *)collectGuids:(NSArray *)modifiedObjects
