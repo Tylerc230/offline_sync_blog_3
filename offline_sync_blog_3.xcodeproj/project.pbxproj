@@ -30,7 +30,6 @@
 		70777FB21524E097007F5C87 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 70777FAF1524E097007F5C87 /* Post.m */; };
 		70777FB31524E097007F5C87 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 70777FAF1524E097007F5C87 /* Post.m */; };
 		70777FB61524E0AE007F5C87 /* SyncObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 70777FB51524E0AE007F5C87 /* SyncObject.m */; };
-		70777FB71524E0AE007F5C87 /* SyncObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 70777FB51524E0AE007F5C87 /* SyncObject.m */; };
 		A2E8D1A7C4E14DD499A6FC58 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 419E5BCA83464321ABC86C71 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -366,7 +365,6 @@
 				70777FA51523E71C007F5C87 /* SyncStoreManagerTests.m in Sources */,
 				70777FB11524E097007F5C87 /* Comment.m in Sources */,
 				70777FB31524E097007F5C87 /* Post.m in Sources */,
-				70777FB71524E0AE007F5C87 /* SyncObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
