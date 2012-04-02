@@ -14,6 +14,7 @@
 #define kModifiedEntitiesKey @"modifiedEntities"
 #define kLastSyncTimeKey @"lastSyncTime"
 #define kClassNameKey @"className"
+
 @interface SyncStorageManager ()
 @property (nonatomic, strong) AFHTTPClient *httpClient;
 @end
@@ -35,6 +36,7 @@
 {
 	[MagicalRecordHelpers cleanUp];
 }
+
 #pragma mark - public methods
 - (void)syncNow
 {
@@ -75,7 +77,7 @@
 }
 
 #pragma mark - sync response
-- (void)syncSucceededWithResponse:(NSData *) responseObject
+- (void)syncSucceededWithResponse:(id) responseObject
 {
 	NSArray *modifiedEntities = [responseObject objectForKey:kModifiedEntitiesKey];
 	[self updateWithJSON:modifiedEntities];
@@ -109,6 +111,7 @@
 			managedObject = [self createManagedObject:className];
 		}
 		[managedObject updateWithJSON:jsonObject];
+		managedObject.syncStatus = SOSynced;
 	}
 	[[NSManagedObjectContext MR_contextForCurrentThread] save];
 }
