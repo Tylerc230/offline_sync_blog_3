@@ -10,6 +10,9 @@
 #import <CoreData/CoreData.h>
 #import "SyncObject.h"
 
+#define kTitleKey @"title"
+#define kBodyKey @"body"
+
 
 @interface Post : SyncObject
 

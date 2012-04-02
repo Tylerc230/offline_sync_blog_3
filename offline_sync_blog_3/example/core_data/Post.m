@@ -18,8 +18,8 @@
 - (NSMutableDictionary *)toJson
 {
 	NSMutableDictionary *object = [super toJson];
-	[object setObject:self.title forKey:@"title"];
-	[object setObject:self.body forKey:@"body"];
+	[object setObject:self.title forKey:kTitleKey];
+	[object setObject:self.body forKey:kBodyKey];
 	return object;
 }
 

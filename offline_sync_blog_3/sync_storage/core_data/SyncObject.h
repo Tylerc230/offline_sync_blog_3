@@ -9,6 +9,10 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+#define kGUIDKey @"guid"
+#define kSyncStatusKey @"syncStatus"
+#define kLastModifiedKey @"lastModified"
+#define kIsGloballyDeletedKey @"isGloballyDeleted"
 
 @interface SyncObject : NSManagedObject
 

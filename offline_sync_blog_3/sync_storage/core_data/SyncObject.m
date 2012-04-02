@@ -33,7 +33,7 @@
 
 + (NSArray *)findUnsyncedObjects
 {
-	return [SyncObject findByAttribute:@"syncStatus" withValue:[NSNumber numberWithInt:SONeedsSync]];
+	return [SyncObject findByAttribute:kSyncStatusKey withValue:[NSNumber numberWithInt:SONeedsSync]];
 }
 
 + (NSArray *)jsonRepresentationOfObjects:(NSArray *)objects
@@ -47,9 +47,9 @@
 
 - (void)updateWithJSON:(NSDictionary *)jsonObject
 {
-	self.guid = [jsonObject objectForKey:@"guid"];
-	self.lastModified = [[jsonObject objectForKey:@"lastModified"] doubleValue];
-	self.isGloballyDeleted = [[jsonObject objectForKey:@"isGloballyDeleted"] boolValue];
+	self.guid = [jsonObject objectForKey:kGUIDKey];
+	self.lastModified = [[jsonObject objectForKey:kLastModifiedKey] doubleValue];
+	self.isGloballyDeleted = [[jsonObject objectForKey:kIsGloballyDeletedKey] boolValue];
 }
 
 - (void)awakeFromInsert
@@ -61,9 +61,9 @@
 - (NSMutableDictionary *)toJson
 {
 	NSMutableDictionary *object = [NSMutableDictionary dictionaryWithCapacity:20];
-	[object setObject:self.guid forKey:@"guid"];
-	[object setObject:[NSNumber numberWithDouble:self.lastModified] forKey:@"lastModified"];
-	[object setObject:[NSNumber numberWithBool:self.isGloballyDeleted] forKey:@"isGloballyDeleted"];
+	[object setObject:self.guid forKey:kGUIDKey];
+	[object setObject:[NSNumber numberWithDouble:self.lastModified] forKey:kLastModifiedKey];
+	[object setObject:[NSNumber numberWithBool:self.isGloballyDeleted] forKey:kIsGloballyDeletedKey];
 	return object;
 }
 
