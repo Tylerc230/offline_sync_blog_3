@@ -11,6 +11,9 @@
 #import "SyncObject.h"
 #import "AFHTTPClient.h"
 
+#define kModifiedEntitiesKey @"modifiedEntities"
+#define kLastSyncTimeKey @"lastSyncTime"
+#define kClassNameKey @"className"
 @interface SyncStorageManager ()
 @property (nonatomic, strong) AFHTTPClient *httpClient;
 @end
@@ -43,7 +46,7 @@
 
 - (NSTimeInterval)lastSyncTime
 {
-	return [[[SyncObject findAllSortedBy:@"lastModified" ascending:NO] objectAtIndex:0] lastModified];
+	return [[[SyncObject findAllSortedBy:kLastModifiedKey ascending:NO] objectAtIndex:0] lastModified];
 }
 
 #pragma mark - sync
@@ -53,8 +56,8 @@
 	NSArray *jsonRepresentation = [SyncObject jsonRepresentationOfObjects:modifiedEntities];
 	NSTimeInterval lastSyncTime = [self lastSyncTime];
 	NSDictionary *payload = [NSDictionary dictionaryWithObjectsAndKeys:
-							 jsonRepresentation, @"modifiedEntities",
-							 [NSNumber numberWithDouble:lastSyncTime], @"lastSyncTime",
+							 jsonRepresentation, kModifiedEntitiesKey,
+							 [NSNumber numberWithDouble:lastSyncTime], kLastSyncTimeKey,
 							 nil];
 	[self syncPayload:payload];
 	
@@ -74,9 +77,8 @@
 #pragma mark - sync response
 - (void)syncSucceededWithResponse:(NSData *) responseObject
 {
-	NSString * stringForm = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
-//	NSArray *modifiedEntities = [responseObject objectForKey:@"modifiedEntities"];
-//	[self updateWithJSON:modifiedEntities];
+	NSArray *modifiedEntities = [responseObject objectForKey:kModifiedEntitiesKey];
+	[self updateWithJSON:modifiedEntities];
 	[[NSNotificationCenter defaultCenter] postNotificationName:kSyncCompleteNotif object:self];
 }
 
@@ -100,10 +102,10 @@
 	NSDictionary *managedObjectsByGuid = [self managedObjectsByGuid:updatedManagedObjects];
 	
 	for (NSDictionary * jsonObject in json) {
-		NSString * guid = [jsonObject objectForKey:@"guid"];
+		NSString * guid = [jsonObject objectForKey:kGUIDKey];
 		SyncObject * managedObject = [managedObjectsByGuid objectForKey:guid];
 		if (!managedObject) {
-			NSString * className = [jsonObject objectForKey:@"className"];
+			NSString * className = [jsonObject objectForKey:kClassNameKey];
 			managedObject = [self createManagedObject:className];
 		}
 		[managedObject updateWithJSON:jsonObject];
@@ -114,7 +116,7 @@
 {
 	NSMutableArray * guids = [NSMutableArray arrayWithCapacity:modifiedObjects.count];
 	for (NSDictionary * object in modifiedObjects) {
-		[guids addObject:[object objectForKey:@"guid"]];
+		[guids addObject:[object objectForKey:kGUIDKey]];
 	}
 	return guids;
 }
