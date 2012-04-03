@@ -31,6 +31,7 @@ typedef enum {
 + (NSArray *)findUnsyncedObjects;
 + (NSArray *)jsonRepresentationOfObjects:(NSArray *)objects;
 - (void)updateWithJSON:(NSDictionary *)json;
+- (void)deleteGlobalEntity;
 - (NSMutableDictionary *)toJson;
 
 @end

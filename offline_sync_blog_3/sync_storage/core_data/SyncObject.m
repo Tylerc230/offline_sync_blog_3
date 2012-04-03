@@ -58,6 +58,11 @@
 	self.guid = [SyncObject createGUID];
 }
 
+- (void)deleteGlobalEntity
+{
+	self.isGloballyDeleted = YES;
+}
+
 - (NSMutableDictionary *)toJson
 {
 	NSMutableDictionary *object = [NSMutableDictionary dictionaryWithCapacity:20];
