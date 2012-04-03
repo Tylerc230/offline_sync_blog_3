@@ -1,0 +1,4 @@
+Documentation set was installed to Xcode!
+
+Path: /Users/tcasselman/Library/Developer/Shared/Documentation/DocSets/com.casselmanconsulting.Offline-Sync.docset
+Time: 2012-04-03 15:18:30 +0000

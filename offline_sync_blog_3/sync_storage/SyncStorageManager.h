@@ -15,6 +15,14 @@
 
 
 @interface SyncStorageManager : NSObject
+/**
+ * @param baseURL The url where the sync server is located.
+ * @returns A new instance of a SyncStorageManager
+ */
 - (id)initWithBaseURL:(NSString *)baseURL;
+/**
+ * Synchronizes local modifications to the server and merges servers modifications back 
+ * into local store.
+ */
 - (void)syncNow;
 @end

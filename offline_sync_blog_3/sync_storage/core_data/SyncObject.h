@@ -27,6 +27,10 @@ typedef enum {
 @property (nonatomic) NSTimeInterval lastModified;
 @property (nonatomic) BOOL isGloballyDeleted;
 
+/**
+ * @param guids an array of guid strings of format 8-4-4-4-12
+ * @returns all SyncObjects whos guids are found in _guids_
+ */
 + (NSArray *)findAllByGUID:(NSArray *)guids;
 + (NSArray *)findUnsyncedObjects;
 + (NSArray *)jsonRepresentationOfObjects:(NSArray *)objects;
