@@ -8,8 +8,13 @@
 
 #import "SyncStoreManagerTests.h"
 #import "OCMock.h"
+#import "Objection.h"
+#import "TestModule.h"
+#import "DummySyncOperation.h"
 #import "ExampleSyncManager.h"
 #import "Post.h"
+#import "keys.h"
+
 #define kFakeGUID @"21EC2020-3AEA-1069-A2DD-08002B30309D"
 
 @interface ExampleSyncManager (Test_methods)
@@ -21,6 +26,9 @@
 - (void)setUp
 {
     [super setUp];
+	JSObjectionInjector *testInjector = [JSObjection createInjector:[[TestModule alloc] init]];
+	[JSObjection setGlobalInjector:testInjector];
+	
 	syncStorageManager_ = [[ExampleSyncManager alloc] initWithBaseURL:@"http://www.example.com"];
 	[SyncObject MR_truncateAll];
 }
@@ -42,7 +50,7 @@
 	NSMutableDictionary *mockEntity = [NSMutableDictionary dictionaryWithDictionary:[newPost toJson]];
 	[mockEntity setObject:[NSNumber numberWithDouble:[[NSDate date] timeIntervalSince1970]] forKey:kLastModifiedKey];
 	NSDictionary *mockServerResponse = [NSDictionary dictionaryWithObjectsAndKeys:[NSArray arrayWithObject:mockEntity], kModifiedEntitiesKey, nil];
-	[self mockStorageManager:syncStorageManager_ withResponse:mockServerResponse];
+	[DummySyncOperation setResponseObject:mockServerResponse];
 
 	[syncStorageManager_ syncNow];
 	
@@ -67,7 +75,7 @@
 										  [NSNumber numberWithBool:NO], kIsGloballyDeletedKey,
 										  nil];
 	NSDictionary *serverResponse = [NSDictionary dictionaryWithObject:[NSArray arrayWithObject:serverPost] forKey:kModifiedEntitiesKey];
-	[self mockStorageManager:syncStorageManager_ withResponse:serverResponse];
+	[DummySyncOperation setResponseObject:serverResponse];
 	
 	[syncStorageManager_ syncNow];
 	
@@ -81,6 +89,7 @@
 	STAssertEqualObjects(newPost.body, postBody, @"Should have updated data from server");
 	
 }
+
 
 #pragma mark - Helper methods
 - (void)mockStorageManager:(SyncStorageManager *)storageManager withResponse:(NSDictionary *)mockServerResponse

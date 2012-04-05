@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		7060214E152D0F5F0087A4DC /* SyncOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7060214D152D0F5F0087A4DC /* SyncOperation.m */; };
+		70602157152D37140087A4DC /* DependencyModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 70602156152D37140087A4DC /* DependencyModule.m */; };
+		7060215B152D3FDE0087A4DC /* TestModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 7060215A152D3FDE0087A4DC /* TestModule.m */; };
+		7060215E152D400D0087A4DC /* DummySyncOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7060215D152D400D0087A4DC /* DummySyncOperation.m */; };
 		70777F1E15238BD3007F5C87 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70777F1D15238BD3007F5C87 /* UIKit.framework */; };
 		70777F2015238BD3007F5C87 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70777F1F15238BD3007F5C87 /* Foundation.framework */; };
 		70777F2215238BD3007F5C87 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70777F2115238BD3007F5C87 /* CoreGraphics.framework */; };
@@ -27,9 +30,7 @@
 		70777FA51523E71C007F5C87 /* SyncStoreManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 70777FA41523E71C007F5C87 /* SyncStoreManagerTests.m */; };
 		70777FA91524DFC4007F5C87 /* ExampleSyncManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 70777FA81524DFC4007F5C87 /* ExampleSyncManager.m */; };
 		70777FB01524E097007F5C87 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 70777FAD1524E097007F5C87 /* Comment.m */; };
-		70777FB11524E097007F5C87 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 70777FAD1524E097007F5C87 /* Comment.m */; };
 		70777FB21524E097007F5C87 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 70777FAF1524E097007F5C87 /* Post.m */; };
-		70777FB31524E097007F5C87 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 70777FAF1524E097007F5C87 /* Post.m */; };
 		70777FB61524E0AE007F5C87 /* SyncObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 70777FB51524E0AE007F5C87 /* SyncObject.m */; };
 		A2E8D1A7C4E14DD499A6FC58 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 419E5BCA83464321ABC86C71 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -49,6 +50,12 @@
 		7060214C152D0F5F0087A4DC /* SyncOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SyncOperation.h; path = sync_storage/SyncOperation.h; sourceTree = "<group>"; };
 		7060214D152D0F5F0087A4DC /* SyncOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SyncOperation.m; path = sync_storage/SyncOperation.m; sourceTree = "<group>"; };
 		70602150152D171C0087A4DC /* keys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = keys.h; path = sync_storage/keys.h; sourceTree = "<group>"; };
+		70602155152D37140087A4DC /* DependencyModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DependencyModule.h; path = objection/DependencyModule.h; sourceTree = "<group>"; };
+		70602156152D37140087A4DC /* DependencyModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DependencyModule.m; path = objection/DependencyModule.m; sourceTree = "<group>"; };
+		70602159152D3FDE0087A4DC /* TestModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestModule.h; path = objection/TestModule.h; sourceTree = "<group>"; };
+		7060215A152D3FDE0087A4DC /* TestModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestModule.m; path = objection/TestModule.m; sourceTree = "<group>"; };
+		7060215C152D400D0087A4DC /* DummySyncOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DummySyncOperation.h; sourceTree = "<group>"; };
+		7060215D152D400D0087A4DC /* DummySyncOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DummySyncOperation.m; sourceTree = "<group>"; };
 		70777F1915238BD3007F5C87 /* offline_sync_blog_3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = offline_sync_blog_3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70777F1D15238BD3007F5C87 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		70777F1F15238BD3007F5C87 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -109,6 +116,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		70602154152D36E50087A4DC /* objection */ = {
+			isa = PBXGroup;
+			children = (
+				70602155152D37140087A4DC /* DependencyModule.h */,
+				70602156152D37140087A4DC /* DependencyModule.m */,
+			);
+			name = objection;
+			sourceTree = "<group>";
+		};
+		70602158152D3FC00087A4DC /* objection */ = {
+			isa = PBXGroup;
+			children = (
+				70602159152D3FDE0087A4DC /* TestModule.h */,
+				7060215A152D3FDE0087A4DC /* TestModule.m */,
+			);
+			name = objection;
+			sourceTree = "<group>";
+		};
 		70777F0E15238BD3007F5C87 = {
 			isa = PBXGroup;
 			children = (
@@ -169,11 +194,14 @@
 		70777F4115238BD3007F5C87 /* offline_sync_blog_3Tests */ = {
 			isa = PBXGroup;
 			children = (
+				70602158152D3FC00087A4DC /* objection */,
 				70777F4715238BD3007F5C87 /* offline_sync_blog_3Tests.h */,
 				70777F4815238BD3007F5C87 /* offline_sync_blog_3Tests.m */,
 				70777FA31523E71C007F5C87 /* SyncStoreManagerTests.h */,
 				70777FA41523E71C007F5C87 /* SyncStoreManagerTests.m */,
 				70777F4215238BD3007F5C87 /* Supporting Files */,
+				7060215C152D400D0087A4DC /* DummySyncOperation.h */,
+				7060215D152D400D0087A4DC /* DummySyncOperation.m */,
 			);
 			path = offline_sync_blog_3Tests;
 			sourceTree = "<group>";
@@ -190,6 +218,7 @@
 		70777F941523BFA6007F5C87 /* sync_storage */ = {
 			isa = PBXGroup;
 			children = (
+				70602154152D36E50087A4DC /* objection */,
 				70777F951523C227007F5C87 /* core_data */,
 				70777F8F1523BF9D007F5C87 /* SyncStorageManager.h */,
 				70777F901523BF9D007F5C87 /* SyncStorageManager.m */,
@@ -361,6 +390,7 @@
 				70777FB21524E097007F5C87 /* Post.m in Sources */,
 				70777FB61524E0AE007F5C87 /* SyncObject.m in Sources */,
 				7060214E152D0F5F0087A4DC /* SyncOperation.m in Sources */,
+				70602157152D37140087A4DC /* DependencyModule.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,8 +401,8 @@
 				70777F4915238BD3007F5C87 /* offline_sync_blog_3Tests.m in Sources */,
 				70777FA21523CB06007F5C87 /* offline_sync_blog_3.xcdatamodeld in Sources */,
 				70777FA51523E71C007F5C87 /* SyncStoreManagerTests.m in Sources */,
-				70777FB11524E097007F5C87 /* Comment.m in Sources */,
-				70777FB31524E097007F5C87 /* Post.m in Sources */,
+				7060215B152D3FDE0087A4DC /* TestModule.m in Sources */,
+				7060215E152D400D0087A4DC /* DummySyncOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
