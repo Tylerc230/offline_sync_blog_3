@@ -8,16 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #define kSyncCompleteNotif @"SyncCompleteNotif"
-#define kModifiedEntitiesKey @"modifiedEntities"
-#define kLastSyncTimeKey @"lastSyncTime"
-#define kClassNameKey @"className"
+
 
 
 
 @interface SyncStorageManager : NSObject
 /**
  * @param baseURL The url where the sync server is located.
- * @returns A new instance of a SyncStorageManager
+ * @returns A new instance of a SyncStorageManager.
  */
 - (id)initWithBaseURL:(NSString *)baseURL;
 /**
@@ -25,4 +23,8 @@
  * into local store.
  */
 - (void)syncNow;
+/**
+ * baseURL can be set at any time. Subsequent syncs will be done with the new url.
+ */
+@property (nonatomic, strong) NSString *baseURL;
 @end

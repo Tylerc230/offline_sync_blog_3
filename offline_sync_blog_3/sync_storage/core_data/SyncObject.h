@@ -33,6 +33,7 @@ typedef enum {
  */
 + (NSArray *)findAllByGUID:(NSArray *)guids;
 + (NSArray *)findUnsyncedObjects;
++ (NSTimeInterval)lastSyncTime;
 + (NSArray *)jsonRepresentationOfObjects:(NSArray *)objects;
 - (void)updateWithJSON:(NSDictionary *)json;
 - (void)deleteGlobalEntity;

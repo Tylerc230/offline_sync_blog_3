@@ -45,6 +45,17 @@
 	return jsonObjects;
 }
 
++ (NSTimeInterval)lastSyncTime
+{
+	NSArray *allObjects = [SyncObject findAllSortedBy:kLastModifiedKey ascending:NO];
+	if (allObjects.count == 0) {
+		return 0;
+	}
+	return [[allObjects objectAtIndex:0] lastModified];
+}
+
+
+
 - (void)updateWithJSON:(NSDictionary *)jsonObject
 {
 	self.guid = [jsonObject objectForKey:kGUIDKey];

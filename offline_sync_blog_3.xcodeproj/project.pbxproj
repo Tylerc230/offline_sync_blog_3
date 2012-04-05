@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7060214E152D0F5F0087A4DC /* SyncOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7060214D152D0F5F0087A4DC /* SyncOperation.m */; };
 		70777F1E15238BD3007F5C87 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70777F1D15238BD3007F5C87 /* UIKit.framework */; };
 		70777F2015238BD3007F5C87 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70777F1F15238BD3007F5C87 /* Foundation.framework */; };
 		70777F2215238BD3007F5C87 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70777F2115238BD3007F5C87 /* CoreGraphics.framework */; };
@@ -45,6 +46,9 @@
 
 /* Begin PBXFileReference section */
 		419E5BCA83464321ABC86C71 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7060214C152D0F5F0087A4DC /* SyncOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SyncOperation.h; path = sync_storage/SyncOperation.h; sourceTree = "<group>"; };
+		7060214D152D0F5F0087A4DC /* SyncOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SyncOperation.m; path = sync_storage/SyncOperation.m; sourceTree = "<group>"; };
+		70602150152D171C0087A4DC /* keys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = keys.h; path = sync_storage/keys.h; sourceTree = "<group>"; };
 		70777F1915238BD3007F5C87 /* offline_sync_blog_3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = offline_sync_blog_3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70777F1D15238BD3007F5C87 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		70777F1F15238BD3007F5C87 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -189,6 +193,9 @@
 				70777F951523C227007F5C87 /* core_data */,
 				70777F8F1523BF9D007F5C87 /* SyncStorageManager.h */,
 				70777F901523BF9D007F5C87 /* SyncStorageManager.m */,
+				7060214C152D0F5F0087A4DC /* SyncOperation.h */,
+				7060214D152D0F5F0087A4DC /* SyncOperation.m */,
+				70602150152D171C0087A4DC /* keys.h */,
 			);
 			name = sync_storage;
 			sourceTree = "<group>";
@@ -353,6 +360,7 @@
 				70777FB01524E097007F5C87 /* Comment.m in Sources */,
 				70777FB21524E097007F5C87 /* Post.m in Sources */,
 				70777FB61524E0AE007F5C87 /* SyncObject.m in Sources */,
+				7060214E152D0F5F0087A4DC /* SyncOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
