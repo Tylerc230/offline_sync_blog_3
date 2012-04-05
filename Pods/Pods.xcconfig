@@ -1,4 +1,5 @@
 PODS_ROOT = $(SRCROOT)/Pods
-HEADER_SEARCH_PATHS = "$(PODS_ROOT)/Headers" "$(PODS_ROOT)/Headers/AFNetworking" "$(PODS_ROOT)/Headers/MagicalRecord" "$(PODS_ROOT)/Headers/OCMock" "$(PODS_ROOT)/Headers/Objection"
+HEADER_SEARCH_PATHS = "$(PODS_ROOT)/Headers" "$(PODS_ROOT)/Headers/AFNetworking" "$(PODS_ROOT)/Headers/Kiwi" "$(PODS_ROOT)/Headers/MagicalRecord" "$(PODS_ROOT)/Headers/OCMock" "$(PODS_ROOT)/Headers/Objection"
 ALWAYS_SEARCH_USER_PATHS = YES
-OTHER_LDFLAGS = -ObjC -all_load -framework SystemConfiguration -framework CoreData
+OTHER_LDFLAGS = -ObjC -all_load -framework SystemConfiguration -framework SenTestingKit -framework CoreData
+FRAMEWORK_SEARCH_PATHS = "$(SDKROOT)/Developer/Library/Frameworks" "$(DEVELOPER_LIBRARY_DIR)/Frameworks"

@@ -1,11 +1,13 @@
 PODS:
   - AFNetworking (0.9.1)
+  - Kiwi (1.0.0)
   - MagicalRecord (1.8.3)
   - OCMock (1.77.1)
   - Objection (0.12.1)
 
 DEPENDENCIES:
   - AFNetworking
+  - Kiwi
   - MagicalRecord
   - OCMock
   - Objection
