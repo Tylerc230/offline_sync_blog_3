@@ -42,12 +42,12 @@ describe(@"SyncStorageManager", ^{
 		
 		[syncStorageManager_ syncNow];
 
-		[[[KWFutureObject futureObjectWithBlock:^{ 
+		[[theReturnValueOfBlock(^{ 
 			[[NSManagedObjectContext MR_contextForCurrentThread] refreshObject:newPost mergeChanges:YES];
 			SyncObjectStatus postSyncStatus = newPost.syncStatus;
 			return [NSNumber numberWithInt:postSyncStatus];
 			
-		}] shouldEventually] equal:[NSNumber numberWithInt: SOSynced]];//Entity should have a status of 'synced' after doing a sync
+		}) shouldEventually] equal:[NSNumber numberWithInt: SOSynced]];//Entity should have a status of 'synced' after doing a sync
 		
 		[[theValue(newPost.lastModified) should] beGreaterThan:theValue(0)];//Entity last modified date should be set
     });
@@ -70,7 +70,7 @@ describe(@"SyncStorageManager", ^{
 			NSArray *posts = [Post MR_findAll];
 			int postCount = posts.count;
 			return [NSNumber numberWithInt:postCount];
-		}) shouldEventuallyBeforeTimingOutAfter(2.0)] equal:[NSNumber numberWithInt:1]];//Should have 1 post created by the server
+		}) shouldEventuallyBeforeTimingOutAfter(3.0)] equal:[NSNumber numberWithInt:1]];//Should have 1 post created by the server
 
 		NSArray *posts = [Post MR_findAll];
 		Post *newPost = [posts objectAtIndex:0];

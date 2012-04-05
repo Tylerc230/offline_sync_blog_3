@@ -77,8 +77,6 @@
 		70777F4815238BD3007F5C87 /* offline_sync_blog_3Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = offline_sync_blog_3Tests.m; sourceTree = "<group>"; };
 		70777F8F1523BF9D007F5C87 /* SyncStorageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SyncStorageManager.h; path = sync_storage/SyncStorageManager.h; sourceTree = "<group>"; };
 		70777F901523BF9D007F5C87 /* SyncStorageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SyncStorageManager.m; path = sync_storage/SyncStorageManager.m; sourceTree = "<group>"; };
-		70777FA31523E71C007F5C87 /* SyncStoreManagerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SyncStoreManagerTests.h; sourceTree = "<group>"; };
-		70777FA41523E71C007F5C87 /* SyncStoreManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SyncStoreManagerTests.m; sourceTree = "<group>"; };
 		70777FA71524DFC4007F5C87 /* ExampleSyncManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExampleSyncManager.h; path = example/ExampleSyncManager.h; sourceTree = "<group>"; };
 		70777FA81524DFC4007F5C87 /* ExampleSyncManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExampleSyncManager.m; path = example/ExampleSyncManager.m; sourceTree = "<group>"; };
 		70777FAC1524E097007F5C87 /* Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Comment.h; path = example/core_data/Comment.h; sourceTree = "<group>"; };
@@ -207,8 +205,6 @@
 				70602158152D3FC00087A4DC /* objection */,
 				70777F4715238BD3007F5C87 /* offline_sync_blog_3Tests.h */,
 				70777F4815238BD3007F5C87 /* offline_sync_blog_3Tests.m */,
-				70777FA31523E71C007F5C87 /* SyncStoreManagerTests.h */,
-				70777FA41523E71C007F5C87 /* SyncStoreManagerTests.m */,
 				70777F4215238BD3007F5C87 /* Supporting Files */,
 				7060215C152D400D0087A4DC /* DummySyncOperation.h */,
 				7060215D152D400D0087A4DC /* DummySyncOperation.m */,
