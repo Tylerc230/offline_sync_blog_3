@@ -7,6 +7,9 @@
 #import "Post.h"
 #import "SyncStorageManager.h"
 
+#define kFakeGUID @"21EC2020-3AEA-1069-A2DD-08002B30309D"
+
+
 SPEC_BEGIN(SyncStoreManagerSpec)
 describe(@"SyncStorageManager", ^{
 	__block SyncStorageManager *syncStorageManager_ = nil;
@@ -48,6 +51,34 @@ describe(@"SyncStorageManager", ^{
 		
 		[[theValue(newPost.lastModified) should] beGreaterThan:theValue(0)];//Entity last modified date should be set
     });
+	
+	it(@"should sync newly created objects from the server", ^{
+		NSString *postBody = @"post body from another device";
+		NSMutableDictionary * serverPost = [NSDictionary dictionaryWithObjectsAndKeys:
+											@"Post", kClassNameKey,
+											postBody, kBodyKey,
+											@"post title", kTitleKey,
+											kFakeGUID, kGUIDKey,
+											[NSNumber numberWithDouble:[[NSDate date] timeIntervalSince1970]], kLastModifiedKey,
+											[NSNumber numberWithBool:NO], kIsGloballyDeletedKey,
+											nil];
+		NSDictionary *serverResponse = [NSDictionary dictionaryWithObject:[NSArray arrayWithObject:serverPost] forKey:kModifiedEntitiesKey];
+		[DummySyncOperation setResponseObject:serverResponse];
+		
+		[syncStorageManager_ syncNow];
+		[[theReturnValueOfBlock(^{
+			NSArray *posts = [Post MR_findAll];
+			int postCount = posts.count;
+			return [NSNumber numberWithInt:postCount];
+		}) shouldEventuallyBeforeTimingOutAfter(2.0)] equal:[NSNumber numberWithInt:1]];//Should have 1 post created by the server
+
+		NSArray *posts = [Post MR_findAll];
+		Post *newPost = [posts objectAtIndex:0];
+		[newPost.guid shouldNotBeNil];//New entities should have a guid
+		[[theValue(newPost.lastModified) should] beGreaterThan:theValue(0)];//New entities should have a modified date
+		[[newPost.body should] equal:postBody];//Should have updated data from server
+
+	});
 });
 
 SPEC_END
