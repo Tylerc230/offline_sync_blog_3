@@ -38,11 +38,13 @@ describe(@"SyncStorageManager", ^{
 		[DummySyncOperation setResponseObject:mockServerResponse];
 		
 		[syncStorageManager_ syncNow];
-		
-		[[NSManagedObjectContext MR_contextForCurrentThread] refreshObject:newPost mergeChanges:YES];
-		SyncObjectStatus postSyncStatus = newPost.syncStatus;
-		
-		[[theValue(postSyncStatus) should] equal:theValue(SOSynced)];//Entity should have a status of 'synced' after doing a sync
+
+		[[[KWFutureObject futureObjectWithBlock:^{ 
+			[[NSManagedObjectContext MR_contextForCurrentThread] refreshObject:newPost mergeChanges:YES];
+			SyncObjectStatus postSyncStatus = newPost.syncStatus;
+			return [NSNumber numberWithInt:postSyncStatus];
+			
+		}] shouldEventually] equal:[NSNumber numberWithInt: SOSynced]];//Entity should have a status of 'synced' after doing a sync
 		
 		[[theValue(newPost.lastModified) should] beGreaterThan:theValue(0)];//Entity last modified date should be set
     });
