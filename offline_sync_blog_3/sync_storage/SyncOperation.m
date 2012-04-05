@@ -10,6 +10,7 @@
 #import "SyncObject.h"
 #import "AFHTTPClient.h"
 #import "keys.h"
+#import "Objection.h"
 
 #define kExecutingKey @"isExecuting"
 #define kFinishedKey @"isFinished"
@@ -24,6 +25,7 @@
 
 
 @implementation SyncOperation
+objection_register(SyncOperation)
 @synthesize httpClient;
 
 - (id)initWithBaseURL:(NSString *)baseURL

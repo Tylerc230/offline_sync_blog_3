@@ -9,6 +9,7 @@
 #import "SyncStorageManager.h"
 #import "MagicalRecordHelpers.h"
 #import "SyncOperation.h"
+#import "JSObjection.h"
 @interface SyncStorageManager ()
 @property (nonatomic, strong) NSOperationQueue *operationQueue;
 @end
@@ -42,7 +43,8 @@
 #pragma mark - sync
 - (void)syncAllEntities
 {
-	SyncOperation *syncOp = [[SyncOperation alloc] initWithBaseURL:self.baseURL];
+	SyncOperation *syncOp = [[JSObjection globalInjector] getObject:[SyncOperation class]];
+//	syncOp.baseURL = self.baseURL;
 	[syncOp setCompletionBlock:^{
 		[self performSelectorOnMainThread:@selector(syncComplete) withObject:nil waitUntilDone:NO];
 	}];
