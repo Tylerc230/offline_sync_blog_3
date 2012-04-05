@@ -11,6 +11,7 @@
 		70602157152D37140087A4DC /* DependencyModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 70602156152D37140087A4DC /* DependencyModule.m */; };
 		7060215B152D3FDE0087A4DC /* TestModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 7060215A152D3FDE0087A4DC /* TestModule.m */; };
 		7060215E152D400D0087A4DC /* DummySyncOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7060215D152D400D0087A4DC /* DummySyncOperation.m */; };
+		7060218F152D67370087A4DC /* SyncStoreManagerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 7060218E152D67370087A4DC /* SyncStoreManagerSpec.m */; };
 		70777F1E15238BD3007F5C87 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70777F1D15238BD3007F5C87 /* UIKit.framework */; };
 		70777F2015238BD3007F5C87 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70777F1F15238BD3007F5C87 /* Foundation.framework */; };
 		70777F2215238BD3007F5C87 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70777F2115238BD3007F5C87 /* CoreGraphics.framework */; };
@@ -27,7 +28,6 @@
 		70777F4915238BD3007F5C87 /* offline_sync_blog_3Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 70777F4815238BD3007F5C87 /* offline_sync_blog_3Tests.m */; };
 		70777F911523BF9D007F5C87 /* SyncStorageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 70777F901523BF9D007F5C87 /* SyncStorageManager.m */; };
 		70777FA21523CB06007F5C87 /* offline_sync_blog_3.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 70777F3115238BD3007F5C87 /* offline_sync_blog_3.xcdatamodeld */; };
-		70777FA51523E71C007F5C87 /* SyncStoreManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 70777FA41523E71C007F5C87 /* SyncStoreManagerTests.m */; };
 		70777FA91524DFC4007F5C87 /* ExampleSyncManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 70777FA81524DFC4007F5C87 /* ExampleSyncManager.m */; };
 		70777FB01524E097007F5C87 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 70777FAD1524E097007F5C87 /* Comment.m */; };
 		70777FB21524E097007F5C87 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 70777FAF1524E097007F5C87 /* Post.m */; };
@@ -56,6 +56,7 @@
 		7060215A152D3FDE0087A4DC /* TestModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestModule.m; path = objection/TestModule.m; sourceTree = "<group>"; };
 		7060215C152D400D0087A4DC /* DummySyncOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DummySyncOperation.h; sourceTree = "<group>"; };
 		7060215D152D400D0087A4DC /* DummySyncOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DummySyncOperation.m; sourceTree = "<group>"; };
+		7060218E152D67370087A4DC /* SyncStoreManagerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SyncStoreManagerSpec.m; path = kiwi/SyncStoreManagerSpec.m; sourceTree = "<group>"; };
 		70777F1915238BD3007F5C87 /* offline_sync_blog_3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = offline_sync_blog_3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70777F1D15238BD3007F5C87 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		70777F1F15238BD3007F5C87 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -134,6 +135,14 @@
 			name = objection;
 			sourceTree = "<group>";
 		};
+		7060218C152D67060087A4DC /* kiwi */ = {
+			isa = PBXGroup;
+			children = (
+				7060218E152D67370087A4DC /* SyncStoreManagerSpec.m */,
+			);
+			name = kiwi;
+			sourceTree = "<group>";
+		};
 		70777F0E15238BD3007F5C87 = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +203,7 @@
 		70777F4115238BD3007F5C87 /* offline_sync_blog_3Tests */ = {
 			isa = PBXGroup;
 			children = (
+				7060218C152D67060087A4DC /* kiwi */,
 				70602158152D3FC00087A4DC /* objection */,
 				70777F4715238BD3007F5C87 /* offline_sync_blog_3Tests.h */,
 				70777F4815238BD3007F5C87 /* offline_sync_blog_3Tests.m */,
@@ -400,9 +410,9 @@
 			files = (
 				70777F4915238BD3007F5C87 /* offline_sync_blog_3Tests.m in Sources */,
 				70777FA21523CB06007F5C87 /* offline_sync_blog_3.xcdatamodeld in Sources */,
-				70777FA51523E71C007F5C87 /* SyncStoreManagerTests.m in Sources */,
 				7060215B152D3FDE0087A4DC /* TestModule.m in Sources */,
 				7060215E152D400D0087A4DC /* DummySyncOperation.m in Sources */,
+				7060218F152D67370087A4DC /* SyncStoreManagerSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

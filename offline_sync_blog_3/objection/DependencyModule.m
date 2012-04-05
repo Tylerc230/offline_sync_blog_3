@@ -11,6 +11,6 @@
 @implementation DependencyModule
 - (void)configure
 {
-	[self bindClass:[SyncOperation class] toClass:[SyncOperation class]];
+
 }
 @end
