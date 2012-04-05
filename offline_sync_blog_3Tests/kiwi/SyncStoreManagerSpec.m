@@ -79,6 +79,46 @@ describe(@"SyncStorageManager", ^{
 		[[newPost.body should] equal:postBody];//Should have updated data from server
 
 	});
+	
+	it(@"should store a conflicted object when server sends conflict", ^{
+		Post *conflictedPost = [Post MR_createEntity];
+		NSString *postTitle = @"Post title";
+		
+		NSString *myPostBody = @"Post body my version";
+		NSString *serverPostBody = @"Post body server version";
+		NSNumber *localLastModifiedTime = [NSNumber numberWithDouble:1.0];
+		NSNumber *serverLastModifiedTime = [NSNumber numberWithDouble:2.0];
+		
+		conflictedPost.title = postTitle;
+		conflictedPost.body = myPostBody;
+		conflictedPost.lastModified = [localLastModifiedTime doubleValue];
+		
+
+		NSDictionary *conflictedEntity = [NSDictionary dictionaryWithObjectsAndKeys:
+										  @"Post", kClassNameKey,
+										  serverPostBody, kBodyKey,
+										  postTitle, kTitleKey,
+										  conflictedPost.guid, kGUIDKey,
+										  serverLastModifiedTime, kLastModifiedKey,
+										  [NSNumber numberWithBool:NO], kIsGloballyDeletedKey,
+										  nil];
+		
+		NSDictionary *serverResponse = [NSDictionary dictionaryWithObject:[NSArray arrayWithObject:conflictedEntity] forKey:kConflictedEntitiesKey];
+		[DummySyncOperation setResponseObject:serverResponse];
+		
+		[syncStorageManager_ syncNow];
+		
+		[[theReturnValueOfBlock(^{
+			NSArray *conflictedEntities = [SyncObject findConflictedObjects];
+			return [NSNumber numberWithInt: conflictedEntities.count];
+		}) shouldEventually] equal:[NSNumber numberWithInt:1]];
+		
+		Post *serverConflictedPost = [[SyncObject findConflictedObjects] objectAtIndex:0];
+
+		[[serverConflictedPost.body should] equal:serverPostBody];
+		
+		
+	});
 });
 
 SPEC_END

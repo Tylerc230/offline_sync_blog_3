@@ -19,7 +19,7 @@
 typedef enum {
 	SOSynced,
 	SONeedsSync,
-	SOTempObject
+	SOConflicted
 }SyncObjectStatus;
 
 @property (nonatomic, retain) NSString * guid;
@@ -33,6 +33,7 @@ typedef enum {
  */
 + (NSArray *)findAllByGUID:(NSArray *)guids;
 + (NSArray *)findUnsyncedObjects;
++ (NSArray *)findConflictedObjects;
 + (NSTimeInterval)lastSyncTime;
 + (NSArray *)jsonRepresentationOfObjects:(NSArray *)objects;
 - (void)updateWithJSON:(NSDictionary *)json;

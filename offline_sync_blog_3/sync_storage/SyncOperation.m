@@ -87,7 +87,12 @@ objection_register(SyncOperation)
 {
 	NSArray *modifiedEntities = [responseObject objectForKey:kModifiedEntitiesKey];
 	[self updateWithJSON:modifiedEntities];
+	
+	NSArray *conflictedEntities = [responseObject objectForKey:kConflictedEntitiesKey];
+	[self markConflictedAndNotify:conflictedEntities];
 	[self completeOperation];
+	
+	[[NSManagedObjectContext MR_contextForCurrentThread] save];
 }
 
 - (void)syncFailedWithResponse:(NSError *)error
@@ -106,6 +111,18 @@ objection_register(SyncOperation)
 }
 
 #pragma mark - private methods
+#pragma mark - conflict resolution
+- (void)markConflictedAndNotify:(NSArray *)conflictedEntities
+{
+	for (NSDictionary *conflictedEntity in conflictedEntities) {
+		NSString *className = [conflictedEntity objectForKey:kClassNameKey];
+		SyncObject *conflictedObject = [self createManagedObject:className];
+		[conflictedObject updateWithJSON:conflictedEntity];
+		conflictedObject.syncStatus = SOConflicted;
+	}
+
+}
+
 #pragma mark - object creation
 
 - (SyncObject *)createManagedObject:(NSString *)className
@@ -131,7 +148,6 @@ objection_register(SyncOperation)
 		[managedObject updateWithJSON:jsonObject];
 		managedObject.syncStatus = SOSynced;
 	}
-	[[NSManagedObjectContext MR_contextForCurrentThread] save];
 }
 
 - (NSArray *)collectGuids:(NSArray *)modifiedObjects

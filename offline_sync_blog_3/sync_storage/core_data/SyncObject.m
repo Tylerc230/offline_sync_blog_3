@@ -36,6 +36,11 @@
 	return [SyncObject findByAttribute:kSyncStatusKey withValue:[NSNumber numberWithInt:SONeedsSync]];
 }
 
++ (NSArray *)findConflictedObjects
+{
+	return [SyncObject findByAttribute:kSyncStatusKey withValue:[NSNumber numberWithInt:SOConflicted]];
+}
+
 + (NSArray *)jsonRepresentationOfObjects:(NSArray *)objects
 {
 	NSMutableArray * jsonObjects = [NSMutableArray arrayWithCapacity:objects.count];
@@ -53,8 +58,6 @@
 	}
 	return [[allObjects objectAtIndex:0] lastModified];
 }
-
-
 
 - (void)updateWithJSON:(NSDictionary *)jsonObject
 {
