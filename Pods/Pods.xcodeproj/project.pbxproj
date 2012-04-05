@@ -10,35 +10,76 @@
 	<string>46</string>
 	<key>objects</key>
 	<dict>
-		<key>0299C15B0A724B1FBFEE1CD1</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>2AFB6276BC9745F3A90FF64F</string>
-				<string>18D08787C61F42D68D100685</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>044BB5EB425B4B0089031817</key>
+		<key>03C04034041148A5875A493E</key>
 		<dict>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>name</key>
-			<string>MRCoreDataAction.m</string>
+			<string>OCMReturnValueProvider.m</string>
 			<key>path</key>
-			<string>MagicalRecord/Source/MRCoreDataAction.m</string>
+			<string>OCMock/Source/OCMock/OCMReturnValueProvider.m</string>
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>05E62A0EA1A543228DAF155D</key>
+		<key>04A64BFEEAE745F9AFE1D93F</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>NSString+MagicalDataImport.m</string>
+			<key>path</key>
+			<string>MagicalRecord/Source/Categories/DataImport/NSString+MagicalDataImport.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>05E2FF0B0F8B4DF990E9EFF1</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>NSManagedObjectContext+MagicalRecord.h</string>
+			<key>path</key>
+			<string>MagicalRecord/Source/Categories/NSManagedObjectContext+MagicalRecord.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>063CB434FE0C45D490C906AA</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>OCMockRecorder.m</string>
+			<key>path</key>
+			<string>OCMock/Source/OCMock/OCMockRecorder.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>08D4E3A0DC6A41FF806866AB</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>NSRelationshipDescription+MagicalDataImport.h</string>
+			<key>path</key>
+			<string>MagicalRecord/Source/Categories/DataImport/NSRelationshipDescription+MagicalDataImport.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>092C3AE6EC304872B5759890</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>NSEntityDescription+MagicalDataImport.h</string>
+			<key>path</key>
+			<string>MagicalRecord/Source/Categories/DataImport/NSEntityDescription+MagicalDataImport.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>0A9679DE5070463FB370D799</key>
 		<dict>
 			<key>fileRef</key>
-			<string>88AC8D4BC48641F69E5B988B</string>
+			<string>ED1144B3073B483ABE3D0EE6</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -47,197 +88,7 @@
 				<string> </string>
 			</dict>
 		</dict>
-		<key>0642290E938E44D1BE560F3B</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>938CB9344B454AE9BB2A0B2F</string>
-				<string>2415FC1F15DB482DB0B5FB68</string>
-				<string>95CCB1914AEF41F9BF0B999E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>0664C1CA838742A49E1625A3</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>4088D0EFB3194A1283F9E9E5</string>
-				<string>2BDFD821730549A183262B8A</string>
-				<string>171BE1F555714B04A5F8D612</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>07352990B26241239A5793AE</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>OCMRealObjectForwarder.m</string>
-			<key>path</key>
-			<string>OCMock/Source/OCMock/OCMRealObjectForwarder.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>09B6506E8AB04B4D98E74A67</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>OCMNotificationPoster.h</string>
-			<key>path</key>
-			<string>OCMock/Source/OCMock/OCMNotificationPoster.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>0B5A33ACFFFD44B8AD45FBFF</key>
-		<dict>
-			<key>fileRef</key>
-			<string>12D7EC11E924449D87095D99</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string> </string>
-			</dict>
-		</dict>
-		<key>0B91C1EEDEFA4B2F82587892</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>OCMExceptionReturnValueProvider.h</string>
-			<key>path</key>
-			<string>OCMock/Source/OCMock/OCMExceptionReturnValueProvider.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>0FA115446CEA4024B29C30E9</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>OCMockObject.m</string>
-			<key>path</key>
-			<string>OCMock/Source/OCMock/OCMockObject.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>10BC6741B7994977BF2350FF</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>OCMObserverRecorder.h</string>
-			<key>path</key>
-			<string>OCMock/Source/OCMock/OCMObserverRecorder.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>119593B65D7C49A8B4F05B80</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>AFHTTPClient.h</string>
-			<key>path</key>
-			<string>AFNetworking/AFNetworking/AFHTTPClient.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>11E05E1985BB48E6A635A6D5</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>0664C1CA838742A49E1625A3</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Targets Support Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>12D7EC11E924449D87095D99</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>OCMArg.m</string>
-			<key>path</key>
-			<string>OCMock/Source/OCMock/OCMArg.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>1422BD53F64548419B287D3C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F968FE47D03B40798A40F353</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string> </string>
-			</dict>
-		</dict>
-		<key>144F0652085D4B32A47C3A53</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>NSPersistentStore+MagicalRecord.m</string>
-			<key>path</key>
-			<string>MagicalRecord/Source/Categories/NSPersistentStore+MagicalRecord.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>15E511DB469E4581B1DFECD5</key>
-		<dict>
-			<key>fileRef</key>
-			<string>E3D45F3E627E4DE1924C3B7B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string> </string>
-			</dict>
-		</dict>
-		<key>16EAED92714F473C8708954E</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>6AA5AD3D77074984ADA10AE0</string>
-				<string>73EF00EE7824480E9B02E04E</string>
-			</array>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>171BE1F555714B04A5F8D612</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods.xcconfig</string>
-			<key>path</key>
-			<string>Pods.xcconfig</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>179EED383BED4879B296F4D8</key>
+		<key>0D46ABB0F66D4F32A9C864FE</key>
 		<dict>
 			<key>isa</key>
 			<string>PBXFileReference</string>
@@ -248,7 +99,76 @@
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>18D08787C61F42D68D100685</key>
+		<key>0FFB2ECDD76F42A685474E68</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>OCMNotificationPoster.m</string>
+			<key>path</key>
+			<string>OCMock/Source/OCMock/OCMNotificationPoster.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>12B36F8E75F2402088BC84D9</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6532F136F3E84331B7B60E62</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string> </string>
+			</dict>
+		</dict>
+		<key>135133C0519D4FC9A3D140A1</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>OCMockObject.h</string>
+			<key>path</key>
+			<string>OCMock/Source/OCMock/OCMockObject.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>13E8789A463641B8930A73E6</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>AFJSONRequestOperation.m</string>
+			<key>path</key>
+			<string>AFNetworking/AFNetworking/AFJSONRequestOperation.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>14F72A643B284F468AC42641</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D7C44DE1F05A4462A90FFF36</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string> </string>
+			</dict>
+		</dict>
+		<key>1928EAE1A014466E8C624A61</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A91929E705A7457997E0BC38</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string> </string>
+			</dict>
+		</dict>
+		<key>1964A63B198B4FEE89DA4FD3</key>
 		<dict>
 			<key>buildSettings</key>
 			<dict>
@@ -294,7 +214,319 @@
 			<key>name</key>
 			<string>Release</string>
 		</dict>
-		<key>1C6D1D843CDF465B8F00998E</key>
+		<key>1BB312C7E254493EA82553FD</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>3DDD74CFBBAE4ADB87F53F7C</string>
+				<string>EFAE22DE48FF4F2E89C17967</string>
+				<string>F0238C3621BB4CCE9CF6A379</string>
+				<string>6D35C818462447A8A21044EB</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1C2D0D0A5B4A4FC98D1BCEC1</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>OCMBlockCaller.h</string>
+			<key>path</key>
+			<string>OCMock/Source/OCMock/OCMBlockCaller.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>1E9F061D8FEB444480945B9D</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods.xcconfig</string>
+			<key>path</key>
+			<string>Pods.xcconfig</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>1F16CAC0AA73430391517AD0</key>
+		<dict>
+			<key>attributes</key>
+			<dict>
+				<key>LastUpgradeCheck</key>
+				<string>0420</string>
+			</dict>
+			<key>buildConfigurationList</key>
+			<string>C008DD643C7A4208AB80104B</string>
+			<key>compatibilityVersion</key>
+			<string>Xcode 3.2</string>
+			<key>developmentRegion</key>
+			<string>English</string>
+			<key>hasScannedForEncodings</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXProject</string>
+			<key>knownRegions</key>
+			<array>
+				<string>en</string>
+			</array>
+			<key>mainGroup</key>
+			<string>1BB312C7E254493EA82553FD</string>
+			<key>productRefGroup</key>
+			<string>F0238C3621BB4CCE9CF6A379</string>
+			<key>projectDirPath</key>
+			<string></string>
+			<key>projectRoot</key>
+			<string></string>
+			<key>targets</key>
+			<array>
+				<string>8A9182CD8BAF4888B101B794</string>
+			</array>
+		</dict>
+		<key>1FFAACC1B1DD4DDE9EA53F97</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>AFImageRequestOperation.m</string>
+			<key>path</key>
+			<string>AFNetworking/AFNetworking/AFImageRequestOperation.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>21A25BAB60434BE99080B9F1</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>JSObjectionInjector.m</string>
+			<key>path</key>
+			<string>Objection/Source/JSObjectionInjector.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>2264B52E16C84D698A83A027</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>NSMethodSignature+OCMAdditions.m</string>
+			<key>path</key>
+			<string>OCMock/Source/OCMock/NSMethodSignature+OCMAdditions.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>23977BA55D76456585D8E173</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>OCMExceptionReturnValueProvider.h</string>
+			<key>path</key>
+			<string>OCMock/Source/OCMock/OCMExceptionReturnValueProvider.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>23B815F572C845FD83DEBAE7</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>AFNetworkActivityIndicatorManager.h</string>
+			<key>path</key>
+			<string>AFNetworking/AFNetworking/AFNetworkActivityIndicatorManager.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>248DAEFFC8B343979D8484F1</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>JSObjection.m</string>
+			<key>path</key>
+			<string>Objection/Source/JSObjection.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>256298C632A64EEB8F8C51DB</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>Pods-resources.sh</string>
+			<key>path</key>
+			<string>Pods-resources.sh</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>25737B2AF0F242219CD655AC</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>AFHTTPRequestOperation.h</string>
+			<key>path</key>
+			<string>AFNetworking/AFNetworking/AFHTTPRequestOperation.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>2723D2A358EE499994F95685</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>OCMNotificationPoster.h</string>
+			<key>path</key>
+			<string>OCMock/Source/OCMock/OCMNotificationPoster.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>27B1093540CE4C09A23AB1D5</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>AFHTTPRequestOperation.m</string>
+			<key>path</key>
+			<string>AFNetworking/AFNetworking/AFHTTPRequestOperation.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>2857BE2D174749F79354D7B8</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>NSNotificationCenter+OCMAdditions.h</string>
+			<key>path</key>
+			<string>OCMock/Source/OCMock/NSNotificationCenter+OCMAdditions.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>2869B649440849A49AE178BA</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>OCObserverMockObject.m</string>
+			<key>path</key>
+			<string>OCMock/Source/OCMock/OCObserverMockObject.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>28ED47BE190F46C18DAD30F0</key>
+		<dict>
+			<key>fileRef</key>
+			<string>BCF0B2273B7A4A59A62F9D33</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string> </string>
+			</dict>
+		</dict>
+		<key>2EF1A97EBB7E41E99BD1BE8B</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>NSAttributeDescription+MagicalDataImport.m</string>
+			<key>path</key>
+			<string>MagicalRecord/Source/Categories/DataImport/NSAttributeDescription+MagicalDataImport.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>3293075B57C94E4A949017F5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>DFFD59419DE04B8B97D0243D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string> </string>
+			</dict>
+		</dict>
+		<key>3317E9EDDBD14234BF409280</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A0C2921EC773420494B2EBC1</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string> </string>
+			</dict>
+		</dict>
+		<key>369616B998BD490BABD9A073</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>NSManagedObjectModel+MagicalRecord.h</string>
+			<key>path</key>
+			<string>MagicalRecord/Source/Categories/NSManagedObjectModel+MagicalRecord.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>3757077071A047B19846B94B</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>OCPartialMockObject.h</string>
+			<key>path</key>
+			<string>OCMock/Source/OCMock/OCPartialMockObject.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>379A5756A3784A4289D49852</key>
+		<dict>
+			<key>fileRef</key>
+			<string>967AF6685B194BEAA9CB0B7D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string> </string>
+			</dict>
+		</dict>
+		<key>3BD0949FEC954666BCDDA8EA</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>AFXMLRequestOperation.m</string>
+			<key>path</key>
+			<string>AFNetworking/AFNetworking/AFXMLRequestOperation.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>3DDD74CFBBAE4ADB87F53F7C</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>541F48BF9FD6409CBBCCCAAD</string>
+				<string>5169A5A8D6FA482EA051F690</string>
+				<string>6F490EB435354157B411EA28</string>
+				<string>739A5B0DFF8E4BF9858B2C3A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3F1496059B9A407581B70E31</key>
 		<dict>
 			<key>isa</key>
 			<string>PBXFileReference</string>
@@ -305,10 +537,10 @@
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>1EE378FE7CB8462C83086351</key>
+		<key>417E1E6FD69B450286700137</key>
 		<dict>
 			<key>fileRef</key>
-			<string>07352990B26241239A5793AE</string>
+			<string>6735BDA621BB43E692FCAC25</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -317,33 +549,274 @@
 				<string> </string>
 			</dict>
 		</dict>
-		<key>1FAEEBA73FCB437A99CCC840</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>libPods.a</string>
-			<key>path</key>
-			<string>libPods.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>20586CB040524C4EB8DB373C</key>
+		<key>44C5E97D7E88460592D51CFF</key>
 		<dict>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>name</key>
-			<string>OCMConstraint.h</string>
+			<string>NSPersistentStore+MagicalRecord.h</string>
 			<key>path</key>
-			<string>OCMock/Source/OCMock/OCMConstraint.h</string>
+			<string>MagicalRecord/Source/Categories/NSPersistentStore+MagicalRecord.h</string>
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>2149C4C1D1A847C09FAF1A62</key>
+		<key>460C32CB4E4E45EEB13A324B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2264B52E16C84D698A83A027</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string> </string>
+			</dict>
+		</dict>
+		<key>47775F35B5A54D7A8D06DD20</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>OCPartialMockRecorder.h</string>
+			<key>path</key>
+			<string>OCMock/Source/OCMock/OCPartialMockRecorder.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>47FD8AFF523C4E59B86E3680</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>UIImageView+AFNetworking.h</string>
+			<key>path</key>
+			<string>AFNetworking/AFNetworking/UIImageView+AFNetworking.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>489102074EDA4F939A081080</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>OCObserverMockObject.h</string>
+			<key>path</key>
+			<string>OCMock/Source/OCMock/OCObserverMockObject.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>49013CAB01DB4ED681CDB2E4</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>AFNetworking.h</string>
+			<key>path</key>
+			<string>AFNetworking/AFNetworking/AFNetworking.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>4B19B6F8104D4F28B275C76C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>AFJSONUtilities.h</string>
+			<key>path</key>
+			<string>AFNetworking/AFNetworking/AFJSONUtilities.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>4BDE295DDADF4DC88F24B747</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>NSInvocation+OCMAdditions.m</string>
+			<key>path</key>
+			<string>OCMock/Source/OCMock/NSInvocation+OCMAdditions.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>4DD7C4E44CE64C398CC8D634</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>OCMIndirectReturnValueProvider.m</string>
+			<key>path</key>
+			<string>OCMock/Source/OCMock/OCMIndirectReturnValueProvider.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>4F8087F5A2474869B6D45422</key>
+		<dict>
+			<key>fileRef</key>
+			<string>912A993DDC784C2B88B36383</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string> </string>
+			</dict>
+		</dict>
+		<key>5169A5A8D6FA482EA051F690</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>778CEAF4A1A6436C927D154F</string>
+				<string>092C3AE6EC304872B5759890</string>
+				<string>AE49F5295F8542D995AABF9B</string>
+				<string>7F2BF0C966934807BE685357</string>
+				<string>08D4E3A0DC6A41FF806866AB</string>
+				<string>0D46ABB0F66D4F32A9C864FE</string>
+				<string>D2605233257F446597D5A7DD</string>
+				<string>672615F3DFC24899875929B6</string>
+				<string>05E2FF0B0F8B4DF990E9EFF1</string>
+				<string>369616B998BD490BABD9A073</string>
+				<string>44C5E97D7E88460592D51CFF</string>
+				<string>892F12FEADB34233BF03B574</string>
+				<string>3F1496059B9A407581B70E31</string>
+				<string>DA27C77F12D544E9BCE5E7AC</string>
+				<string>D11BEF2D298A4390B2A05BAC</string>
+				<string>D5EB97D676084B27BD71DB7F</string>
+				<string>2EF1A97EBB7E41E99BD1BE8B</string>
+				<string>723E8B9893924E0CBB959BDA</string>
+				<string>862DD7386AC047BCB07E0D50</string>
+				<string>DFFD59419DE04B8B97D0243D</string>
+				<string>754EDD3877FA469E9EA6C2CB</string>
+				<string>04A64BFEEAE745F9AFE1D93F</string>
+				<string>836BBF5A3EB44A50AFFDE852</string>
+				<string>FD88905C172A48DC8CBB2B91</string>
+				<string>B04A3D9026DC46C48F91897D</string>
+				<string>BE5AD5ECD4F34D74867DC02B</string>
+				<string>D7C44DE1F05A4462A90FFF36</string>
+				<string>E96749142FBB484D8204D6B5</string>
+				<string>9CCA07EC78014ACAAF34966C</string>
+				<string>6735BDA621BB43E692FCAC25</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>MagicalRecord</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5239731AB35A452B8BD0B521</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C5F717E2AE6B426CADFD0F5C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>541F48BF9FD6409CBBCCCAAD</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>9F47054ABC97449CBDFFC217</string>
+				<string>25737B2AF0F242219CD655AC</string>
+				<string>6C3E677B033D4D69BECC5AB7</string>
+				<string>EA040DACC7554244B1FBD3C4</string>
+				<string>4B19B6F8104D4F28B275C76C</string>
+				<string>23B815F572C845FD83DEBAE7</string>
+				<string>49013CAB01DB4ED681CDB2E4</string>
+				<string>EF91C9B2BBDA493FBA60836A</string>
+				<string>C8346B58A78C4051BEF0250E</string>
+				<string>AB21B48656184311AACF7AA2</string>
+				<string>47FD8AFF523C4E59B86E3680</string>
+				<string>55056155E61448C0B7887DF4</string>
+				<string>27B1093540CE4C09A23AB1D5</string>
+				<string>1FFAACC1B1DD4DDE9EA53F97</string>
+				<string>13E8789A463641B8930A73E6</string>
+				<string>8742E5525971497FA92FE499</string>
+				<string>5FE19C0ECF99466B92B10823</string>
+				<string>F64D5512EEE44929B1D2FB55</string>
+				<string>6B97FB55AE0A4B9B965DCCD2</string>
+				<string>3BD0949FEC954666BCDDA8EA</string>
+				<string>912A993DDC784C2B88B36383</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>AFNetworking</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>55056155E61448C0B7887DF4</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>AFHTTPClient.m</string>
+			<key>path</key>
+			<string>AFNetworking/AFNetworking/AFHTTPClient.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>56A51BFD01C541019786244B</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>JSObjectionModule.h</string>
+			<key>path</key>
+			<string>Objection/Source/JSObjectionModule.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>58336A9B072945C3A544F3AD</key>
+		<dict>
+			<key>fileRef</key>
+			<string>248DAEFFC8B343979D8484F1</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string> </string>
+			</dict>
+		</dict>
+		<key>5847A3F13376478AB9281EB3</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>OCMObserverRecorder.h</string>
+			<key>path</key>
+			<string>OCMock/Source/OCMock/OCMObserverRecorder.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>5862A2E94371452BA47E5EE1</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>256298C632A64EEB8F8C51DB</string>
+				<string>D5E15E3CC94E4973B4DD8BAD</string>
+				<string>1E9F061D8FEB444480945B9D</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5A62C6CE9569491BA6632B16</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>5239731AB35A452B8BD0B521</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>5AACDE7D73D64CD39A5ECCDE</key>
 		<dict>
 			<key>isa</key>
 			<string>PBXFileReference</string>
@@ -354,10 +827,10 @@
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>2389C4A4B0B94230A52C193B</key>
+		<key>5E3F3D79D40B412F853519F8</key>
 		<dict>
 			<key>fileRef</key>
-			<string>651FF148C444466AA3651207</string>
+			<string>03C04034041148A5875A493E</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -366,74 +839,205 @@
 				<string> </string>
 			</dict>
 		</dict>
-		<key>2415FC1F15DB482DB0B5FB68</key>
+		<key>5F05BBB2D4F2443CA3CCFE67</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>dstPath</key>
+			<string>$(PRODUCT_NAME)</string>
+			<key>dstSubfolderSpec</key>
+			<string>16</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXCopyFilesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>5FE19C0ECF99466B92B10823</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>AFNetworkActivityIndicatorManager.m</string>
+			<key>path</key>
+			<string>AFNetworking/AFNetworking/AFNetworkActivityIndicatorManager.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>60D82F8566D24301AF7DBA34</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>NSInvocation+OCMAdditions.h</string>
+			<key>path</key>
+			<string>OCMock/Source/OCMock/NSInvocation+OCMAdditions.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>617FFE7BFC7449478E4475FD</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>OCProtocolMockObject.h</string>
+			<key>path</key>
+			<string>OCMock/Source/OCMock/OCProtocolMockObject.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>63568EFA5500457786CA2F99</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>JSObjectionProviderEntry.h</string>
+			<key>path</key>
+			<string>Objection/Source/JSObjectionProviderEntry.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>6532F136F3E84331B7B60E62</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>JSObjectionBindingEntry.m</string>
+			<key>path</key>
+			<string>Objection/Source/JSObjectionBindingEntry.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>6660F190820E49A7AE62B862</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>OCClassMockObject.h</string>
+			<key>path</key>
+			<string>OCMock/Source/OCMock/OCClassMockObject.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>672615F3DFC24899875929B6</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>NSManagedObject+MagicalRecord.h</string>
+			<key>path</key>
+			<string>MagicalRecord/Source/Categories/NSManagedObject+MagicalRecord.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>6735BDA621BB43E692FCAC25</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>MRCoreDataAction.m</string>
+			<key>path</key>
+			<string>MagicalRecord/Source/MRCoreDataAction.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>68AF3472177E4AF5B1005535</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>JSObjection.h</string>
+			<key>path</key>
+			<string>Objection/Source/JSObjection.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>68C750E43A2E4D9A86BEFCA8</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>JSObjectionInjector.h</string>
+			<key>path</key>
+			<string>Objection/Source/JSObjectionInjector.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>6B97FB55AE0A4B9B965DCCD2</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>AFURLConnectionOperation.m</string>
+			<key>path</key>
+			<string>AFNetworking/AFNetworking/AFURLConnectionOperation.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>6C3E677B033D4D69BECC5AB7</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>AFImageRequestOperation.h</string>
+			<key>path</key>
+			<string>AFNetworking/AFNetworking/AFImageRequestOperation.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>6CDEE4F3FE424ED88D021A93</key>
+		<dict>
+			<key>fileRef</key>
+			<string>04A64BFEEAE745F9AFE1D93F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string> </string>
+			</dict>
+		</dict>
+		<key>6D1394B7F7B644E5AFB2D2A5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>55056155E61448C0B7887DF4</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string> </string>
+			</dict>
+		</dict>
+		<key>6D35C818462447A8A21044EB</key>
 		<dict>
 			<key>children</key>
 			<array>
-				<string>5CCFF23E3A7547D08E483F61</string>
-				<string>5E402642008847BFA70ABC89</string>
-				<string>90923148E8FA4ADAA8ACB117</string>
-				<string>AF17157B35134EA988792A00</string>
-				<string>90BB98948C8C45A1B75C16BA</string>
-				<string>179EED383BED4879B296F4D8</string>
-				<string>2C2E05B26635426B89264BE1</string>
-				<string>3A5AF524DB7649CF86D81B29</string>
-				<string>F0F468B434FC4D1694A4514C</string>
-				<string>58880D1FDED34153B47E71BF</string>
-				<string>3CAFC9C71ECE480FA3F9E067</string>
-				<string>FDB88C89A160428CA37BC9B0</string>
-				<string>1C6D1D843CDF465B8F00998E</string>
-				<string>EBFE3EEFB8CF4E0E8CC2891D</string>
-				<string>A8090AE173764251BEE15684</string>
-				<string>AF6DA8D92CF74FF38561D702</string>
-				<string>90A82B1894F0471283B052D0</string>
-				<string>8B0AA4E3D54F4681891761FF</string>
-				<string>B1B1B3187F4245B0940B3DF3</string>
-				<string>D128BE88BF7143A2B559A648</string>
-				<string>40D6B8F2B67040F59C5DF504</string>
-				<string>31650F8C48504D7C8A7959BD</string>
-				<string>AFE5B421A6CA47A7B371696E</string>
-				<string>CD791CC63DFD480BA1DC9C33</string>
-				<string>24512AAAC768414DAEC156A2</string>
-				<string>5985EB53E0324EC2A1CF2ADD</string>
-				<string>144F0652085D4B32A47C3A53</string>
-				<string>E9FC52DE31F949C5BAFC3565</string>
-				<string>366440AE1F1E40D5A9912FAA</string>
-				<string>044BB5EB425B4B0089031817</string>
+				<string>5862A2E94371452BA47E5EE1</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
 			<key>name</key>
-			<string>MagicalRecord</string>
+			<string>Targets Support Files</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>24512AAAC768414DAEC156A2</key>
+		<key>6D8AF0326E6D4A1A9F60C6EF</key>
 		<dict>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>name</key>
-			<string>NSManagedObjectContext+MagicalRecord.m</string>
+			<string>OCMArg.m</string>
 			<key>path</key>
-			<string>MagicalRecord/Source/Categories/NSManagedObjectContext+MagicalRecord.m</string>
+			<string>OCMock/Source/OCMock/OCMArg.m</string>
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>25308FC3CF034383BDA0F40A</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>OCProtocolMockObject.m</string>
-			<key>path</key>
-			<string>OCMock/Source/OCMock/OCProtocolMockObject.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>253CF7B461644AF883B7AFB0</key>
+		<key>6D8E5C3635BA41BD827BF973</key>
 		<dict>
 			<key>fileRef</key>
-			<string>5985EB53E0324EC2A1CF2ADD</string>
+			<string>4DD7C4E44CE64C398CC8D634</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -442,29 +1046,343 @@
 				<string> </string>
 			</dict>
 		</dict>
-		<key>2678CABA9D614FDAAEE15394</key>
+		<key>6E78E27F776E43B3BEEFE5CB</key>
 		<dict>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>name</key>
-			<string>AFJSONUtilities.m</string>
+			<string>OCMPassByRefSetter.h</string>
 			<key>path</key>
-			<string>AFNetworking/AFNetworking/AFJSONUtilities.m</string>
+			<string>OCMock/Source/OCMock/OCMPassByRefSetter.h</string>
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>290FF0BAC0EF43FD9D99BD08</key>
+		<key>6F490EB435354157B411EA28</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>60D82F8566D24301AF7DBA34</string>
+				<string>4BDE295DDADF4DC88F24B747</string>
+				<string>707A816A99974FAFA67F6BAE</string>
+				<string>2264B52E16C84D698A83A027</string>
+				<string>2857BE2D174749F79354D7B8</string>
+				<string>9AEDAA525E9D49318E54A43C</string>
+				<string>6660F190820E49A7AE62B862</string>
+				<string>78AF0CF870F7474AA021E309</string>
+				<string>77EA25D6D216470A953BC5D6</string>
+				<string>6D8AF0326E6D4A1A9F60C6EF</string>
+				<string>1C2D0D0A5B4A4FC98D1BCEC1</string>
+				<string>D735FC4D850D4F8E8CD1B66B</string>
+				<string>8CBAE547F8F34BB082709A96</string>
+				<string>79B3F094EED44C43ACCE3FBE</string>
+				<string>DA817267044247C98F125152</string>
+				<string>967AF6685B194BEAA9CB0B7D</string>
+				<string>23977BA55D76456585D8E173</string>
+				<string>ED1144B3073B483ABE3D0EE6</string>
+				<string>EAB230CF2A4746579D007BBC</string>
+				<string>4DD7C4E44CE64C398CC8D634</string>
+				<string>2723D2A358EE499994F95685</string>
+				<string>0FFB2ECDD76F42A685474E68</string>
+				<string>5847A3F13376478AB9281EB3</string>
+				<string>9412B6169A2F4594B5B2E584</string>
+				<string>5AACDE7D73D64CD39A5ECCDE</string>
+				<string>135133C0519D4FC9A3D140A1</string>
+				<string>ADEC1696EB324425B7A37F03</string>
+				<string>C1A98F7247004BE6AEAA307B</string>
+				<string>063CB434FE0C45D490C906AA</string>
+				<string>6E78E27F776E43B3BEEFE5CB</string>
+				<string>D5E9A7F7F7DA44F487EF24C1</string>
+				<string>8143D801D37646DE8E212722</string>
+				<string>70C2839FB6704BDF93D0DE83</string>
+				<string>8321CE8F2B654C27BBB75519</string>
+				<string>03C04034041148A5875A493E</string>
+				<string>489102074EDA4F939A081080</string>
+				<string>2869B649440849A49AE178BA</string>
+				<string>3757077071A047B19846B94B</string>
+				<string>A91929E705A7457997E0BC38</string>
+				<string>47775F35B5A54D7A8D06DD20</string>
+				<string>B5F56B488BFC44048ACE2439</string>
+				<string>617FFE7BFC7449478E4475FD</string>
+				<string>9FE562046041403793ABAFB8</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>OCMock</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6FA170829A394F899F7A3372</key>
+		<dict>
+			<key>fileRef</key>
+			<string>836BBF5A3EB44A50AFFDE852</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string> </string>
+			</dict>
+		</dict>
+		<key>707A816A99974FAFA67F6BAE</key>
 		<dict>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>name</key>
-			<string>OCMReturnValueProvider.h</string>
+			<string>NSMethodSignature+OCMAdditions.h</string>
 			<key>path</key>
-			<string>OCMock/Source/OCMock/OCMReturnValueProvider.h</string>
+			<string>OCMock/Source/OCMock/NSMethodSignature+OCMAdditions.h</string>
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>2AFB6276BC9745F3A90FF64F</key>
+		<key>70C2839FB6704BDF93D0DE83</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>OCMRealObjectForwarder.m</string>
+			<key>path</key>
+			<string>OCMock/Source/OCMock/OCMRealObjectForwarder.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>717E7E316AAB452D9BC18FFC</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2869B649440849A49AE178BA</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string> </string>
+			</dict>
+		</dict>
+		<key>723E8B9893924E0CBB959BDA</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>NSEntityDescription+MagicalDataImport.m</string>
+			<key>path</key>
+			<string>MagicalRecord/Source/Categories/DataImport/NSEntityDescription+MagicalDataImport.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>739A5B0DFF8E4BF9858B2C3A</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>8D68FFD4D37D4515B62A4F3A</string>
+				<string>68AF3472177E4AF5B1005535</string>
+				<string>C8AB19CDE6ED43ACABC93276</string>
+				<string>9042F64A94B2469A804A3F41</string>
+				<string>68C750E43A2E4D9A86BEFCA8</string>
+				<string>E528816492044D05A97870AA</string>
+				<string>56A51BFD01C541019786244B</string>
+				<string>63568EFA5500457786CA2F99</string>
+				<string>91D70F28CF9C41BAA03C8D70</string>
+				<string>D8620C7C5D02459FA36D8FC0</string>
+				<string>C713D8D1016A4489AFA64790</string>
+				<string>BCF0B2273B7A4A59A62F9D33</string>
+				<string>248DAEFFC8B343979D8484F1</string>
+				<string>6532F136F3E84331B7B60E62</string>
+				<string>F6E22B91AC1E464FBC2642F1</string>
+				<string>21A25BAB60434BE99080B9F1</string>
+				<string>A288B3895A614B0F8580394F</string>
+				<string>973FC4888EE3430188388882</string>
+				<string>A0C2921EC773420494B2EBC1</string>
+				<string>E0D5A8DB8C1D4A27B0F9C2FB</string>
+				<string>90C7D9C2A20546CBBD78EEC1</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Objection</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>754EDD3877FA469E9EA6C2CB</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>NSRelationshipDescription+MagicalDataImport.m</string>
+			<key>path</key>
+			<string>MagicalRecord/Source/Categories/DataImport/NSRelationshipDescription+MagicalDataImport.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>778CEAF4A1A6436C927D154F</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>NSAttributeDescription+MagicalDataImport.h</string>
+			<key>path</key>
+			<string>MagicalRecord/Source/Categories/DataImport/NSAttributeDescription+MagicalDataImport.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>77EA25D6D216470A953BC5D6</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>OCMArg.h</string>
+			<key>path</key>
+			<string>OCMock/Source/OCMock/OCMArg.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>78AF0CF870F7474AA021E309</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>OCClassMockObject.m</string>
+			<key>path</key>
+			<string>OCMock/Source/OCMock/OCClassMockObject.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>79B3F094EED44C43ACCE3FBE</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>OCMBoxedReturnValueProvider.m</string>
+			<key>path</key>
+			<string>OCMock/Source/OCMock/OCMBoxedReturnValueProvider.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>7C1DAEE58F1441D1A1E2B3A6</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5FE19C0ECF99466B92B10823</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string> </string>
+			</dict>
+		</dict>
+		<key>7E8D85F94A144E5688DA77E6</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>6D1394B7F7B644E5AFB2D2A5</string>
+				<string>D74D1CD9EDB74C0AB1DD70F4</string>
+				<string>D0FE65B9C7D545EEB3E4C79F</string>
+				<string>C0C008B395194AF7A693D03B</string>
+				<string>E25EDE53AC374939AB8F9DA8</string>
+				<string>7C1DAEE58F1441D1A1E2B3A6</string>
+				<string>B2D5BEE32994497E8078C767</string>
+				<string>DABF125B536D4709A53CC8A9</string>
+				<string>D2A8A42B4A1E47F2ABBB9306</string>
+				<string>4F8087F5A2474869B6D45422</string>
+				<string>FF5A01EE03294D22B583F655</string>
+				<string>8EBA7F7DC6554A5E91A3BBB0</string>
+				<string>FA93FBBCB23E474E83B7B0B5</string>
+				<string>3293075B57C94E4A949017F5</string>
+				<string>D4C6632995494882B988D888</string>
+				<string>6CDEE4F3FE424ED88D021A93</string>
+				<string>6FA170829A394F899F7A3372</string>
+				<string>BA6EC6CD8E1C45B88B7EF8DC</string>
+				<string>B541FFF5010841E2A993C9AC</string>
+				<string>89CAE9B958464C06923B85BF</string>
+				<string>14F72A643B284F468AC42641</string>
+				<string>D55E01051D09488C9B08C5F5</string>
+				<string>D0A1BE17088E4BD2958F0E71</string>
+				<string>417E1E6FD69B450286700137</string>
+				<string>DA6F101AE1EC4671990BB165</string>
+				<string>460C32CB4E4E45EEB13A324B</string>
+				<string>D018A53EBFCE4E4BA3E7CDD4</string>
+				<string>C75E1C6A09C94CFABD49481B</string>
+				<string>80C1563FCEC6460985DE9A04</string>
+				<string>C4AFB113B5EB45C498CBFBEB</string>
+				<string>9169A8922C9241C688012577</string>
+				<string>379A5756A3784A4289D49852</string>
+				<string>0A9679DE5070463FB370D799</string>
+				<string>6D8E5C3635BA41BD827BF973</string>
+				<string>F154313969244478A19090BF</string>
+				<string>B606A4FFAE63412A98C673F5</string>
+				<string>E9F7ED198F33475F9F2C3A87</string>
+				<string>89E979C825AC46DFA742326F</string>
+				<string>D4B13C05DB114D90A00B2F01</string>
+				<string>D7F49B1CF6A143C3911AF3FB</string>
+				<string>5E3F3D79D40B412F853519F8</string>
+				<string>717E7E316AAB452D9BC18FFC</string>
+				<string>1928EAE1A014466E8C624A61</string>
+				<string>EE8BFE1EAB5E4F94A1D76429</string>
+				<string>AD94C697CA9C477CB7F883BE</string>
+				<string>28ED47BE190F46C18DAD30F0</string>
+				<string>58336A9B072945C3A544F3AD</string>
+				<string>12B36F8E75F2402088BC84D9</string>
+				<string>F2D9BFE7119A4ED6B6A73E54</string>
+				<string>EFFB2322889642D3AAFD2011</string>
+				<string>DB26FA88850843E0B8B6D00F</string>
+				<string>D958388CF82440668CC1E827</string>
+				<string>3317E9EDDBD14234BF409280</string>
+				<string>C161D4BA1D3444DF8CBE3807</string>
+				<string>809ADAB758E94AE5ABC55163</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>7F2BF0C966934807BE685357</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>NSObject+MagicalDataImport.h</string>
+			<key>path</key>
+			<string>MagicalRecord/Source/Categories/DataImport/NSObject+MagicalDataImport.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>809ADAB758E94AE5ABC55163</key>
+		<dict>
+			<key>fileRef</key>
+			<string>90C7D9C2A20546CBBD78EEC1</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string> </string>
+			</dict>
+		</dict>
+		<key>80C1563FCEC6460985DE9A04</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6D8AF0326E6D4A1A9F60C6EF</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string> </string>
+			</dict>
+		</dict>
+		<key>8143D801D37646DE8E212722</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>OCMRealObjectForwarder.h</string>
+			<key>path</key>
+			<string>OCMock/Source/OCMock/OCMRealObjectForwarder.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>814EB549F63A492EA1A329A5</key>
 		<dict>
 			<key>buildSettings</key>
 			<dict>
@@ -519,342 +1437,90 @@
 			<key>name</key>
 			<string>Debug</string>
 		</dict>
-		<key>2BDFD821730549A183262B8A</key>
+		<key>82B31F5A8FAF448C89A93FBC</key>
 		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>Pods-prefix.pch</string>
-			<key>path</key>
-			<string>Pods-prefix.pch</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>2C2E05B26635426B89264BE1</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>NSManagedObject+MagicalDataImport.h</string>
-			<key>path</key>
-			<string>MagicalRecord/Source/Categories/NSManagedObject+MagicalDataImport.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>2D185BE1EA734AB7A2668513</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>OCMIndirectReturnValueProvider.h</string>
-			<key>path</key>
-			<string>OCMock/Source/OCMock/OCMIndirectReturnValueProvider.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>2E6326AAD55E4FAC99DC2874</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>AFImageRequestOperation.m</string>
-			<key>path</key>
-			<string>AFNetworking/AFNetworking/AFImageRequestOperation.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>2E77F5978D63468BB55EC016</key>
-		<dict>
-			<key>fileRef</key>
-			<string>24512AAAC768414DAEC156A2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string> </string>
-			</dict>
-		</dict>
-		<key>2F4389AAF1DB405F8BD06680</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>OCObserverMockObject.h</string>
-			<key>path</key>
-			<string>OCMock/Source/OCMock/OCObserverMockObject.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>2F963CF6C4C449839B15A8FA</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>OCClassMockObject.h</string>
-			<key>path</key>
-			<string>OCMock/Source/OCMock/OCClassMockObject.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>2FB51299B0ED45958D931E96</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F5E74805E96B40C6A787427B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string> </string>
-			</dict>
-		</dict>
-		<key>31650F8C48504D7C8A7959BD</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>NSString+MagicalDataImport.m</string>
-			<key>path</key>
-			<string>MagicalRecord/Source/Categories/DataImport/NSString+MagicalDataImport.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>366440AE1F1E40D5A9912FAA</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>MagicalRecordHelpers.m</string>
-			<key>path</key>
-			<string>MagicalRecord/Source/MagicalRecordHelpers.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>38BAF571ABDA4237AC087F04</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>NSNotificationCenter+OCMAdditions.h</string>
-			<key>path</key>
-			<string>OCMock/Source/OCMock/NSNotificationCenter+OCMAdditions.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>39628300C7F343DDB1D5C624</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>OCMRealObjectForwarder.h</string>
-			<key>path</key>
-			<string>OCMock/Source/OCMock/OCMRealObjectForwarder.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>3A5AF524DB7649CF86D81B29</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>NSManagedObject+MagicalRecord.h</string>
-			<key>path</key>
-			<string>MagicalRecord/Source/Categories/NSManagedObject+MagicalRecord.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>3CAFC9C71ECE480FA3F9E067</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>NSPersistentStore+MagicalRecord.h</string>
-			<key>path</key>
-			<string>MagicalRecord/Source/Categories/NSPersistentStore+MagicalRecord.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>3DB886B9EBB24BBDA7CF1B92</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>OCMBlockCaller.m</string>
-			<key>path</key>
-			<string>OCMock/Source/OCMock/OCMBlockCaller.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>4088D0EFB3194A1283F9E9E5</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>Pods-resources.sh</string>
-			<key>path</key>
-			<string>Pods-resources.sh</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>40D6B8F2B67040F59C5DF504</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>NSRelationshipDescription+MagicalDataImport.m</string>
-			<key>path</key>
-			<string>MagicalRecord/Source/Categories/DataImport/NSRelationshipDescription+MagicalDataImport.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>457E5053AC084D4EBF92C72C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>656FA3EC031A46EA93AAB8F5</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string> </string>
-			</dict>
-		</dict>
-		<key>45C8CDA20ECA4826A2A6A263</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>AFJSONRequestOperation.h</string>
-			<key>path</key>
-			<string>AFNetworking/AFNetworking/AFJSONRequestOperation.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>46EDA3568711458B8831F5B2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>89BE2B4E6CD244F8983E77AA</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string> </string>
-			</dict>
-		</dict>
-		<key>48CCE75BBAB044EE9D4B4A09</key>
-		<dict>
-			<key>fileRef</key>
-			<string>31650F8C48504D7C8A7959BD</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string> </string>
-			</dict>
-		</dict>
-		<key>49E8F40C0424472DA33F4B11</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D5FE0188E70F40A0B2444B5C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string> </string>
-			</dict>
-		</dict>
-		<key>4AF57156A3874968AEC5D757</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>OCProtocolMockObject.h</string>
-			<key>path</key>
-			<string>OCMock/Source/OCMock/OCProtocolMockObject.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>4B01C510AF264CC391F50348</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BC71C78845D244AC8F758B0D</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string> </string>
-			</dict>
-		</dict>
-		<key>4BA01E262C9B4CB596E5D014</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>6FF60B6F2F51412CAA19DAE0</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
 			<string>0</string>
-		</dict>
-		<key>4BC756452C554F5B97274359</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BEDD1A639B6C45E0B9188879</string>
 			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string> </string>
-			</dict>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>libPods.a</string>
+			<key>path</key>
+			<string>libPods.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
 		</dict>
-		<key>4BFFC5751A9A49B2929E4B51</key>
+		<key>8321CE8F2B654C27BBB75519</key>
 		<dict>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>name</key>
-			<string>UIImageView+AFNetworking.h</string>
+			<string>OCMReturnValueProvider.h</string>
 			<key>path</key>
-			<string>AFNetworking/AFNetworking/UIImageView+AFNetworking.h</string>
+			<string>OCMock/Source/OCMock/OCMReturnValueProvider.h</string>
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>4C18C26194444B39AD95A862</key>
+		<key>83403E58062F4DE6BB6F810D</key>
 		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>OCMBlockCaller.h</string>
-			<key>path</key>
-			<string>OCMock/Source/OCMock/OCMBlockCaller.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>4CB5864A4F7740598F8C8740</key>
-		<dict>
-			<key>children</key>
+			<key>buildConfigurations</key>
 			<array>
-				<string>0642290E938E44D1BE560F3B</string>
-				<string>9E6E5B201D1245038A66AAFE</string>
-				<string>919EB9E753EA4FE48C13D284</string>
-				<string>11E05E1985BB48E6A635A6D5</string>
+				<string>F8483F80385B4E90A7B6CA9B</string>
+				<string>B35F18422CB042FB950BA2BD</string>
 			</array>
 			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
+			<string>XCConfigurationList</string>
 		</dict>
-		<key>4CFF973121C74E1E82F61B08</key>
+		<key>836BBF5A3EB44A50AFFDE852</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>NSManagedObject+MagicalDataImport.m</string>
+			<key>path</key>
+			<string>MagicalRecord/Source/Categories/NSManagedObject+MagicalDataImport.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>862DD7386AC047BCB07E0D50</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>NSNumber+MagicalDataImport.m</string>
+			<key>path</key>
+			<string>MagicalRecord/Source/Categories/DataImport/NSNumber+MagicalDataImport.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>8742E5525971497FA92FE499</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>AFJSONUtilities.m</string>
+			<key>path</key>
+			<string>AFNetworking/AFNetworking/AFJSONUtilities.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>892F12FEADB34233BF03B574</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>NSPersistentStoreCoordinator+MagicalRecord.h</string>
+			<key>path</key>
+			<string>MagicalRecord/Source/Categories/NSPersistentStoreCoordinator+MagicalRecord.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>89CAE9B958464C06923B85BF</key>
 		<dict>
 			<key>fileRef</key>
-			<string>8B0AA4E3D54F4681891761FF</string>
+			<string>BE5AD5ECD4F34D74867DC02B</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -863,21 +1529,10 @@
 				<string> </string>
 			</dict>
 		</dict>
-		<key>50BC158DDA5C40B5A3F1DA5B</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>AFNetworking.h</string>
-			<key>path</key>
-			<string>AFNetworking/AFNetworking/AFNetworking.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>5134DA11929D4D758227036F</key>
+		<key>89E979C825AC46DFA742326F</key>
 		<dict>
 			<key>fileRef</key>
-			<string>55E2DD3CDAAE4EDF86C7D5D8</string>
+			<string>063CB434FE0C45D490C906AA</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -886,10 +1541,57 @@
 				<string> </string>
 			</dict>
 		</dict>
-		<key>52CD63BBAC394E7793D54DBB</key>
+		<key>8A9182CD8BAF4888B101B794</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>83403E58062F4DE6BB6F810D</string>
+			<key>buildPhases</key>
+			<array>
+				<string>7E8D85F94A144E5688DA77E6</string>
+				<string>5A62C6CE9569491BA6632B16</string>
+				<string>5F05BBB2D4F2443CA3CCFE67</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Pods</string>
+			<key>productName</key>
+			<string>Pods</string>
+			<key>productReference</key>
+			<string>82B31F5A8FAF448C89A93FBC</string>
+			<key>productType</key>
+			<string>com.apple.product-type.library.static</string>
+		</dict>
+		<key>8CBAE547F8F34BB082709A96</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>OCMBoxedReturnValueProvider.h</string>
+			<key>path</key>
+			<string>OCMock/Source/OCMock/OCMBoxedReturnValueProvider.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>8D68FFD4D37D4515B62A4F3A</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>JSObjectFactory.h</string>
+			<key>path</key>
+			<string>Objection/Source/JSObjectFactory.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>8EBA7F7DC6554A5E91A3BBB0</key>
 		<dict>
 			<key>fileRef</key>
-			<string>BD61A1AB87F94DAA9417DC34</string>
+			<string>723E8B9893924E0CBB959BDA</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -898,142 +1600,29 @@
 				<string> </string>
 			</dict>
 		</dict>
-		<key>53251EB40CEF4F8A82A94B90</key>
+		<key>9042F64A94B2469A804A3F41</key>
 		<dict>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>name</key>
-			<string>OCPartialMockRecorder.h</string>
+			<string>JSObjectionEntry.h</string>
 			<key>path</key>
-			<string>OCMock/Source/OCMock/OCPartialMockRecorder.h</string>
+			<string>Objection/Source/JSObjectionEntry.h</string>
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>53282E9F669F4138B276CC09</key>
-		<dict>
-			<key>fileRef</key>
-			<string>B4A352DA5D84443B9289030F</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string> </string>
-			</dict>
-		</dict>
-		<key>53C289FED8D14A659224EA3A</key>
+		<key>90C7D9C2A20546CBBD78EEC1</key>
 		<dict>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>name</key>
-			<string>NSMethodSignature+OCMAdditions.h</string>
+			<string>NSObject+Objection.m</string>
 			<key>path</key>
-			<string>OCMock/Source/OCMock/NSMethodSignature+OCMAdditions.h</string>
+			<string>Objection/Source/NSObject+Objection.m</string>
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>55E2DD3CDAAE4EDF86C7D5D8</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>OCMConstraint.m</string>
-			<key>path</key>
-			<string>OCMock/Source/OCMock/OCMConstraint.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>58880D1FDED34153B47E71BF</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>NSManagedObjectModel+MagicalRecord.h</string>
-			<key>path</key>
-			<string>MagicalRecord/Source/Categories/NSManagedObjectModel+MagicalRecord.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>5985EB53E0324EC2A1CF2ADD</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>NSManagedObjectModel+MagicalRecord.m</string>
-			<key>path</key>
-			<string>MagicalRecord/Source/Categories/NSManagedObjectModel+MagicalRecord.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>5C4DC059C65D45EEAD301774</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>NSInvocation+OCMAdditions.h</string>
-			<key>path</key>
-			<string>OCMock/Source/OCMock/NSInvocation+OCMAdditions.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>5C6C4AF7396B4D1AB83E4A13</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>OCPartialMockRecorder.m</string>
-			<key>path</key>
-			<string>OCMock/Source/OCMock/OCPartialMockRecorder.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>5CCFF23E3A7547D08E483F61</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>NSAttributeDescription+MagicalDataImport.h</string>
-			<key>path</key>
-			<string>MagicalRecord/Source/Categories/DataImport/NSAttributeDescription+MagicalDataImport.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>5D97E66BF9CB498ABB7F9FA6</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D128BE88BF7143A2B559A648</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string> </string>
-			</dict>
-		</dict>
-		<key>5E402642008847BFA70ABC89</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>NSEntityDescription+MagicalDataImport.h</string>
-			<key>path</key>
-			<string>MagicalRecord/Source/Categories/DataImport/NSEntityDescription+MagicalDataImport.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>5F318B3C9F654004A7F1DB99</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5C6C4AF7396B4D1AB83E4A13</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string> </string>
-			</dict>
-		</dict>
-		<key>61BFF85760044D3184D8C102</key>
+		<key>912A993DDC784C2B88B36383</key>
 		<dict>
 			<key>isa</key>
 			<string>PBXFileReference</string>
@@ -1044,10 +1633,10 @@
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>61FD4B6B5409451C8C95FC55</key>
+		<key>9169A8922C9241C688012577</key>
 		<dict>
 			<key>fileRef</key>
-			<string>2678CABA9D614FDAAEE15394</string>
+			<string>79B3F094EED44C43ACCE3FBE</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -1056,43 +1645,142 @@
 				<string> </string>
 			</dict>
 		</dict>
-		<key>649D71731EAA45618B422D55</key>
+		<key>91D70F28CF9C41BAA03C8D70</key>
 		<dict>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>name</key>
-			<string>OCMReturnValueProvider.m</string>
+			<string>JSObjectionUtils.h</string>
 			<key>path</key>
-			<string>OCMock/Source/OCMock/OCMReturnValueProvider.m</string>
+			<string>Objection/Source/JSObjectionUtils.h</string>
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>651FF148C444466AA3651207</key>
+		<key>9412B6169A2F4594B5B2E584</key>
 		<dict>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>name</key>
-			<string>AFPropertyListRequestOperation.m</string>
+			<string>OCMObserverRecorder.m</string>
 			<key>path</key>
-			<string>AFNetworking/AFNetworking/AFPropertyListRequestOperation.m</string>
+			<string>OCMock/Source/OCMock/OCMObserverRecorder.m</string>
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>656FA3EC031A46EA93AAB8F5</key>
+		<key>967AF6685B194BEAA9CB0B7D</key>
 		<dict>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>name</key>
-			<string>OCMBoxedReturnValueProvider.m</string>
+			<string>OCMConstraint.m</string>
 			<key>path</key>
-			<string>OCMock/Source/OCMock/OCMBoxedReturnValueProvider.m</string>
+			<string>OCMock/Source/OCMock/OCMConstraint.m</string>
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>65EA571EB47D4889B2628B0C</key>
+		<key>973FC4888EE3430188388882</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>JSObjectionModule.m</string>
+			<key>path</key>
+			<string>Objection/Source/JSObjectionModule.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>9AEDAA525E9D49318E54A43C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>NSNotificationCenter+OCMAdditions.m</string>
+			<key>path</key>
+			<string>OCMock/Source/OCMock/NSNotificationCenter+OCMAdditions.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>9CCA07EC78014ACAAF34966C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>MagicalRecordHelpers.m</string>
+			<key>path</key>
+			<string>MagicalRecord/Source/MagicalRecordHelpers.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>9F47054ABC97449CBDFFC217</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>AFHTTPClient.h</string>
+			<key>path</key>
+			<string>AFNetworking/AFNetworking/AFHTTPClient.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>9FE562046041403793ABAFB8</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>OCProtocolMockObject.m</string>
+			<key>path</key>
+			<string>OCMock/Source/OCMock/OCProtocolMockObject.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>A0C2921EC773420494B2EBC1</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>JSObjectionProviderEntry.m</string>
+			<key>path</key>
+			<string>Objection/Source/JSObjectionProviderEntry.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>A288B3895A614B0F8580394F</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>JSObjectionInjectorEntry.m</string>
+			<key>path</key>
+			<string>Objection/Source/JSObjectionInjectorEntry.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>A91929E705A7457997E0BC38</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>OCPartialMockObject.m</string>
+			<key>path</key>
+			<string>OCMock/Source/OCMock/OCPartialMockObject.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>AB21B48656184311AACF7AA2</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>AFXMLRequestOperation.h</string>
+			<key>path</key>
+			<string>AFNetworking/AFNetworking/AFXMLRequestOperation.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>AD94C697CA9C477CB7F883BE</key>
 		<dict>
 			<key>fileRef</key>
-			<string>8DF4DD4568294114B0664FFD</string>
+			<string>9FE562046041403793ABAFB8</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -1101,10 +1789,43 @@
 				<string> </string>
 			</dict>
 		</dict>
-		<key>694812696D654567A1313E00</key>
+		<key>ADEC1696EB324425B7A37F03</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>OCMockObject.m</string>
+			<key>path</key>
+			<string>OCMock/Source/OCMock/OCMockObject.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>AE49F5295F8542D995AABF9B</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>NSNumber+MagicalDataImport.h</string>
+			<key>path</key>
+			<string>MagicalRecord/Source/Categories/DataImport/NSNumber+MagicalDataImport.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>B04A3D9026DC46C48F91897D</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>NSManagedObjectContext+MagicalRecord.m</string>
+			<key>path</key>
+			<string>MagicalRecord/Source/Categories/NSManagedObjectContext+MagicalRecord.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>B2D5BEE32994497E8078C767</key>
 		<dict>
 			<key>fileRef</key>
-			<string>61BFF85760044D3184D8C102</string>
+			<string>F64D5512EEE44929B1D2FB55</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -1113,91 +1834,10 @@
 				<string> </string>
 			</dict>
 		</dict>
-		<key>695CF56EFDFD4A9FAFDF1431</key>
-		<dict>
-			<key>fileRef</key>
-			<string>B1377870A0BC43959E7675B5</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string> </string>
-			</dict>
-		</dict>
-		<key>6AA5AD3D77074984ADA10AE0</key>
+		<key>B35F18422CB042FB950BA2BD</key>
 		<dict>
 			<key>baseConfigurationReference</key>
-			<string>171BE1F555714B04A5F8D612</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>DSTROOT</key>
-				<string>/tmp/xcodeproj.dst</string>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Pods-prefix.pch</string>
-				<key>GCC_VERSION</key>
-				<string>com.apple.compilers.llvm.clang.1_0</string>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>PODS_ROOT</key>
-				<string>$(SRCROOT)</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>6BB0991EF92A4365940B16E4</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3DB886B9EBB24BBDA7CF1B92</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string> </string>
-			</dict>
-		</dict>
-		<key>6EFF51E5D568459EAEEC3C15</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>OCMArg.h</string>
-			<key>path</key>
-			<string>OCMock/Source/OCMock/OCMArg.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>6FF60B6F2F51412CAA19DAE0</key>
-		<dict>
-			<key>fileRef</key>
-			<string>ECE79F96EBB84A5F8102E544</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>71D702A9BAED409791D9F389</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>AFHTTPRequestOperation.h</string>
-			<key>path</key>
-			<string>AFNetworking/AFNetworking/AFHTTPRequestOperation.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>73EF00EE7824480E9B02E04E</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>171BE1F555714B04A5F8D612</string>
+			<string>1E9F061D8FEB444480945B9D</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>DSTROOT</key>
@@ -1222,10 +1862,10 @@
 			<key>name</key>
 			<string>Release</string>
 		</dict>
-		<key>7871E148B05347CAA74AFC04</key>
+		<key>B541FFF5010841E2A993C9AC</key>
 		<dict>
 			<key>fileRef</key>
-			<string>B2EF55738ADA45299C046E3E</string>
+			<string>B04A3D9026DC46C48F91897D</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -1234,25 +1874,81 @@
 				<string> </string>
 			</dict>
 		</dict>
-		<key>7945284EFACF40BFA970EDD8</key>
+		<key>B5F56B488BFC44048ACE2439</key>
 		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>dstPath</key>
-			<string>$(PRODUCT_NAME)</string>
-			<key>dstSubfolderSpec</key>
-			<string>16</string>
-			<key>files</key>
-			<array/>
 			<key>isa</key>
-			<string>PBXCopyFilesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>OCPartialMockRecorder.m</string>
+			<key>path</key>
+			<string>OCMock/Source/OCMock/OCPartialMockRecorder.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>B606A4FFAE63412A98C673F5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9412B6169A2F4594B5B2E584</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string> </string>
+			</dict>
+		</dict>
+		<key>BA6EC6CD8E1C45B88B7EF8DC</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FD88905C172A48DC8CBB2B91</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string> </string>
+			</dict>
+		</dict>
+		<key>BCF0B2273B7A4A59A62F9D33</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>JSObjectFactory.m</string>
+			<key>path</key>
+			<string>Objection/Source/JSObjectFactory.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>BE5AD5ECD4F34D74867DC02B</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>NSManagedObjectModel+MagicalRecord.m</string>
+			<key>path</key>
+			<string>MagicalRecord/Source/Categories/NSManagedObjectModel+MagicalRecord.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>C008DD643C7A4208AB80104B</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>814EB549F63A492EA1A329A5</string>
+				<string>1964A63B198B4FEE89DA4FD3</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
 			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
 		</dict>
-		<key>7C6D34DA520E4824ACA36D7F</key>
+		<key>C0C008B395194AF7A693D03B</key>
 		<dict>
 			<key>fileRef</key>
-			<string>40D6B8F2B67040F59C5DF504</string>
+			<string>13E8789A463641B8930A73E6</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -1261,10 +1957,10 @@
 				<string> </string>
 			</dict>
 		</dict>
-		<key>7DD25EB838D5461FAD9B0A8D</key>
+		<key>C161D4BA1D3444DF8CBE3807</key>
 		<dict>
 			<key>fileRef</key>
-			<string>366440AE1F1E40D5A9912FAA</string>
+			<string>E0D5A8DB8C1D4A27B0F9C2FB</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -1273,709 +1969,7 @@
 				<string> </string>
 			</dict>
 		</dict>
-		<key>7FB09762EE9340D18FD8BCF2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>2E6326AAD55E4FAC99DC2874</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string> </string>
-			</dict>
-		</dict>
-		<key>81CFA6C8CB0D46C4B1308F06</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8B8EB769F7B0470A96DAFD64</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string> </string>
-			</dict>
-		</dict>
-		<key>88AC8D4BC48641F69E5B988B</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>OCObserverMockObject.m</string>
-			<key>path</key>
-			<string>OCMock/Source/OCMock/OCObserverMockObject.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>89BE2B4E6CD244F8983E77AA</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>OCMIndirectReturnValueProvider.m</string>
-			<key>path</key>
-			<string>OCMock/Source/OCMock/OCMIndirectReturnValueProvider.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>8B0AA4E3D54F4681891761FF</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>NSEntityDescription+MagicalDataImport.m</string>
-			<key>path</key>
-			<string>MagicalRecord/Source/Categories/DataImport/NSEntityDescription+MagicalDataImport.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>8B8EB769F7B0470A96DAFD64</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>OCMPassByRefSetter.m</string>
-			<key>path</key>
-			<string>OCMock/Source/OCMock/OCMPassByRefSetter.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>8DF4DD4568294114B0664FFD</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>OCClassMockObject.m</string>
-			<key>path</key>
-			<string>OCMock/Source/OCMock/OCClassMockObject.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>8DFAE48C61C848AFBD9D5277</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>AFURLConnectionOperation.h</string>
-			<key>path</key>
-			<string>AFNetworking/AFNetworking/AFURLConnectionOperation.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>90584DE205E84FD7901E36F1</key>
-		<dict>
-			<key>fileRef</key>
-			<string>B1B1B3187F4245B0940B3DF3</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string> </string>
-			</dict>
-		</dict>
-		<key>90923148E8FA4ADAA8ACB117</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>NSNumber+MagicalDataImport.h</string>
-			<key>path</key>
-			<string>MagicalRecord/Source/Categories/DataImport/NSNumber+MagicalDataImport.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>90A82B1894F0471283B052D0</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>NSAttributeDescription+MagicalDataImport.m</string>
-			<key>path</key>
-			<string>MagicalRecord/Source/Categories/DataImport/NSAttributeDescription+MagicalDataImport.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>90BB98948C8C45A1B75C16BA</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>NSRelationshipDescription+MagicalDataImport.h</string>
-			<key>path</key>
-			<string>MagicalRecord/Source/Categories/DataImport/NSRelationshipDescription+MagicalDataImport.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>91320C64306843839CEEA08F</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>16EAED92714F473C8708954E</string>
-			<key>buildPhases</key>
-			<array>
-				<string>BD33F173370144E995D97729</string>
-				<string>4BA01E262C9B4CB596E5D014</string>
-				<string>7945284EFACF40BFA970EDD8</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>productName</key>
-			<string>Pods</string>
-			<key>productReference</key>
-			<string>1FAEEBA73FCB437A99CCC840</string>
-			<key>productType</key>
-			<string>com.apple.product-type.library.static</string>
-		</dict>
-		<key>9155A075A41B4563A7095972</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AFE5B421A6CA47A7B371696E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string> </string>
-			</dict>
-		</dict>
-		<key>919EB9E753EA4FE48C13D284</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>1FAEEBA73FCB437A99CCC840</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>937DBAD3C645437D9582703C</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>AFXMLRequestOperation.m</string>
-			<key>path</key>
-			<string>AFNetworking/AFNetworking/AFXMLRequestOperation.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>938CB9344B454AE9BB2A0B2F</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>119593B65D7C49A8B4F05B80</string>
-				<string>71D702A9BAED409791D9F389</string>
-				<string>F336AA7690644938B5FC1787</string>
-				<string>45C8CDA20ECA4826A2A6A263</string>
-				<string>FA4226D4624844459ABD1049</string>
-				<string>E54407EB67F04E4395C05B15</string>
-				<string>50BC158DDA5C40B5A3F1DA5B</string>
-				<string>99061F8615484EC08E9FBF1F</string>
-				<string>8DFAE48C61C848AFBD9D5277</string>
-				<string>E9854B2B53A84DB88736E3B9</string>
-				<string>4BFFC5751A9A49B2929E4B51</string>
-				<string>F968FE47D03B40798A40F353</string>
-				<string>AAB74FD40A0846AF876C0614</string>
-				<string>2E6326AAD55E4FAC99DC2874</string>
-				<string>D5FE0188E70F40A0B2444B5C</string>
-				<string>2678CABA9D614FDAAEE15394</string>
-				<string>E3D45F3E627E4DE1924C3B7B</string>
-				<string>651FF148C444466AA3651207</string>
-				<string>B2EF55738ADA45299C046E3E</string>
-				<string>937DBAD3C645437D9582703C</string>
-				<string>61BFF85760044D3184D8C102</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>AFNetworking</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>954BE780D6B747E5A370673E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>937DBAD3C645437D9582703C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string> </string>
-			</dict>
-		</dict>
-		<key>95CCB1914AEF41F9BF0B999E</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>5C4DC059C65D45EEAD301774</string>
-				<string>BEDD1A639B6C45E0B9188879</string>
-				<string>53C289FED8D14A659224EA3A</string>
-				<string>BC71C78845D244AC8F758B0D</string>
-				<string>38BAF571ABDA4237AC087F04</string>
-				<string>F5E74805E96B40C6A787427B</string>
-				<string>2F963CF6C4C449839B15A8FA</string>
-				<string>8DF4DD4568294114B0664FFD</string>
-				<string>6EFF51E5D568459EAEEC3C15</string>
-				<string>12D7EC11E924449D87095D99</string>
-				<string>4C18C26194444B39AD95A862</string>
-				<string>3DB886B9EBB24BBDA7CF1B92</string>
-				<string>B594E09D748146A8B155966F</string>
-				<string>656FA3EC031A46EA93AAB8F5</string>
-				<string>20586CB040524C4EB8DB373C</string>
-				<string>55E2DD3CDAAE4EDF86C7D5D8</string>
-				<string>0B91C1EEDEFA4B2F82587892</string>
-				<string>BD61A1AB87F94DAA9417DC34</string>
-				<string>2D185BE1EA734AB7A2668513</string>
-				<string>89BE2B4E6CD244F8983E77AA</string>
-				<string>09B6506E8AB04B4D98E74A67</string>
-				<string>D69EA65AD3024CCD8F9F413C</string>
-				<string>10BC6741B7994977BF2350FF</string>
-				<string>A66188FDE9DF4C8A8C5B4D60</string>
-				<string>2149C4C1D1A847C09FAF1A62</string>
-				<string>BE5EE580F9B84A179BC72079</string>
-				<string>0FA115446CEA4024B29C30E9</string>
-				<string>D9BD95094E3F4E11A6AC808D</string>
-				<string>B4A352DA5D84443B9289030F</string>
-				<string>B55511EF2DBD459492EB5F93</string>
-				<string>8B8EB769F7B0470A96DAFD64</string>
-				<string>39628300C7F343DDB1D5C624</string>
-				<string>07352990B26241239A5793AE</string>
-				<string>290FF0BAC0EF43FD9D99BD08</string>
-				<string>649D71731EAA45618B422D55</string>
-				<string>2F4389AAF1DB405F8BD06680</string>
-				<string>88AC8D4BC48641F69E5B988B</string>
-				<string>D8F67A29AFD24DFAB8151797</string>
-				<string>B1377870A0BC43959E7675B5</string>
-				<string>53251EB40CEF4F8A82A94B90</string>
-				<string>5C6C4AF7396B4D1AB83E4A13</string>
-				<string>4AF57156A3874968AEC5D757</string>
-				<string>25308FC3CF034383BDA0F40A</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>OCMock</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>96719F6B12CB4C649F848DEE</key>
-		<dict>
-			<key>fileRef</key>
-			<string>90A82B1894F0471283B052D0</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string> </string>
-			</dict>
-		</dict>
-		<key>99061F8615484EC08E9FBF1F</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>AFPropertyListRequestOperation.h</string>
-			<key>path</key>
-			<string>AFNetworking/AFNetworking/AFPropertyListRequestOperation.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>9E6E5B201D1245038A66AAFE</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>ECE79F96EBB84A5F8102E544</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A66188FDE9DF4C8A8C5B4D60</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>OCMObserverRecorder.m</string>
-			<key>path</key>
-			<string>OCMock/Source/OCMock/OCMObserverRecorder.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>A8090AE173764251BEE15684</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>MagicalRecordShorthand.h</string>
-			<key>path</key>
-			<string>MagicalRecord/Source/MagicalRecordShorthand.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>A874F2B140D84B1E9C5BA235</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D69EA65AD3024CCD8F9F413C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string> </string>
-			</dict>
-		</dict>
-		<key>AAB74FD40A0846AF876C0614</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>AFHTTPRequestOperation.m</string>
-			<key>path</key>
-			<string>AFNetworking/AFNetworking/AFHTTPRequestOperation.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>AEDE690231314DDBB0CE8113</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>LastUpgradeCheck</key>
-				<string>0420</string>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>0299C15B0A724B1FBFEE1CD1</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-			</array>
-			<key>mainGroup</key>
-			<string>4CB5864A4F7740598F8C8740</string>
-			<key>productRefGroup</key>
-			<string>919EB9E753EA4FE48C13D284</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>91320C64306843839CEEA08F</string>
-			</array>
-		</dict>
-		<key>AF17157B35134EA988792A00</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>NSObject+MagicalDataImport.h</string>
-			<key>path</key>
-			<string>MagicalRecord/Source/Categories/DataImport/NSObject+MagicalDataImport.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>AF6DA8D92CF74FF38561D702</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>MRCoreDataAction.h</string>
-			<key>path</key>
-			<string>MagicalRecord/Source/MRCoreDataAction.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>AFE5B421A6CA47A7B371696E</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>NSManagedObject+MagicalDataImport.m</string>
-			<key>path</key>
-			<string>MagicalRecord/Source/Categories/NSManagedObject+MagicalDataImport.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>B1377870A0BC43959E7675B5</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>OCPartialMockObject.m</string>
-			<key>path</key>
-			<string>OCMock/Source/OCMock/OCPartialMockObject.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>B1B1B3187F4245B0940B3DF3</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>NSNumber+MagicalDataImport.m</string>
-			<key>path</key>
-			<string>MagicalRecord/Source/Categories/DataImport/NSNumber+MagicalDataImport.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>B2EF55738ADA45299C046E3E</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>AFURLConnectionOperation.m</string>
-			<key>path</key>
-			<string>AFNetworking/AFNetworking/AFURLConnectionOperation.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>B325B349BAF44E41A5C29D0B</key>
-		<dict>
-			<key>fileRef</key>
-			<string>144F0652085D4B32A47C3A53</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string> </string>
-			</dict>
-		</dict>
-		<key>B4A352DA5D84443B9289030F</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>OCMockRecorder.m</string>
-			<key>path</key>
-			<string>OCMock/Source/OCMock/OCMockRecorder.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>B55511EF2DBD459492EB5F93</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>OCMPassByRefSetter.h</string>
-			<key>path</key>
-			<string>OCMock/Source/OCMock/OCMPassByRefSetter.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>B594E09D748146A8B155966F</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>OCMBoxedReturnValueProvider.h</string>
-			<key>path</key>
-			<string>OCMock/Source/OCMock/OCMBoxedReturnValueProvider.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>BC71C78845D244AC8F758B0D</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>NSMethodSignature+OCMAdditions.m</string>
-			<key>path</key>
-			<string>OCMock/Source/OCMock/NSMethodSignature+OCMAdditions.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>BD33F173370144E995D97729</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>1422BD53F64548419B287D3C</string>
-				<string>EB164DB2D1F04D5283E52A9A</string>
-				<string>7FB09762EE9340D18FD8BCF2</string>
-				<string>49E8F40C0424472DA33F4B11</string>
-				<string>61FD4B6B5409451C8C95FC55</string>
-				<string>15E511DB469E4581B1DFECD5</string>
-				<string>2389C4A4B0B94230A52C193B</string>
-				<string>7871E148B05347CAA74AFC04</string>
-				<string>954BE780D6B747E5A370673E</string>
-				<string>694812696D654567A1313E00</string>
-				<string>96719F6B12CB4C649F848DEE</string>
-				<string>4CFF973121C74E1E82F61B08</string>
-				<string>90584DE205E84FD7901E36F1</string>
-				<string>5D97E66BF9CB498ABB7F9FA6</string>
-				<string>7C6D34DA520E4824ACA36D7F</string>
-				<string>48CCE75BBAB044EE9D4B4A09</string>
-				<string>9155A075A41B4563A7095972</string>
-				<string>FDEEDBFD686A421195DE8568</string>
-				<string>2E77F5978D63468BB55EC016</string>
-				<string>253CF7B461644AF883B7AFB0</string>
-				<string>B325B349BAF44E41A5C29D0B</string>
-				<string>F536216F5A46477894302A79</string>
-				<string>7DD25EB838D5461FAD9B0A8D</string>
-				<string>BF6F46A643E04360B635534D</string>
-				<string>4BC756452C554F5B97274359</string>
-				<string>4B01C510AF264CC391F50348</string>
-				<string>2FB51299B0ED45958D931E96</string>
-				<string>65EA571EB47D4889B2628B0C</string>
-				<string>0B5A33ACFFFD44B8AD45FBFF</string>
-				<string>6BB0991EF92A4365940B16E4</string>
-				<string>457E5053AC084D4EBF92C72C</string>
-				<string>5134DA11929D4D758227036F</string>
-				<string>52CD63BBAC394E7793D54DBB</string>
-				<string>46EDA3568711458B8831F5B2</string>
-				<string>A874F2B140D84B1E9C5BA235</string>
-				<string>FB2107D87F6B428F8DB971C0</string>
-				<string>E0D8165D29DA4F21AB3DCDF1</string>
-				<string>53282E9F669F4138B276CC09</string>
-				<string>81CFA6C8CB0D46C4B1308F06</string>
-				<string>1EE378FE7CB8462C83086351</string>
-				<string>F8CE24F8356246DBA00088D0</string>
-				<string>05E62A0EA1A543228DAF155D</string>
-				<string>695CF56EFDFD4A9FAFDF1431</string>
-				<string>5F318B3C9F654004A7F1DB99</string>
-				<string>D66ACD9C34284F2C864DC27D</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>BD61A1AB87F94DAA9417DC34</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>OCMExceptionReturnValueProvider.m</string>
-			<key>path</key>
-			<string>OCMock/Source/OCMock/OCMExceptionReturnValueProvider.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>BE5EE580F9B84A179BC72079</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>OCMockObject.h</string>
-			<key>path</key>
-			<string>OCMock/Source/OCMock/OCMockObject.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>BEDD1A639B6C45E0B9188879</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>NSInvocation+OCMAdditions.m</string>
-			<key>path</key>
-			<string>OCMock/Source/OCMock/NSInvocation+OCMAdditions.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>BF6F46A643E04360B635534D</key>
-		<dict>
-			<key>fileRef</key>
-			<string>044BB5EB425B4B0089031817</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string> </string>
-			</dict>
-		</dict>
-		<key>CD791CC63DFD480BA1DC9C33</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>NSManagedObject+MagicalRecord.m</string>
-			<key>path</key>
-			<string>MagicalRecord/Source/Categories/NSManagedObject+MagicalRecord.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>D128BE88BF7143A2B559A648</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>NSObject+MagicalDataImport.m</string>
-			<key>path</key>
-			<string>MagicalRecord/Source/Categories/DataImport/NSObject+MagicalDataImport.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>D5FE0188E70F40A0B2444B5C</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>AFJSONRequestOperation.m</string>
-			<key>path</key>
-			<string>AFNetworking/AFNetworking/AFJSONRequestOperation.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>D66ACD9C34284F2C864DC27D</key>
-		<dict>
-			<key>fileRef</key>
-			<string>25308FC3CF034383BDA0F40A</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string> </string>
-			</dict>
-		</dict>
-		<key>D69EA65AD3024CCD8F9F413C</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>OCMNotificationPoster.m</string>
-			<key>path</key>
-			<string>OCMock/Source/OCMock/OCMNotificationPoster.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>D8F67A29AFD24DFAB8151797</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>OCPartialMockObject.h</string>
-			<key>path</key>
-			<string>OCMock/Source/OCMock/OCPartialMockObject.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>D9BD95094E3F4E11A6AC808D</key>
+		<key>C1A98F7247004BE6AEAA307B</key>
 		<dict>
 			<key>isa</key>
 			<string>PBXFileReference</string>
@@ -1986,10 +1980,10 @@
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>E0D8165D29DA4F21AB3DCDF1</key>
+		<key>C4AFB113B5EB45C498CBFBEB</key>
 		<dict>
 			<key>fileRef</key>
-			<string>0FA115446CEA4024B29C30E9</string>
+			<string>D735FC4D850D4F8E8CD1B66B</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -1998,74 +1992,7 @@
 				<string> </string>
 			</dict>
 		</dict>
-		<key>E3D45F3E627E4DE1924C3B7B</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>AFNetworkActivityIndicatorManager.m</string>
-			<key>path</key>
-			<string>AFNetworking/AFNetworking/AFNetworkActivityIndicatorManager.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>E54407EB67F04E4395C05B15</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>AFNetworkActivityIndicatorManager.h</string>
-			<key>path</key>
-			<string>AFNetworking/AFNetworking/AFNetworkActivityIndicatorManager.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>E9854B2B53A84DB88736E3B9</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>AFXMLRequestOperation.h</string>
-			<key>path</key>
-			<string>AFNetworking/AFNetworking/AFXMLRequestOperation.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>E9FC52DE31F949C5BAFC3565</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>NSPersistentStoreCoordinator+MagicalRecord.m</string>
-			<key>path</key>
-			<string>MagicalRecord/Source/Categories/NSPersistentStoreCoordinator+MagicalRecord.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>EB164DB2D1F04D5283E52A9A</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AAB74FD40A0846AF876C0614</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string> </string>
-			</dict>
-		</dict>
-		<key>EBFE3EEFB8CF4E0E8CC2891D</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>MagicalRecordHelpers.h</string>
-			<key>path</key>
-			<string>MagicalRecord/Source/MagicalRecordHelpers.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>ECE79F96EBB84A5F8102E544</key>
+		<key>C5F717E2AE6B426CADFD0F5C</key>
 		<dict>
 			<key>isa</key>
 			<string>PBXFileReference</string>
@@ -2078,32 +2005,21 @@
 			<key>sourceTree</key>
 			<string>SDKROOT</string>
 		</dict>
-		<key>F0F468B434FC4D1694A4514C</key>
+		<key>C713D8D1016A4489AFA64790</key>
 		<dict>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>name</key>
-			<string>NSManagedObjectContext+MagicalRecord.h</string>
+			<string>Objection.h</string>
 			<key>path</key>
-			<string>MagicalRecord/Source/Categories/NSManagedObjectContext+MagicalRecord.h</string>
+			<string>Objection/Source/Objection.h</string>
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>F336AA7690644938B5FC1787</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>AFImageRequestOperation.h</string>
-			<key>path</key>
-			<string>AFNetworking/AFNetworking/AFImageRequestOperation.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>F536216F5A46477894302A79</key>
+		<key>C75E1C6A09C94CFABD49481B</key>
 		<dict>
 			<key>fileRef</key>
-			<string>E9FC52DE31F949C5BAFC3565</string>
+			<string>78AF0CF870F7474AA021E309</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -2112,21 +2028,32 @@
 				<string> </string>
 			</dict>
 		</dict>
-		<key>F5E74805E96B40C6A787427B</key>
+		<key>C8346B58A78C4051BEF0250E</key>
 		<dict>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>name</key>
-			<string>NSNotificationCenter+OCMAdditions.m</string>
+			<string>AFURLConnectionOperation.h</string>
 			<key>path</key>
-			<string>OCMock/Source/OCMock/NSNotificationCenter+OCMAdditions.m</string>
+			<string>AFNetworking/AFNetworking/AFURLConnectionOperation.h</string>
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>F8CE24F8356246DBA00088D0</key>
+		<key>C8AB19CDE6ED43ACABC93276</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>JSObjectionBindingEntry.h</string>
+			<key>path</key>
+			<string>Objection/Source/JSObjectionBindingEntry.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>D018A53EBFCE4E4BA3E7CDD4</key>
 		<dict>
 			<key>fileRef</key>
-			<string>649D71731EAA45618B422D55</string>
+			<string>9AEDAA525E9D49318E54A43C</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -2135,32 +2062,10 @@
 				<string> </string>
 			</dict>
 		</dict>
-		<key>F968FE47D03B40798A40F353</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>AFHTTPClient.m</string>
-			<key>path</key>
-			<string>AFNetworking/AFNetworking/AFHTTPClient.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>FA4226D4624844459ABD1049</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>AFJSONUtilities.h</string>
-			<key>path</key>
-			<string>AFNetworking/AFNetworking/AFJSONUtilities.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>FB2107D87F6B428F8DB971C0</key>
+		<key>D0A1BE17088E4BD2958F0E71</key>
 		<dict>
 			<key>fileRef</key>
-			<string>A66188FDE9DF4C8A8C5B4D60</string>
+			<string>9CCA07EC78014ACAAF34966C</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -2169,21 +2074,511 @@
 				<string> </string>
 			</dict>
 		</dict>
-		<key>FDB88C89A160428CA37BC9B0</key>
+		<key>D0FE65B9C7D545EEB3E4C79F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1FFAACC1B1DD4DDE9EA53F97</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string> </string>
+			</dict>
+		</dict>
+		<key>D11BEF2D298A4390B2A05BAC</key>
 		<dict>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>name</key>
-			<string>NSPersistentStoreCoordinator+MagicalRecord.h</string>
+			<string>MagicalRecordShorthand.h</string>
 			<key>path</key>
-			<string>MagicalRecord/Source/Categories/NSPersistentStoreCoordinator+MagicalRecord.h</string>
+			<string>MagicalRecord/Source/MagicalRecordShorthand.h</string>
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>FDEEDBFD686A421195DE8568</key>
+		<key>D2605233257F446597D5A7DD</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>NSManagedObject+MagicalDataImport.h</string>
+			<key>path</key>
+			<string>MagicalRecord/Source/Categories/NSManagedObject+MagicalDataImport.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>D2A8A42B4A1E47F2ABBB9306</key>
 		<dict>
 			<key>fileRef</key>
-			<string>CD791CC63DFD480BA1DC9C33</string>
+			<string>3BD0949FEC954666BCDDA8EA</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string> </string>
+			</dict>
+		</dict>
+		<key>D4B13C05DB114D90A00B2F01</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D5E9A7F7F7DA44F487EF24C1</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string> </string>
+			</dict>
+		</dict>
+		<key>D4C6632995494882B988D888</key>
+		<dict>
+			<key>fileRef</key>
+			<string>754EDD3877FA469E9EA6C2CB</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string> </string>
+			</dict>
+		</dict>
+		<key>D55E01051D09488C9B08C5F5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>E96749142FBB484D8204D6B5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string> </string>
+			</dict>
+		</dict>
+		<key>D5E15E3CC94E4973B4DD8BAD</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>Pods-prefix.pch</string>
+			<key>path</key>
+			<string>Pods-prefix.pch</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>D5E9A7F7F7DA44F487EF24C1</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>OCMPassByRefSetter.m</string>
+			<key>path</key>
+			<string>OCMock/Source/OCMock/OCMPassByRefSetter.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>D5EB97D676084B27BD71DB7F</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>MRCoreDataAction.h</string>
+			<key>path</key>
+			<string>MagicalRecord/Source/MRCoreDataAction.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>D735FC4D850D4F8E8CD1B66B</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>OCMBlockCaller.m</string>
+			<key>path</key>
+			<string>OCMock/Source/OCMock/OCMBlockCaller.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>D74D1CD9EDB74C0AB1DD70F4</key>
+		<dict>
+			<key>fileRef</key>
+			<string>27B1093540CE4C09A23AB1D5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string> </string>
+			</dict>
+		</dict>
+		<key>D7C44DE1F05A4462A90FFF36</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>NSPersistentStore+MagicalRecord.m</string>
+			<key>path</key>
+			<string>MagicalRecord/Source/Categories/NSPersistentStore+MagicalRecord.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>D7F49B1CF6A143C3911AF3FB</key>
+		<dict>
+			<key>fileRef</key>
+			<string>70C2839FB6704BDF93D0DE83</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string> </string>
+			</dict>
+		</dict>
+		<key>D8620C7C5D02459FA36D8FC0</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>NSObject+Objection.h</string>
+			<key>path</key>
+			<string>Objection/Source/NSObject+Objection.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>D958388CF82440668CC1E827</key>
+		<dict>
+			<key>fileRef</key>
+			<string>973FC4888EE3430188388882</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string> </string>
+			</dict>
+		</dict>
+		<key>DA27C77F12D544E9BCE5E7AC</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>MagicalRecordHelpers.h</string>
+			<key>path</key>
+			<string>MagicalRecord/Source/MagicalRecordHelpers.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>DA6F101AE1EC4671990BB165</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4BDE295DDADF4DC88F24B747</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string> </string>
+			</dict>
+		</dict>
+		<key>DA817267044247C98F125152</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>OCMConstraint.h</string>
+			<key>path</key>
+			<string>OCMock/Source/OCMock/OCMConstraint.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>DABF125B536D4709A53CC8A9</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6B97FB55AE0A4B9B965DCCD2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string> </string>
+			</dict>
+		</dict>
+		<key>DB26FA88850843E0B8B6D00F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A288B3895A614B0F8580394F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string> </string>
+			</dict>
+		</dict>
+		<key>DFFD59419DE04B8B97D0243D</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>NSObject+MagicalDataImport.m</string>
+			<key>path</key>
+			<string>MagicalRecord/Source/Categories/DataImport/NSObject+MagicalDataImport.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>E0D5A8DB8C1D4A27B0F9C2FB</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>JSObjectionUtils.m</string>
+			<key>path</key>
+			<string>Objection/Source/JSObjectionUtils.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>E25EDE53AC374939AB8F9DA8</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8742E5525971497FA92FE499</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string> </string>
+			</dict>
+		</dict>
+		<key>E528816492044D05A97870AA</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>JSObjectionInjectorEntry.h</string>
+			<key>path</key>
+			<string>Objection/Source/JSObjectionInjectorEntry.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>E96749142FBB484D8204D6B5</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>NSPersistentStoreCoordinator+MagicalRecord.m</string>
+			<key>path</key>
+			<string>MagicalRecord/Source/Categories/NSPersistentStoreCoordinator+MagicalRecord.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>E9F7ED198F33475F9F2C3A87</key>
+		<dict>
+			<key>fileRef</key>
+			<string>ADEC1696EB324425B7A37F03</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string> </string>
+			</dict>
+		</dict>
+		<key>EA040DACC7554244B1FBD3C4</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>AFJSONRequestOperation.h</string>
+			<key>path</key>
+			<string>AFNetworking/AFNetworking/AFJSONRequestOperation.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>EAB230CF2A4746579D007BBC</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>OCMIndirectReturnValueProvider.h</string>
+			<key>path</key>
+			<string>OCMock/Source/OCMock/OCMIndirectReturnValueProvider.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>ED1144B3073B483ABE3D0EE6</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>OCMExceptionReturnValueProvider.m</string>
+			<key>path</key>
+			<string>OCMock/Source/OCMock/OCMExceptionReturnValueProvider.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>EE8BFE1EAB5E4F94A1D76429</key>
+		<dict>
+			<key>fileRef</key>
+			<string>B5F56B488BFC44048ACE2439</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string> </string>
+			</dict>
+		</dict>
+		<key>EF91C9B2BBDA493FBA60836A</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>AFPropertyListRequestOperation.h</string>
+			<key>path</key>
+			<string>AFNetworking/AFNetworking/AFPropertyListRequestOperation.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>EFAE22DE48FF4F2E89C17967</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>C5F717E2AE6B426CADFD0F5C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EFFB2322889642D3AAFD2011</key>
+		<dict>
+			<key>fileRef</key>
+			<string>21A25BAB60434BE99080B9F1</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string> </string>
+			</dict>
+		</dict>
+		<key>F0238C3621BB4CCE9CF6A379</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>82B31F5A8FAF448C89A93FBC</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Products</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F154313969244478A19090BF</key>
+		<dict>
+			<key>fileRef</key>
+			<string>0FFB2ECDD76F42A685474E68</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string> </string>
+			</dict>
+		</dict>
+		<key>F2D9BFE7119A4ED6B6A73E54</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F6E22B91AC1E464FBC2642F1</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string> </string>
+			</dict>
+		</dict>
+		<key>F64D5512EEE44929B1D2FB55</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>AFPropertyListRequestOperation.m</string>
+			<key>path</key>
+			<string>AFNetworking/AFNetworking/AFPropertyListRequestOperation.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>F6E22B91AC1E464FBC2642F1</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>JSObjectionEntry.m</string>
+			<key>path</key>
+			<string>Objection/Source/JSObjectionEntry.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>F8483F80385B4E90A7B6CA9B</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>1E9F061D8FEB444480945B9D</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>DSTROOT</key>
+				<string>/tmp/xcodeproj.dst</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Pods-prefix.pch</string>
+				<key>GCC_VERSION</key>
+				<string>com.apple.compilers.llvm.clang.1_0</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>PODS_ROOT</key>
+				<string>$(SRCROOT)</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>FA93FBBCB23E474E83B7B0B5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>862DD7386AC047BCB07E0D50</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string> </string>
+			</dict>
+		</dict>
+		<key>FD88905C172A48DC8CBB2B91</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>NSManagedObject+MagicalRecord.m</string>
+			<key>path</key>
+			<string>MagicalRecord/Source/Categories/NSManagedObject+MagicalRecord.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>FF5A01EE03294D22B583F655</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2EF1A97EBB7E41E99BD1BE8B</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -2194,6 +2589,6 @@
 		</dict>
 	</dict>
 	<key>rootObject</key>
-	<string>AEDE690231314DDBB0CE8113</string>
+	<string>1F16CAC0AA73430391517AD0</string>
 </dict>
 </plist>
