@@ -11,28 +11,14 @@
 
 @interface TestHelpers : NSObject
 + (void)createConflictServerResponse:(NSString *)clientPostBody serverPostBody:(NSString *)serverPostBody;
++ (SyncStorageManager *)startTest;
++ (void)endTest:(SyncStorageManager *)manager;
 @end
 
 SPEC_BEGIN(SyncStoreManagerSpec)
 describe(@"SyncStorageManager", ^{
-	__block SyncStorageManager *syncStorageManager_ = nil;
-	beforeEach(^{ // Occurs before each enclosed "it"
-		JSObjectionInjector *testInjector = [JSObjection createInjector:[[TestModule alloc] init]];
-		[JSObjection setGlobalInjector:testInjector];
-		
-		syncStorageManager_ = [[SyncStorageManager alloc] initWithBaseURL:@"http://www.example.com"];
-		[SyncObject MR_truncateAll];
-		[[NSManagedObjectContext contextForCurrentThread] MR_save];
-
-	});
-	
-	afterEach(^{ // Occurs after each enclosed "it"
-		[SyncObject MR_truncateAll];
-		[[NSManagedObjectContext contextForCurrentThread] MR_save];
-		syncStorageManager_ = nil;
-	});
-	
     it(@"should sync newly created objects to server", ^{
+		SyncStorageManager *syncStorageManager = [TestHelpers startTest];
 		Post *newPost = [Post MR_createEntity];
 		
 		[[theValue(newPost.lastModified) should] equal:theValue(0)];//New objects created on the client should not have a last modified time
@@ -45,8 +31,8 @@ describe(@"SyncStorageManager", ^{
 		[mockEntity setObject:[NSNumber numberWithDouble:[[NSDate date] timeIntervalSince1970]] forKey:kLastModifiedKey];
 		NSDictionary *mockServerResponse = [NSDictionary dictionaryWithObjectsAndKeys:[NSArray arrayWithObject:mockEntity], kModifiedEntitiesKey, nil];
 		[DummySyncOperation setResponseObject:mockServerResponse];
-		syncStorageManager_.resolveConflicts = ^(NSArray * empty){};
-		[syncStorageManager_ syncNow];
+		syncStorageManager.resolveConflicts = ^(NSArray * empty){};
+		[syncStorageManager syncNow];
 
 		[[theReturnValueOfBlock(^{ 
 			[[NSManagedObjectContext MR_contextForCurrentThread] refreshObject:newPost mergeChanges:YES];
@@ -56,9 +42,11 @@ describe(@"SyncStorageManager", ^{
 		}) shouldEventually] equal:[NSNumber numberWithInt: SOSynced]];//Entity should have a status of 'synced' after doing a sync
 		
 		[[theValue(newPost.lastModified) should] beGreaterThan:theValue(0)];//Entity last modified date should be set
+		[TestHelpers endTest:syncStorageManager];
     });
 	
 	it(@"should sync newly created objects from the server", ^{
+		SyncStorageManager * syncStorageManager = [TestHelpers startTest];
 		NSString *postBody = @"post body from another device";
 		NSMutableDictionary * serverPost = [NSDictionary dictionaryWithObjectsAndKeys:
 											@"Post", kClassNameKey,
@@ -71,7 +59,7 @@ describe(@"SyncStorageManager", ^{
 		NSDictionary *serverResponse = [NSDictionary dictionaryWithObject:[NSArray arrayWithObject:serverPost] forKey:kModifiedEntitiesKey];
 		[DummySyncOperation setResponseObject:serverResponse];
 		
-		[syncStorageManager_ syncNow];
+		[syncStorageManager syncNow];
 		[[theReturnValueOfBlock(^{
 			NSArray *posts = [Post MR_findAll];
 			int postCount = posts.count;
@@ -83,18 +71,20 @@ describe(@"SyncStorageManager", ^{
 		[newPost.guid shouldNotBeNil];//New entities should have a guid
 		[[theValue(newPost.lastModified) should] beGreaterThan:theValue(0)];//New entities should have a modified date
 		[[newPost.body should] equal:postBody];//Should have updated data from server
+		[TestHelpers endTest:syncStorageManager];
 
 	});
 	
 	it(@"should store a conflicted object when server sends conflict", ^{
+		SyncStorageManager *syncStorageManager = [TestHelpers startTest];
 		NSString *myPostBody = @"Post body my version";
 		NSString *serverPostBody = @"Post body server version";
 
 		[TestHelpers createConflictServerResponse:myPostBody serverPostBody:serverPostBody];
-		syncStorageManager_.resolveConflicts = ^(NSArray *conflicts){};
+		syncStorageManager.resolveConflicts = ^(NSArray *conflicts){};
 		
 		
-		[syncStorageManager_ syncNow];
+		[syncStorageManager syncNow];
 		
 		[[theReturnValueOfBlock(^{
 			NSArray *conflictedEntities = [SyncObject findConflictedObjects];
@@ -104,31 +94,51 @@ describe(@"SyncStorageManager", ^{
 		Post *serverConflictedPost = [[SyncObject findConflictedObjects] objectAtIndex:0];
 
 		[[serverConflictedPost.body should] equal:serverPostBody];
-		
+		[TestHelpers endTest:syncStorageManager];
 		
 	});
 	
 	it(@"should call conflict resolution callback when conflict detected", ^{
+		SyncStorageManager *syncStorageManager = [TestHelpers startTest];
 		NSString *myPostBody = @"Post body my version";
 		NSString *serverPostBody = @"Post body server version";
 		
 		[TestHelpers createConflictServerResponse:myPostBody serverPostBody:serverPostBody];
 		__block NSArray *serverConflicts = nil;
 		
-		syncStorageManager_.resolveConflicts = ^(NSArray *conflicts)
+		syncStorageManager.resolveConflicts = ^(NSArray *conflicts)
 		{
 			serverConflicts = conflicts;
 		};
 		
-		[syncStorageManager_ syncNow];
+		[syncStorageManager syncNow];
 		
 		[[expectFutureValue(serverConflicts) shouldEventually] beNonNil];
+		[TestHelpers endTest:syncStorageManager];
 		
 	});
 });
 
 SPEC_END
 @implementation TestHelpers
+
++ (SyncStorageManager *)startTest
+{
+	JSObjectionInjector *testInjector = [JSObjection createInjector:[[TestModule alloc] init]];
+	[JSObjection setGlobalInjector:testInjector];
+	
+	SyncStorageManager *syncStorageManager = [[SyncStorageManager alloc] initWithBaseURL:@"http://www.example.com"];
+	[SyncObject MR_truncateAll];
+	[[NSManagedObjectContext contextForCurrentThread] MR_save];
+	return  syncStorageManager;
+}
+
++ (void)endTest:(SyncStorageManager *)manager
+{
+	[SyncObject MR_truncateAll];
+	[[NSManagedObjectContext contextForCurrentThread] MR_save];
+	[manager cleanup];
+}
 
 + (void)createConflictServerResponse:(NSString *)clientPostBody serverPostBody:(NSString *)serverPostBody
 {
