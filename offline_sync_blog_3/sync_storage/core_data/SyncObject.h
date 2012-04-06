@@ -31,8 +31,21 @@ typedef enum {
  * @param guids an array of guid strings of format 8-4-4-4-12
  * @returns all SyncObjects whos guids are found in _guids_
  */
-+ (NSArray *)findAllByGUID:(NSArray *)guids;
++ (NSDictionary *)findAllByGUID:(NSArray *)guids;
 + (NSArray *)findUnsyncedObjects;
++ (NSDictionary *)findUnconflictedByGUID:(NSArray *)guids;
+
+/**
+ * @param entities an NSArray of objects which are KV complient
+ * for the key 'guid'.
+ */
++ (NSArray *)collectGUIDS:(NSArray *)entities;
+
+/**
+ * @returns an array of SyncObjects which have the syncStatus 
+ * set to SOConflicted. This represents the version that the
+ * server has in its database;
+ */
 + (NSArray *)findConflictedObjects;
 + (NSTimeInterval)lastSyncTime;
 + (NSArray *)jsonRepresentationOfObjects:(NSArray *)objects;

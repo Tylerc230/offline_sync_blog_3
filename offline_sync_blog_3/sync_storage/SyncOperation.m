@@ -90,9 +90,10 @@ objection_register(SyncOperation)
 	
 	NSArray *conflictedEntities = [responseObject objectForKey:kConflictedEntitiesKey];
 	[self markConflictedAndNotify:conflictedEntities];
+	[[NSManagedObjectContext MR_contextForCurrentThread] save];
 	[self completeOperation];
 	
-	[[NSManagedObjectContext MR_contextForCurrentThread] save];
+
 }
 
 - (void)syncFailedWithResponse:(NSError *)error
@@ -134,11 +135,11 @@ objection_register(SyncOperation)
 #pragma mark - update
 - (void)updateWithJSON:(NSArray *)json
 {	
-	NSArray *allGuids = [self collectGuids:json];
-	NSArray *updatedManagedObjects = [SyncObject findAllByGUID:allGuids];
-	NSDictionary *managedObjectsByGuid = [self managedObjectsByGuid:updatedManagedObjects];
+	NSArray *allGuids = [SyncObject collectGUIDS:json];
+	NSDictionary *managedObjectsByGuid = [SyncObject findAllByGUID:allGuids];
 	
-	for (NSDictionary * jsonObject in json) {
+	for (NSDictionary * jsonObject in json) 
+	{
 		NSString * guid = [jsonObject objectForKey:kGUIDKey];
 		SyncObject * managedObject = [managedObjectsByGuid objectForKey:guid];
 		if (!managedObject) {
@@ -149,26 +150,5 @@ objection_register(SyncOperation)
 		managedObject.syncStatus = SOSynced;
 	}
 }
-
-- (NSArray *)collectGuids:(NSArray *)modifiedObjects
-{
-	NSMutableArray * guids = [NSMutableArray arrayWithCapacity:modifiedObjects.count];
-	for (NSDictionary * object in modifiedObjects) {
-		[guids addObject:[object objectForKey:kGUIDKey]];
-	}
-	return guids;
-}
-
-- (NSDictionary *)managedObjectsByGuid:(NSArray *)entities
-{
-	NSMutableDictionary *entitiesByGuid = [NSMutableDictionary dictionaryWithCapacity:entities.count];
-	for (SyncObject *entity in entities) {
-		[entitiesByGuid setObject:entity forKey:entity.guid];
-	}
-	return entitiesByGuid;
-}
-
-
-
 
 @end

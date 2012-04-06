@@ -24,11 +24,19 @@
 	return (__bridge_transfer NSString *)string;
 }
 
-+ (NSArray *)findAllByGUID:(NSArray *)guids
++ (NSDictionary *)findAllByGUID:(NSArray *)guids
 {
-	NSPredicate *modifiedGuidsPredicate = [NSPredicate predicateWithFormat:@"guid IN %@", guids];
-	NSArray *updatedManagedObjects = [self findAllWithPredicate:modifiedGuidsPredicate];
-	return updatedManagedObjects;
+	NSPredicate *guidsPredicate = [NSPredicate predicateWithFormat:@"guid IN %@", guids];
+	NSArray *managedObjects = [self findAllWithPredicate:guidsPredicate];
+	return [self keyByGUID:managedObjects];
+}
+
++ (NSDictionary *)findUnconflictedByGUID:(NSArray *)guids
+{
+	NSPredicate * unconflictedGuidsPredicate = [NSPredicate predicateWithFormat:@"guid IN %@ AND syncStatus != %@",
+												guids, [NSNumber numberWithInt:SOConflicted]];
+	NSArray *managedObjects = [self findAllWithPredicate:unconflictedGuidsPredicate];
+	return [self keyByGUID: managedObjects];
 }
 
 + (NSArray *)findUnsyncedObjects
@@ -57,6 +65,25 @@
 		return 0;
 	}
 	return [[allObjects objectAtIndex:0] lastModified];
+}
+
++ (NSDictionary *)keyByGUID:(NSArray *)entities
+{
+	NSMutableDictionary *entitiesByGuid = [NSMutableDictionary dictionaryWithCapacity:entities.count];
+	for (id entity in entities) {
+		[entitiesByGuid setObject:entity forKey:[entity valueForKey:kGUIDKey]];
+	}
+	return entitiesByGuid;
+}
+
++ (NSArray *)collectGUIDS:(NSArray *)entities
+{
+	NSMutableArray * guids = [NSMutableArray arrayWithCapacity:entities.count];
+	for (id object in entities) {
+		[guids addObject:[object valueForKey:kGUIDKey]];
+	}
+	return guids;
+
 }
 
 - (void)updateWithJSON:(NSDictionary *)jsonObject

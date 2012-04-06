@@ -9,6 +9,9 @@
 
 #define kFakeGUID @"21EC2020-3AEA-1069-A2DD-08002B30309D"
 
+@interface TestHelpers : NSObject
++ (void)createConflictServerResponse:(NSString *)clientPostBody serverPostBody:(NSString *)serverPostBody;
+@end
 
 SPEC_BEGIN(SyncStoreManagerSpec)
 describe(@"SyncStorageManager", ^{
@@ -19,10 +22,13 @@ describe(@"SyncStorageManager", ^{
 		
 		syncStorageManager_ = [[SyncStorageManager alloc] initWithBaseURL:@"http://www.example.com"];
 		[SyncObject MR_truncateAll];
+		[[NSManagedObjectContext contextForCurrentThread] MR_save];
 
 	});
 	
 	afterEach(^{ // Occurs after each enclosed "it"
+		[SyncObject MR_truncateAll];
+		[[NSManagedObjectContext contextForCurrentThread] MR_save];
 		syncStorageManager_ = nil;
 	});
 	
@@ -39,7 +45,7 @@ describe(@"SyncStorageManager", ^{
 		[mockEntity setObject:[NSNumber numberWithDouble:[[NSDate date] timeIntervalSince1970]] forKey:kLastModifiedKey];
 		NSDictionary *mockServerResponse = [NSDictionary dictionaryWithObjectsAndKeys:[NSArray arrayWithObject:mockEntity], kModifiedEntitiesKey, nil];
 		[DummySyncOperation setResponseObject:mockServerResponse];
-		
+		syncStorageManager_.resolveConflicts = ^(NSArray * empty){};
 		[syncStorageManager_ syncNow];
 
 		[[theReturnValueOfBlock(^{ 
@@ -81,37 +87,19 @@ describe(@"SyncStorageManager", ^{
 	});
 	
 	it(@"should store a conflicted object when server sends conflict", ^{
-		Post *conflictedPost = [Post MR_createEntity];
-		NSString *postTitle = @"Post title";
-		
 		NSString *myPostBody = @"Post body my version";
 		NSString *serverPostBody = @"Post body server version";
-		NSNumber *localLastModifiedTime = [NSNumber numberWithDouble:1.0];
-		NSNumber *serverLastModifiedTime = [NSNumber numberWithDouble:2.0];
-		
-		conflictedPost.title = postTitle;
-		conflictedPost.body = myPostBody;
-		conflictedPost.lastModified = [localLastModifiedTime doubleValue];
-		
 
-		NSDictionary *conflictedEntity = [NSDictionary dictionaryWithObjectsAndKeys:
-										  @"Post", kClassNameKey,
-										  serverPostBody, kBodyKey,
-										  postTitle, kTitleKey,
-										  conflictedPost.guid, kGUIDKey,
-										  serverLastModifiedTime, kLastModifiedKey,
-										  [NSNumber numberWithBool:NO], kIsGloballyDeletedKey,
-										  nil];
+		[TestHelpers createConflictServerResponse:myPostBody serverPostBody:serverPostBody];
+		syncStorageManager_.resolveConflicts = ^(NSArray *conflicts){};
 		
-		NSDictionary *serverResponse = [NSDictionary dictionaryWithObject:[NSArray arrayWithObject:conflictedEntity] forKey:kConflictedEntitiesKey];
-		[DummySyncOperation setResponseObject:serverResponse];
 		
 		[syncStorageManager_ syncNow];
 		
 		[[theReturnValueOfBlock(^{
 			NSArray *conflictedEntities = [SyncObject findConflictedObjects];
 			return [NSNumber numberWithInt: conflictedEntities.count];
-		}) shouldEventually] equal:[NSNumber numberWithInt:1]];
+		}) shouldEventuallyBeforeTimingOutAfter(3.0)] equal:[NSNumber numberWithInt:1]];
 		
 		Post *serverConflictedPost = [[SyncObject findConflictedObjects] objectAtIndex:0];
 
@@ -119,6 +107,53 @@ describe(@"SyncStorageManager", ^{
 		
 		
 	});
+	
+	it(@"should call conflict resolution callback when conflict detected", ^{
+		NSString *myPostBody = @"Post body my version";
+		NSString *serverPostBody = @"Post body server version";
+		
+		[TestHelpers createConflictServerResponse:myPostBody serverPostBody:serverPostBody];
+		__block NSArray *serverConflicts = nil;
+		
+		syncStorageManager_.resolveConflicts = ^(NSArray *conflicts)
+		{
+			serverConflicts = conflicts;
+		};
+		
+		[syncStorageManager_ syncNow];
+		
+		[[expectFutureValue(serverConflicts) shouldEventually] beNonNil];
+		
+	});
 });
 
 SPEC_END
+@implementation TestHelpers
+
++ (void)createConflictServerResponse:(NSString *)clientPostBody serverPostBody:(NSString *)serverPostBody
+{
+	Post *conflictedPost = [Post MR_createEntity];
+	NSString *postTitle = @"Post title";
+	
+	NSNumber *localLastModifiedTime = [NSNumber numberWithDouble:1.0];
+	NSNumber *serverLastModifiedTime = [NSNumber numberWithDouble:2.0];
+	
+	conflictedPost.title = postTitle;
+	conflictedPost.body = clientPostBody;
+	conflictedPost.lastModified = [localLastModifiedTime doubleValue];
+	
+	
+	NSDictionary *conflictedEntity = [NSDictionary dictionaryWithObjectsAndKeys:
+									  @"Post", kClassNameKey,
+									  serverPostBody, kBodyKey,
+									  postTitle, kTitleKey,
+									  conflictedPost.guid, kGUIDKey,
+									  serverLastModifiedTime, kLastModifiedKey,
+									  [NSNumber numberWithBool:NO], kIsGloballyDeletedKey,
+									  nil];
+	
+	NSDictionary *serverResponse = [NSDictionary dictionaryWithObject:[NSArray arrayWithObject:conflictedEntity] forKey:kConflictedEntitiesKey];
+	[DummySyncOperation setResponseObject:serverResponse];
+}
+
+@end

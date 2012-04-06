@@ -12,6 +12,7 @@
 		7060215B152D3FDE0087A4DC /* TestModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 7060215A152D3FDE0087A4DC /* TestModule.m */; };
 		7060215E152D400D0087A4DC /* DummySyncOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7060215D152D400D0087A4DC /* DummySyncOperation.m */; };
 		7060218F152D67370087A4DC /* SyncStoreManagerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 7060218E152D67370087A4DC /* SyncStoreManagerSpec.m */; };
+		706021BD152E68E20087A4DC /* Conflict.m in Sources */ = {isa = PBXBuildFile; fileRef = 706021BC152E68E10087A4DC /* Conflict.m */; };
 		70777F1E15238BD3007F5C87 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70777F1D15238BD3007F5C87 /* UIKit.framework */; };
 		70777F2015238BD3007F5C87 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70777F1F15238BD3007F5C87 /* Foundation.framework */; };
 		70777F2215238BD3007F5C87 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70777F2115238BD3007F5C87 /* CoreGraphics.framework */; };
@@ -57,6 +58,8 @@
 		7060215C152D400D0087A4DC /* DummySyncOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DummySyncOperation.h; sourceTree = "<group>"; };
 		7060215D152D400D0087A4DC /* DummySyncOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DummySyncOperation.m; sourceTree = "<group>"; };
 		7060218E152D67370087A4DC /* SyncStoreManagerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SyncStoreManagerSpec.m; path = kiwi/SyncStoreManagerSpec.m; sourceTree = "<group>"; };
+		706021BB152E68E10087A4DC /* Conflict.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Conflict.h; path = sync_storage/Conflict.h; sourceTree = "<group>"; };
+		706021BC152E68E10087A4DC /* Conflict.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Conflict.m; path = sync_storage/Conflict.m; sourceTree = "<group>"; };
 		70777F1915238BD3007F5C87 /* offline_sync_blog_3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = offline_sync_blog_3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70777F1D15238BD3007F5C87 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		70777F1F15238BD3007F5C87 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -231,6 +234,8 @@
 				7060214C152D0F5F0087A4DC /* SyncOperation.h */,
 				7060214D152D0F5F0087A4DC /* SyncOperation.m */,
 				70602150152D171C0087A4DC /* keys.h */,
+				706021BB152E68E10087A4DC /* Conflict.h */,
+				706021BC152E68E10087A4DC /* Conflict.m */,
 			);
 			name = sync_storage;
 			sourceTree = "<group>";
@@ -397,6 +402,7 @@
 				70777FB61524E0AE007F5C87 /* SyncObject.m in Sources */,
 				7060214E152D0F5F0087A4DC /* SyncOperation.m in Sources */,
 				70602157152D37140087A4DC /* DependencyModule.m in Sources */,
+				706021BD152E68E20087A4DC /* Conflict.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
