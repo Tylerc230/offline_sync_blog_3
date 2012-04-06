@@ -90,7 +90,7 @@ objection_register(SyncOperation)
 	
 	NSArray *conflictedEntities = [responseObject objectForKey:kConflictedEntitiesKey];
 	[self markConflictedAndNotify:conflictedEntities];
-	[[NSManagedObjectContext MR_contextForCurrentThread] save];
+	[[NSManagedObjectContext MR_contextForCurrentThread] MR_save];
 	[self completeOperation];
 	
 

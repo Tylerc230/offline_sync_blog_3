@@ -27,7 +27,7 @@
 + (NSDictionary *)findAllByGUID:(NSArray *)guids
 {
 	NSPredicate *guidsPredicate = [NSPredicate predicateWithFormat:@"guid IN %@", guids];
-	NSArray *managedObjects = [self findAllWithPredicate:guidsPredicate];
+	NSArray *managedObjects = [self MR_findAllWithPredicate:guidsPredicate];
 	return [self keyByGUID:managedObjects];
 }
 
@@ -35,18 +35,18 @@
 {
 	NSPredicate * unconflictedGuidsPredicate = [NSPredicate predicateWithFormat:@"guid IN %@ AND syncStatus != %@",
 												guids, [NSNumber numberWithInt:SOConflicted]];
-	NSArray *managedObjects = [self findAllWithPredicate:unconflictedGuidsPredicate];
+	NSArray *managedObjects = [self MR_findAllWithPredicate:unconflictedGuidsPredicate];
 	return [self keyByGUID: managedObjects];
 }
 
 + (NSArray *)findUnsyncedObjects
 {
-	return [SyncObject findByAttribute:kSyncStatusKey withValue:[NSNumber numberWithInt:SONeedsSync]];
+	return [SyncObject MR_findByAttribute:kSyncStatusKey withValue:[NSNumber numberWithInt:SONeedsSync]];
 }
 
 + (NSArray *)findConflictedObjects
 {
-	return [SyncObject findByAttribute:kSyncStatusKey withValue:[NSNumber numberWithInt:SOConflicted]];
+	return [SyncObject MR_findByAttribute:kSyncStatusKey withValue:[NSNumber numberWithInt:SOConflicted]];
 }
 
 + (NSArray *)jsonRepresentationOfObjects:(NSArray *)objects
@@ -60,7 +60,7 @@
 
 + (NSTimeInterval)lastSyncTime
 {
-	NSArray *allObjects = [SyncObject findAllSortedBy:kLastModifiedKey ascending:NO];
+	NSArray *allObjects = [SyncObject MR_findAllSortedBy:kLastModifiedKey ascending:NO];
 	if (allObjects.count == 0) {
 		return 0;
 	}
