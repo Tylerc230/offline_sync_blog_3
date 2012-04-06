@@ -28,7 +28,6 @@
 		70777F4615238BD3007F5C87 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 70777F4415238BD3007F5C87 /* InfoPlist.strings */; };
 		70777F4915238BD3007F5C87 /* offline_sync_blog_3Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 70777F4815238BD3007F5C87 /* offline_sync_blog_3Tests.m */; };
 		70777F911523BF9D007F5C87 /* SyncStorageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 70777F901523BF9D007F5C87 /* SyncStorageManager.m */; };
-		70777FA21523CB06007F5C87 /* offline_sync_blog_3.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 70777F3115238BD3007F5C87 /* offline_sync_blog_3.xcdatamodeld */; };
 		70777FA91524DFC4007F5C87 /* ExampleSyncManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 70777FA81524DFC4007F5C87 /* ExampleSyncManager.m */; };
 		70777FB01524E097007F5C87 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 70777FAD1524E097007F5C87 /* Comment.m */; };
 		70777FB21524E097007F5C87 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 70777FAF1524E097007F5C87 /* Post.m */; };
@@ -411,7 +410,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				70777F4915238BD3007F5C87 /* offline_sync_blog_3Tests.m in Sources */,
-				70777FA21523CB06007F5C87 /* offline_sync_blog_3.xcdatamodeld in Sources */,
 				7060215B152D3FDE0087A4DC /* TestModule.m in Sources */,
 				7060215E152D400D0087A4DC /* DummySyncOperation.m in Sources */,
 				7060218F152D67370087A4DC /* SyncStoreManagerSpec.m in Sources */,

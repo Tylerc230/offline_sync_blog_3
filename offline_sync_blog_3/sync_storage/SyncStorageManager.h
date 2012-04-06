@@ -31,6 +31,11 @@ typedef void(^ConflictResolutionBlock)(NSArray *);
 - (void)resolveExistingConflicts;
 
 /**
+ * Shuts down the CoreData stack
+ */
+- (void)cleanup;
+
+/**
  * baseURL can be set at any time. Subsequent syncs will be done with the new url.
  */
 @property (nonatomic, strong) NSString *baseURL;
