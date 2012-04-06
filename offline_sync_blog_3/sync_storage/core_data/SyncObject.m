@@ -24,10 +24,10 @@
 	return (__bridge_transfer NSString *)string;
 }
 
-+ (NSDictionary *)findAllByGUID:(NSArray *)guids
++ (NSDictionary *)findAllByGUID:(NSArray *)guids inContext:(NSManagedObjectContext *)managedObjectContext
 {
 	NSPredicate *guidsPredicate = [NSPredicate predicateWithFormat:@"guid IN %@", guids];
-	NSArray *managedObjects = [self MR_findAllWithPredicate:guidsPredicate];
+	NSArray *managedObjects = [self MR_findAllWithPredicate:guidsPredicate inContext:managedObjectContext];
 	return [self keyByGUID:managedObjects];
 }
 

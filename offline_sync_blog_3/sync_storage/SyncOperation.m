@@ -19,6 +19,7 @@
 {
 	BOOL finished_;
 	BOOL executing_;
+	NSManagedObjectContext *managedObjectContext_;
 }
 @property (nonatomic, strong) AFHTTPClient *httpClient;
 @end
@@ -45,7 +46,7 @@ objection_register(SyncOperation)
 	[self willChangeValueForKey:kExecutingKey];
 	executing_ = YES;
 	[self didChangeValueForKey:kExecutingKey];
-	
+	managedObjectContext_ = [NSManagedObjectContext MR_context];
 	NSArray *modifiedEntities = [SyncObject findUnsyncedObjects];
 	NSArray *jsonRepresentation = [SyncObject jsonRepresentationOfObjects:modifiedEntities];
 	NSTimeInterval lastSyncTime = [SyncObject lastSyncTime];
@@ -90,7 +91,7 @@ objection_register(SyncOperation)
 	
 	NSArray *conflictedEntities = [responseObject objectForKey:kConflictedEntitiesKey];
 	[self markConflictedAndNotify:conflictedEntities];
-	[[NSManagedObjectContext MR_contextForCurrentThread] MR_save];
+	[managedObjectContext_ MR_save];
 	[self completeOperation];
 	
 
@@ -129,14 +130,14 @@ objection_register(SyncOperation)
 - (SyncObject *)createManagedObject:(NSString *)className
 {
 	Class managedObjectClass = NSClassFromString(className);
-	return [managedObjectClass MR_createEntity];
+	return [managedObjectClass MR_createInContext:managedObjectContext_];
 }
 
 #pragma mark - update
 - (void)updateWithJSON:(NSArray *)json
 {	
 	NSArray *allGuids = [SyncObject collectGUIDS:json];
-	NSDictionary *managedObjectsByGuid = [SyncObject findAllByGUID:allGuids];
+	NSDictionary *managedObjectsByGuid = [SyncObject findAllByGUID:allGuids inContext:managedObjectContext_];
 	
 	for (NSDictionary * jsonObject in json) 
 	{

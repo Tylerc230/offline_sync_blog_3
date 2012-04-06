@@ -31,7 +31,7 @@ typedef enum {
  * @param guids an array of guid strings of format 8-4-4-4-12
  * @returns all SyncObjects whos guids are found in _guids_
  */
-+ (NSDictionary *)findAllByGUID:(NSArray *)guids;
++ (NSDictionary *)findAllByGUID:(NSArray *)guids inContext:(NSManagedObjectContext *)managedObjectContext;
 + (NSArray *)findUnsyncedObjects;
 + (NSDictionary *)findUnconflictedByGUID:(NSArray *)guids;
 
