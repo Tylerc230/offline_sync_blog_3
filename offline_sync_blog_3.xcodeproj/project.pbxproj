@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7039D177153533D400ACA30B /* SyncObjectSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 7039D176153533D400ACA30B /* SyncObjectSpec.m */; };
 		7060214E152D0F5F0087A4DC /* SyncOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7060214D152D0F5F0087A4DC /* SyncOperation.m */; };
 		70602157152D37140087A4DC /* DependencyModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 70602156152D37140087A4DC /* DependencyModule.m */; };
 		7060215B152D3FDE0087A4DC /* TestModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 7060215A152D3FDE0087A4DC /* TestModule.m */; };
@@ -47,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		419E5BCA83464321ABC86C71 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7039D176153533D400ACA30B /* SyncObjectSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SyncObjectSpec.m; path = kiwi/SyncObjectSpec.m; sourceTree = "<group>"; };
 		7060214C152D0F5F0087A4DC /* SyncOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SyncOperation.h; path = sync_storage/SyncOperation.h; sourceTree = "<group>"; };
 		7060214D152D0F5F0087A4DC /* SyncOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SyncOperation.m; path = sync_storage/SyncOperation.m; sourceTree = "<group>"; };
 		70602150152D171C0087A4DC /* keys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = keys.h; path = sync_storage/keys.h; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				7060218E152D67370087A4DC /* SyncStoreManagerSpec.m */,
+				7039D176153533D400ACA30B /* SyncObjectSpec.m */,
 			);
 			name = kiwi;
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 				7060215B152D3FDE0087A4DC /* TestModule.m in Sources */,
 				7060215E152D400D0087A4DC /* DummySyncOperation.m in Sources */,
 				7060218F152D67370087A4DC /* SyncStoreManagerSpec.m in Sources */,
+				7039D177153533D400ACA30B /* SyncObjectSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
