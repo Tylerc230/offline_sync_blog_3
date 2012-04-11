@@ -114,6 +114,7 @@ describe(@"SyncStorageManager", ^{
 		[syncStorageManager syncNow];
 		
 		[[expectFutureValue(serverConflicts) shouldEventually] beNonNil];
+		[[theValue(serverConflicts.count) should] equal:theValue(1)];
 		[TestHelpers endTest:syncStorageManager];
 		
 	});
