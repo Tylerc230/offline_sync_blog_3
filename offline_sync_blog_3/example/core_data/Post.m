@@ -31,4 +31,12 @@
 	return object;
 }
 
+- (NSMutableDictionary *)diff:(Post *)other
+{
+	NSMutableDictionary *diff = [super diff:other];
+	[self setKey:kTitleKey inDict:diff ifDiffers:other];
+	[self setKey:kBodyKey inDict:diff ifDiffers:other];
+	return diff;
+}
+
 @end

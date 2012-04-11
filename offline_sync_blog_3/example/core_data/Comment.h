@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 #import "SyncObject.h"
+#define kCommentKey @"comment"
 
 @class Post;
 

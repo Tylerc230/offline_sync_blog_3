@@ -113,6 +113,30 @@
 	return object;
 }
 
+- (NSMutableDictionary *)diff:(SyncObject *)other
+{
+	NSMutableDictionary *diff = [[NSMutableDictionary alloc] initWithCapacity:30];
+	return diff;
+}
+
+- (void)setKey:(NSString *)key inDict:(NSMutableDictionary *)dict ifDiffers:(NSObject *)other
+{
+	NSObject *thisValue = [self valueForKey:key];
+	NSObject *otherValue = [other valueForKey:key];
+	if (![thisValue isEqual:otherValue]) {
+		[SyncObject setKey:key withValues:thisValue otherValue:otherValue inDict:dict];
+	}
+	
+}
+		 
++ (void)setKey:(NSString *)key withValues:(NSObject *)thisValue otherValue:(NSObject *)otherValue inDict:(NSMutableDictionary *)dict
+{
+	NSDictionary *attributeDict = [NSDictionary dictionaryWithObjectsAndKeys:
+								   thisValue, kReceiverKey,
+								   otherValue, kOtherKey, nil];
+	[dict setObject:attributeDict forKey:key];
+}
+
 
 
 @end

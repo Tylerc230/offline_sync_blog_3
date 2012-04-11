@@ -15,4 +15,11 @@
 @dynamic post;
 @dynamic comment;
 
+- (NSMutableDictionary *)diff:(Comment *)other
+{
+	NSMutableDictionary *diff = [super diff:other];
+	[self setKey:kCommentKey inDict:diff ifDiffers:other];
+	return diff;
+}
+
 @end

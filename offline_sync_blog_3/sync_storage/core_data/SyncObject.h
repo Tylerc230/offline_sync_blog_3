@@ -13,6 +13,8 @@
 #define kSyncStatusKey @"syncStatus"
 #define kLastModifiedKey @"lastModified"
 #define kIsGloballyDeletedKey @"isGloballyDeleted"
+#define kReceiverKey @"receiver"
+#define kOtherKey @"other"
 
 @interface SyncObject : NSManagedObject
 
@@ -29,7 +31,8 @@ typedef enum {
 
 /**
  * @param guids an array of guid strings of format 8-4-4-4-12
- * @returns all SyncObjects whos guids are found in _guids_
+ * @param the context you would like to query
+ * @returns all SyncObjects whos guids are found in _guids_ keyed by guid
  */
 + (NSDictionary *)findAllByGUID:(NSArray *)guids inContext:(NSManagedObjectContext *)managedObjectContext;
 + (NSArray *)findUnsyncedObjects;
@@ -52,5 +55,17 @@ typedef enum {
 - (void)updateWithJSON:(NSDictionary *)json;
 - (void)deleteGlobalEntity;
 - (NSMutableDictionary *)toJson;
+/**
+ * This method is meant to be overridden by all subclasses. This method will compute
+ * the differences between 2 objects of the same type; returning a hash of the differences.
+ * This method should be used to resolve conflicts from the server. Comparisons are done with
+ * the equal: methods. The format of the returned hash is:
+ * 'attributeName' => 'other' => <value>
+ *				 => 'receiver' => <value>
+ * @param other an object of the same type which this object will be compared with
+ * @return a hash containing keys of all attributes who's values differ from that of other
+ */
+- (NSMutableDictionary *)diff:(SyncObject *)other;
 
+- (void)setKey:(NSString *)key inDict:(NSMutableDictionary *)dict ifDiffers:(NSObject *)other;
 @end
