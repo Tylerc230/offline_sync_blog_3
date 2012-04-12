@@ -21,8 +21,16 @@
 	return self;
 }
 
-- (void)resolve
+- (NSDictionary *)diffs
 {
-	
+	return [self.clientVersion diff:self.serverVersion];
+}
+
+- (void)resolve:(NSDictionary *)resolution
+{
+	[self.clientVersion updateWithJSON:resolution];
+	self.clientVersion.lastModified = self.serverVersion.lastModified;
+	self.clientVersion.syncStatus = SONeedsSync;
+	[self.serverVersion MR_deleteEntity];
 }
 @end

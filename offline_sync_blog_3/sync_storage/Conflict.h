@@ -14,5 +14,6 @@
 @property (nonatomic, strong) SyncObject *serverVersion;
 
 - (id)initWithLocalVersion:(SyncObject *)localVersion serverVersion:(SyncObject *)serverVersion;
-- (void)resolve;
+- (NSDictionary *)diffs;
+- (void)resolve:(NSDictionary *)resolution;
 @end
