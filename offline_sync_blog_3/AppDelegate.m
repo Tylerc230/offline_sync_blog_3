@@ -7,10 +7,11 @@
 //
 
 #import "AppDelegate.h"
-#import "ExampleSyncManager.h"
 #import "Post.h"
 #import "Objection.h"
 #import "DependencyModule.h"
+#import "SyncStorageManager.h"
+
 @implementation AppDelegate
 
 @synthesize window = _window;
@@ -26,9 +27,9 @@
 	[JSObjection setGlobalInjector:injector];
 	
 	
-//	ExampleSyncManager *syncManager = [[ExampleSyncManager alloc] initWithBaseURL:@"http://www.casselmanconsulting.com"];
-//	Post *newPost = [Post MR_createEntity];
-//	[syncManager syncNow];
+	SyncStorageManager *syncManager = [[SyncStorageManager alloc] initWithBaseURL:@"http://localhost:3000"];
+	[Post MR_createEntity];
+	[syncManager syncNow];
 	
     return YES;
 }
