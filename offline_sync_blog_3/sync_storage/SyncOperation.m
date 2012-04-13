@@ -9,6 +9,7 @@
 #import "SyncOperation.h"
 #import "SyncObject.h"
 #import "AFHTTPClient.h"
+#import "AFJSONRequestOperation.h"
 #import "keys.h"
 #import "Objection.h"
 
@@ -43,6 +44,8 @@ objection_requires(@"baseURL")
 {
 	self.httpClient = [AFHTTPClient clientWithBaseURL:[NSURL URLWithString:baseURL]];
 	self.httpClient.parameterEncoding = AFJSONParameterEncoding;
+	[self.httpClient setDefaultHeader:@"Accept" value:@"application/json"];
+	[self.httpClient registerHTTPOperationClass:[AFJSONRequestOperation class]];
 }
 
 - (void)main
@@ -88,7 +91,7 @@ objection_requires(@"baseURL")
 }
 
 #pragma mark - sync response
-- (void)syncSucceededWithResponse:(id) responseObject
+- (void)syncSucceededWithResponse:(NSDictionary *) responseObject
 {
 	NSArray *modifiedEntities = [responseObject objectForKey:kModifiedEntitiesKey];
 	[self updateWithJSON:modifiedEntities];
@@ -97,8 +100,6 @@ objection_requires(@"baseURL")
 	[self markConflictedAndNotify:conflictedEntities];
 	[managedObjectContext_ MR_save];
 	[self completeOperation];
-	
-
 }
 
 - (void)syncFailedWithResponse:(NSError *)error
