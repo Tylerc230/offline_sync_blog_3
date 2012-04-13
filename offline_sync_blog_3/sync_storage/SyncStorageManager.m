@@ -55,7 +55,7 @@
 - (void)syncAllEntities
 {
 	SyncOperation *syncOp = [[JSObjection globalInjector] getObject:[SyncOperation class]];
-//	syncOp.baseURL = self.baseURL;
+	syncOp.baseURL = self.baseURL;
 	[syncOp setCompletionBlock:^{
 		[self performSelectorOnMainThread:@selector(syncComplete) withObject:nil waitUntilDone:NO];
 	}];

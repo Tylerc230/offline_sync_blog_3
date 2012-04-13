@@ -27,18 +27,22 @@
 
 @implementation SyncOperation
 objection_register(SyncOperation)
+objection_requires(@"baseURL")
 @synthesize httpClient;
-
-- (id)initWithBaseURL:(NSString *)baseURL
+@dynamic baseURL;
+- (id)init
 {
 	if (self = [super init]) {
 		executing_ = NO;
 		finished_ = NO;
-		self.httpClient = [AFHTTPClient clientWithBaseURL:[NSURL URLWithString:baseURL]];
-		self.httpClient.parameterEncoding = AFJSONParameterEncoding;
-
 	}
 	return self;
+}
+
+- (void)setBaseURL:(NSString *)baseURL
+{
+	self.httpClient = [AFHTTPClient clientWithBaseURL:[NSURL URLWithString:baseURL]];
+	self.httpClient.parameterEncoding = AFJSONParameterEncoding;
 }
 
 - (void)main

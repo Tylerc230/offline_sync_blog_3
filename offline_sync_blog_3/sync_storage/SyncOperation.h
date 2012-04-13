@@ -9,7 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface SyncOperation : NSOperation
-
-- (id)initWithBaseURL:(NSString *)baseURL;
-
+@property (nonatomic, strong) NSString *baseURL;
 @end
