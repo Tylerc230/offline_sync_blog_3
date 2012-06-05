@@ -1,6 +1,8 @@
 class SyncController < ApplicationController
   def sync
-    modifiedEntities = params[:modifiedEntities]
+    client_modified_entities = params[:modifiedEntities]
+    client_last_sync = params[:lastSyncTime]
+    SyncHelper.sy
     response = {}
     respond_to do |format|
           format.json { render :json => response}

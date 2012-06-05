@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(:version => 20120412234040) do
     t.datetime "updated_at"
   end
 
-  create_view "view_comments", "CREATE VIEW \"view_comments\" AS SELECT sync_objects.id, type,is_deleted,guid,created_at,updated_at,comment FROM sync_objects, comments WHERE sync_objects.id = comments.id", :force => true do |v|
+  create_view "view_comments", "SELECT sync_objects.id, type,is_deleted,guid,created_at,updated_at,comment FROM sync_objects, comments WHERE sync_objects.id = comments.id", :force => true do |v|
     v.column :id
     v.column :type
     v.column :is_deleted
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(:version => 20120412234040) do
     v.column :comment
   end
 
-  create_view "view_posts", "CREATE VIEW \"view_posts\" AS SELECT sync_objects.id, type,is_deleted,guid,created_at,updated_at,body,title FROM sync_objects, posts WHERE sync_objects.id = posts.id", :force => true do |v|
+  create_view "view_posts", "SELECT sync_objects.id, type,is_deleted,guid,created_at,updated_at,body,title FROM sync_objects, posts WHERE sync_objects.id = posts.id", :force => true do |v|
     v.column :id
     v.column :type
     v.column :is_deleted
