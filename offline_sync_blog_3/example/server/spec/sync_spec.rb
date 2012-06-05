@@ -18,4 +18,15 @@ describe "Sync" do
     SyncObject.all.should have(1).object
 
   end
+
+  it "should return all modified objects since date" do
+    modified_entity = FactoryGirl.create(:post, {:updated_at => 1.day.ago})
+    FactoryGirl.create(:post, {:updated_at => 2.day.ago})
+    response = SyncHelper.sync_entities [], 1.day.ago - 60
+    entities_modified_since_date = response[SyncHelper::MODIFIED_ENTITIES_KEY]
+
+    entities_modified_since_date.should have(1).modified_entity
+    entities_modified_since_date.last.should eq(modified_entity)
+
+  end
 end

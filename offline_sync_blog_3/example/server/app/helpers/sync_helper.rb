@@ -16,7 +16,6 @@ module SyncHelper
       klass = entity.keys.last
       attributes = entity[klass]
       guid = attributes[GUID_KEY]
-      class_name = attributes[CLASS_NAME_KEY]
       updated_record = SyncObject.find_by_guid guid
       if updated_record.nil?
         updated_record = klass.to_s.capitalize.constantize.new
@@ -24,7 +23,6 @@ module SyncHelper
       updated_record.update_attributes attributes
       updated_record.save
     end
-
   end
 
 end
