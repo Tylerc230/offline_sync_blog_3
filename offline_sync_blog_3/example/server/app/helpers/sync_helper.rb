@@ -1,10 +1,11 @@
 module SyncHelper
-  def self.sync_request client_modified_entities, client_last_sync
-    #server_modified_entities = SyncObject.
-
+  MODIFIED_ENTITIES_KEY = 'modifiedEntities'
+  LAST_SYNC_TIME_KEY = 'lastSyncTime'
+  def self.sync_entities client_modified_entities, client_last_sync
+    response = {}
+    server_modified_entities = SyncObject.modified_since client_last_sync
+    response[MODIFIED_ENTITIES_KEY] = server_modified_entities
+    response
   end
 
-  def updates_since_time timestamp
-
-  end
 end
