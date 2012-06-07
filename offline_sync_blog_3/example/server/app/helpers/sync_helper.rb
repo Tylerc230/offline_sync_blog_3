@@ -4,6 +4,7 @@ module SyncHelper
   LAST_SYNC_TIME_KEY = :updated_at
   GUID_KEY = :guid
   CLASS_NAME_KEY = :classname
+
   def self.sync_entities client_modified_entities, client_last_sync
     conflicts = self.sync_client_modifications client_modified_entities
     response = {}
@@ -18,6 +19,7 @@ module SyncHelper
       klass = entity.keys.last
       attributes = entity[klass]
       guid = attributes[GUID_KEY]
+      client_last_updated = attributes[LAST_SYNC_TIME_KEY]
       updated_record = SyncObject.find_by_guid guid
       if updated_record.nil?
         updated_record = klass.to_s.capitalize.constantize.new attributes
@@ -31,10 +33,11 @@ module SyncHelper
       end
       updated_record.save
     end
+    conflicts
   end
 
   def self.detect_conflict client_last_updated_at, server_entity
-    client_last_updated_at != server_entity.modified_at
+    client_last_updated_at != server_entity.updated_at
   end
 
   def self.modifications_since_date client_last_sync

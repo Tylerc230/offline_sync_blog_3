@@ -1,6 +1,7 @@
 require "rspec"
 require "spec_helper"
 
+@shared_guid = "60357A99-9CCD-4D1A-B83A-162E533F915F"
 describe "Sync" do
 
   it "should add new elements from the client" do
@@ -22,12 +23,21 @@ describe "Sync" do
   end
 
   it "should detect conflicts when they occur" do
-    shared_guid = "60357A99-9CCD-4D1A-B83A-162E533F915F",
-    Factory(:post, {:updated_at => 1.day.ago, :guid => shared_guid})
-    client_entities = [entity_with_guid(shared_guid)]
+    Factory(:post, {:updated_at => 1.day.ago, :guid => @shared_guid})
+    client_entities = [entity_with_guid(@shared_guid)]
     response = SyncHelper.sync_entities client_entities, 0
     conflicted_entities = response[SyncHelper::CONFLICTED_ENTITIES_KEY]
     conflicted_entities.should have(1).conflicted_entity
+  end
+
+  it "should not detect any conflicts if they are not present" do
+    Factory(:post, {:updated_at => 12345, :guid => @shared_guid})
+    client_entities = [entity_with_guid(@shared_guid)]
+    response = SyncHelper.sync_entities client_entities, 0
+    conflicted_entities = response[SyncHelper::CONFLICTED_ENTITIES_KEY]
+    conflicted_entities.should have(0).conflicted_entities
+
+
   end
 
 end
@@ -38,7 +48,7 @@ def entity_with_guid guid
        :body => "Post Body",
        :guid => guid,
        :is_deleted => "0",
-       :updated_at => "1338872968.706092",
+       :updated_at => 12345,
        :title => "post title",
 
      }}
