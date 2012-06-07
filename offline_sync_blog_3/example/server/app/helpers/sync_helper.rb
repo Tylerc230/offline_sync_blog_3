@@ -19,25 +19,25 @@ module SyncHelper
       klass = entity.keys.last
       attributes = entity[klass]
       guid = attributes[GUID_KEY]
-      client_last_updated = attributes[LAST_SYNC_TIME_KEY]
-      updated_record = SyncObject.find_by_guid guid
-      if updated_record.nil?
-        updated_record = klass.to_s.capitalize.constantize.new attributes
+      client_modification_timestamp = attributes[LAST_SYNC_TIME_KEY]
+      server_record = SyncObject.find_by_guid guid
+      if server_record.nil?
+        server_record = klass.to_s.capitalize.constantize.new attributes
       else
-        conflict_detected = self.detect_conflict client_last_updated, updated_record
-        if conflict_detected
-          conflicts << updated_record
+        conflicted = self.conflicted? client_modification_timestamp, server_record
+        if conflicted
+          conflicts << server_record
         else
-          updated_record.update_attributes attributes
+          server_record.update_attributes attributes
         end
       end
-      updated_record.save
+      server_record.save
     end
     conflicts
   end
 
-  def self.detect_conflict client_last_updated_at, server_entity
-    client_last_updated_at != server_entity.updated_at
+  def self.conflicted? client_modification_timestamp, server_entity
+    client_modification_timestamp != server_entity.updated_at
   end
 
   def self.modifications_since_date client_last_sync
