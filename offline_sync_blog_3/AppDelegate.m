@@ -17,19 +17,9 @@
 @synthesize window = _window;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
-	
 	
 	JSObjectionInjector *injector = [JSObjection createInjector:[[DependencyModule alloc] init]];
 	[JSObjection setGlobalInjector:injector];
-	
-	
-	SyncStorageManager *syncManager = [[SyncStorageManager alloc] initWithBaseURL:@"http://localhost:3000"];
-	[Post MR_createEntity];
-	[syncManager syncNow];
 	
     return YES;
 }

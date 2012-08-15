@@ -32,6 +32,8 @@
 		70777FB01524E097007F5C87 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 70777FAD1524E097007F5C87 /* Comment.m */; };
 		70777FB21524E097007F5C87 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 70777FAF1524E097007F5C87 /* Post.m */; };
 		70777FB61524E0AE007F5C87 /* SyncObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 70777FB51524E0AE007F5C87 /* SyncObject.m */; };
+		70E7CA9F15DB6EF800D78CBE /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70E7CA9E15DB6EF800D78CBE /* Storyboard.storyboard */; };
+		70E7CAA215DB6F6000D78CBE /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E7CAA115DB6F6000D78CBE /* MainViewController.m */; };
 		A2E8D1A7C4E14DD499A6FC58 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 419E5BCA83464321ABC86C71 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +88,9 @@
 		70777FAF1524E097007F5C87 /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Post.m; path = example/core_data/Post.m; sourceTree = "<group>"; };
 		70777FB41524E0AE007F5C87 /* SyncObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SyncObject.h; path = sync_storage/core_data/SyncObject.h; sourceTree = "<group>"; };
 		70777FB51524E0AE007F5C87 /* SyncObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SyncObject.m; path = sync_storage/core_data/SyncObject.m; sourceTree = "<group>"; };
+		70E7CA9E15DB6EF800D78CBE /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Storyboard.storyboard; path = example/Storyboard.storyboard; sourceTree = "<group>"; };
+		70E7CAA015DB6F6000D78CBE /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = example/MainViewController.h; sourceTree = "<group>"; };
+		70E7CAA115DB6F6000D78CBE /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = example/MainViewController.m; sourceTree = "<group>"; };
 		973FA2A9F5FC4024BF85C4BD /* Pods.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -252,6 +257,9 @@
 			isa = PBXGroup;
 			children = (
 				70777FAB1524DFDD007F5C87 /* core_data */,
+				70E7CA9E15DB6EF800D78CBE /* Storyboard.storyboard */,
+				70E7CAA015DB6F6000D78CBE /* MainViewController.h */,
+				70E7CAA115DB6F6000D78CBE /* MainViewController.m */,
 			);
 			name = example;
 			sourceTree = "<group>";
@@ -341,6 +349,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				70777F2A15238BD3007F5C87 /* InfoPlist.strings in Resources */,
+				70E7CA9F15DB6EF800D78CBE /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,6 +408,7 @@
 				7060214E152D0F5F0087A4DC /* SyncOperation.m in Sources */,
 				70602157152D37140087A4DC /* DependencyModule.m in Sources */,
 				706021BD152E68E20087A4DC /* Conflict.m in Sources */,
+				70E7CAA215DB6F6000D78CBE /* MainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

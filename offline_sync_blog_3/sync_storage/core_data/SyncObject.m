@@ -107,9 +107,9 @@
 - (NSMutableDictionary *)toJson
 {
 	NSMutableDictionary *object = [NSMutableDictionary dictionaryWithCapacity:20];
-	[object setObject:self.guid forKey:kGUIDKey];
-	[object setObject:[NSNumber numberWithDouble:self.lastModified] forKey:kLastModifiedKey];
-	[object setObject:[NSNumber numberWithBool:self.isGloballyDeleted] forKey:kIsGloballyDeletedKey];
+	[object setObject:self.guid forKey:kJSONGUIDKey];
+	[object setObject:[NSNumber numberWithDouble:self.lastModified] forKey:kJSONLastModifiedKey];
+	[object setObject:[NSNumber numberWithBool:self.isGloballyDeleted] forKey:kJSONIsGloballyDeletedKey];
 	return object;
 }
 

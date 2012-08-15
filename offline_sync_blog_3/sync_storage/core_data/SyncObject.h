@@ -16,6 +16,12 @@
 #define kReceiverKey @"receiver"
 #define kOtherKey @"other"
 
+#define kJSONGUIDKey @"guid"
+#define kJSONSyncStatusKey @"sync_status"
+#define kJSONLastModifiedKey @"updated_at"
+#define kJSONIsGloballyDeletedKey @"is_deleted"
+
+
 @interface SyncObject : NSManagedObject
 
 typedef enum {

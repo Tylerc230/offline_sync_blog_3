@@ -25,17 +25,17 @@
 
 - (NSMutableDictionary *)toJson
 {
-	NSMutableDictionary *object = [super toJson];
-	[object setObject:self.title forKey:kTitleKey];
-	[object setObject:self.body forKey:kBodyKey];
-	return object;
+	NSMutableDictionary *parentObject = [super toJson];
+	[parentObject setObject:self.title forKey:kJSONTitleKey];
+	[parentObject setObject:self.body forKey:kJSONBodyKey];
+	return [NSMutableDictionary dictionaryWithObjectsAndKeys:parentObject, kJSONPostKey, nil];
 }
 
 - (NSMutableDictionary *)diff:(Post *)other
 {
 	NSMutableDictionary *diff = [super diff:other];
-	[self setKey:kTitleKey inDict:diff ifDiffers:other];
-	[self setKey:kBodyKey inDict:diff ifDiffers:other];
+	[self setKey:kJSONTitleKey inDict:diff ifDiffers:other];
+	[self setKey:kJSONBodyKey inDict:diff ifDiffers:other];
 	return diff;
 }
 

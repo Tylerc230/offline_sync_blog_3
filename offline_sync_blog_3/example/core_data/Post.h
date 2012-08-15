@@ -10,8 +10,13 @@
 #import <CoreData/CoreData.h>
 #import "SyncObject.h"
 
+#define kPostKey @"post"
 #define kTitleKey @"title"
 #define kBodyKey @"body"
+
+#define kJSONPostKey @"post"
+#define kJSONTitleKey @"title"
+#define kJSONBodyKey @"body"
 
 
 @interface Post : SyncObject

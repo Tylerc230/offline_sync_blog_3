@@ -18,17 +18,14 @@ module SyncHelper
     client_modified_entities.each do |entity|
       klass = entity.keys.last
       attributes = entity[klass]
-      guid = attributes[GUID_KEY]
-      client_modification_timestamp = attributes[LAST_SYNC_TIME_KEY]
-      server_record = SyncObject.find_by_guid guid
-      if server_record.nil?
-        server_record = klass.to_s.capitalize.constantize.new attributes
-      else
+      server_record = klass.to_s.capitalize.constantize.new attributes
+      exists = SyncObject.exists? :guid => server_record.guid
+      if exists
+        server_record = SyncObject.find_by_guid server_record.guid
+        client_modification_timestamp = server_record.updated_at
         conflicted = self.conflicted? client_modification_timestamp, server_record
         if conflicted
           conflicts << server_record
-        else
-          server_record.update_attributes attributes
         end
       end
       server_record.save
