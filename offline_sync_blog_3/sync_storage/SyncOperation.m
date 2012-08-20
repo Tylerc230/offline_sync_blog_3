@@ -53,7 +53,7 @@ objection_requires(@"baseURL")
 	[self willChangeValueForKey:kExecutingKey];
 	executing_ = YES;
 	[self didChangeValueForKey:kExecutingKey];
-	managedObjectContext_ = [NSManagedObjectContext MR_context];
+	managedObjectContext_ = [NSManagedObjectContext MR_contextForCurrentThread];
 	NSArray *modifiedEntities = [SyncObject findUnsyncedObjects];
 	NSArray *jsonRepresentation = [SyncObject jsonRepresentationOfObjects:modifiedEntities];
 	NSTimeInterval lastSyncTime = [SyncObject lastSyncTime];
@@ -146,13 +146,14 @@ objection_requires(@"baseURL")
 	
 	for (NSDictionary * jsonObject in json) 
 	{
-		NSString * guid = [jsonObject objectForKey:kGUIDKey];
+        NSString *className = [[jsonObject allKeys] lastObject];
+        NSDictionary *attributes = [jsonObject valueForKey:className];
+		NSString * guid = [attributes objectForKey:kGUIDKey];
 		SyncObject * managedObject = [managedObjectsByGuid objectForKey:guid];
 		if (!managedObject) {
-			NSString * className = [jsonObject objectForKey:kClassNameKey];
-			managedObject = [self createManagedObject:className];
+			managedObject = [self createManagedObject:[className capitalizedString]];
 		}
-		[managedObject updateWithJSON:jsonObject];
+		[managedObject updateWithJSON:attributes];
 		managedObject.syncStatus = SOSynced;
 	}
 }

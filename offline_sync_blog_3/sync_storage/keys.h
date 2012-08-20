@@ -11,7 +11,7 @@
 
 #define kModifiedEntitiesKey @"modified_entities"
 #define kConflictedEntitiesKey @"conflictedEntities"
-#define kLastSyncTimeKey @"lastSyncTime"
+#define kLastSyncTimeKey @"last_sync_time"
 #define kClassNameKey @"className"
 
 

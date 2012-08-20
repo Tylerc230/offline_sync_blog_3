@@ -1,14 +1,14 @@
 module SyncHelper
   MODIFIED_ENTITIES_KEY = :modified_entities
   CONFLICTED_ENTITIES_KEY = :conflicted_entities
-  LAST_SYNC_TIME_KEY = :updated_at
+  LAST_SYNC_TIME_KEY = :last_sync_time
   GUID_KEY = :guid
   CLASS_NAME_KEY = :classname
 
   def self.sync_entities client_modified_entities, client_last_sync
     conflicts = self.sync_client_modifications client_modified_entities
     response = {}
-    response[MODIFIED_ENTITIES_KEY] = self.modifications_since_date client_last_sync
+    response[MODIFIED_ENTITIES_KEY] = SyncObject.modified_since client_last_sync
     response[CONFLICTED_ENTITIES_KEY] = conflicts
     response
   end
@@ -35,10 +35,6 @@ module SyncHelper
 
   def self.conflicted? client_modification_timestamp, server_entity
     client_modification_timestamp != server_entity.updated_at
-  end
-
-  def self.modifications_since_date client_last_sync
-    return SyncObject.modified_since client_last_sync
   end
 
 end

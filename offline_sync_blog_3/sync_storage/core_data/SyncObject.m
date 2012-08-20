@@ -79,8 +79,9 @@
 + (NSArray *)collectGUIDS:(NSArray *)entities
 {
 	NSMutableArray * guids = [NSMutableArray arrayWithCapacity:entities.count];
-	for (id object in entities) {
-		[guids addObject:[object valueForKey:kGUIDKey]];
+	for (NSDictionary* object in entities) {
+        NSDictionary *attributes = [[object allValues] lastObject];
+		[guids addObject:[attributes valueForKey:kGUIDKey]];
 	}
 	return guids;
 
@@ -88,9 +89,9 @@
 
 - (void)updateWithJSON:(NSDictionary *)jsonObject
 {
-	self.guid = [jsonObject objectForKey:kGUIDKey];
-	self.lastModified = [[jsonObject objectForKey:kLastModifiedKey] doubleValue];
-	self.isGloballyDeleted = [[jsonObject objectForKey:kIsGloballyDeletedKey] boolValue];
+	self.guid = [jsonObject objectForKey:kJSONGUIDKey];
+	self.lastModified = [[jsonObject objectForKey:kJSONLastModifiedKey] doubleValue];
+	self.isGloballyDeleted = [[jsonObject objectForKey:kJSONIsGloballyDeletedKey] boolValue];
 }
 
 - (void)awakeFromInsert

@@ -1,5 +1,5 @@
 //
-//  MainViewController.h
+//  PostViewController.h
 //  offline_sync_blog_3
 //
 //  Created by Tyler Casselman on 8/14/12.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MainViewController : UITableViewController <NSFetchedResultsControllerDelegate>
+@interface PostViewController : UIViewController
 
 @end
