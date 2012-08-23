@@ -81,13 +81,17 @@ objection_requires(@"baseURL")
 
 - (void)syncPayload:(NSDictionary *)payload
 {
-	[self.httpClient postPath:@"/sync" parameters:payload 
-					  success:^(AFHTTPRequestOperation *op, id responseObject) {
-						  [self syncSucceededWithResponse:responseObject];
-					  }
-					  failure:^(AFHTTPRequestOperation *op, NSError *error) {
-						  [self syncFailedWithResponse:error];
+	NSURLRequest *request = [self.httpClient requestWithMethod:@"POST" path:@"/sync" parameters:payload];
+	AFHTTPRequestOperation *operation = [self.httpClient HTTPRequestOperationWithRequest:request
+                                                                      success:^(AFHTTPRequestOperation *op, id responseObject) {
+                                                                          [self syncSucceededWithResponse:responseObject];
+    }
+                                                                      failure:^(AFHTTPRequestOperation *op, NSError *error) {
+                                                                          [self syncFailedWithResponse:error];
 					  }];
+    operation.successCallbackQueue = dispatch_get_current_queue();
+    operation.failureCallbackQueue = dispatch_get_current_queue();
+    [self.httpClient enqueueHTTPRequestOperation:operation];
 }
 
 #pragma mark - sync response
