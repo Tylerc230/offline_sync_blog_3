@@ -67,7 +67,7 @@
                         </prototypes>
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="qe5-Qa-KbA">
-                        <barButtonItem key="rightBarButtonItem" title="Sync" id="R0P-95-7bi">
+                        <barButtonItem key="leftBarButtonItem" title="Sync" id="R0P-95-7bi">
                             <connections>
                                 <action selector="syncTapped:" destination="7zT-9k-YT7" id="iHC-yU-n7z"/>
                             </connections>

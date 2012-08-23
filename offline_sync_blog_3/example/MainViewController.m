@@ -23,6 +23,8 @@
     if (self) {
         self.syncManager = [[SyncStorageManager alloc] initWithBaseURL:@"http://localhost:3000"];
         NSFetchRequest * request = [NSFetchRequest fetchRequestWithEntityName:@"Post"];
+        NSPredicate * predicate = [NSPredicate predicateWithFormat:@"isGloballyDeleted == NO"];
+        request.predicate = predicate;
         request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:kLastModifiedKey ascending:YES]];
         self.fetchController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
                                                                    managedObjectContext:[NSManagedObjectContext MR_contextForCurrentThread]
@@ -37,6 +39,12 @@
     return self;
 }
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
 - (IBAction)syncTapped:(id)sender
 {
 	[self.syncManager syncNow];
@@ -47,6 +55,8 @@
     [Post MR_createEntity];
     [[NSManagedObjectContext MR_contextForCurrentThread] MR_save];
 }
+
+#pragma mark - NSFetchedResultsController delegate methods
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
     // The fetch controller is about to start sending change notifications, so prepare the table view for updates.
@@ -101,6 +111,8 @@
     // The fetch controller has sent all current change notifications, so tell the table view to process all updates.
     [self.tableView endUpdates];
 }
+
+#pragma mark - UITableView delegate/source methods
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.fetchController.fetchedObjects.count;
@@ -111,6 +123,21 @@
     SyncCell * cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell"];
     [self configureCell:cell atIndexPath:indexPath];
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    SyncObject *editedObject = [self.fetchController objectAtIndexPath:indexPath];
+    switch (editingStyle) {
+        case UITableViewCellEditingStyleDelete:
+            editedObject.isGloballyDeleted = YES;
+            break;
+            
+        default:
+            break;
+    }
+    [[NSManagedObjectContext MR_contextForCurrentThread] MR_save];
+
 }
 
 - (void)configureCell:(SyncCell *)cell atIndexPath:(NSIndexPath *)indexPath
