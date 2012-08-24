@@ -7,7 +7,7 @@
 //
 
 #import "SyncStorageManager.h"
-#import "MagicalRecordHelpers.h"
+#import "MagicalRecord.h"
 #import "SyncOperation.h"
 #import "SyncObject.h"
 #import "Conflict.h"
@@ -24,7 +24,7 @@
 - (id)initWithBaseURL:(NSString *)aBaseURL
 {
 	if (self = [super init]) {
-		[MagicalRecordHelpers setupCoreDataStack];
+		[MagicalRecord setupCoreDataStack];
 		self.operationQueue = [[NSOperationQueue alloc] init];
 		self.baseURL = aBaseURL;
 	}
@@ -33,13 +33,13 @@
 
 - (void)cleanup
 {
-	[MagicalRecordHelpers cleanUp];
+	[MagicalRecord cleanUp];
 }
 
 #pragma mark - public methods
 - (void)syncNow
 {
-	[[NSManagedObjectContext MR_contextForCurrentThread] MR_save];
+	[[NSManagedObjectContext MR_contextForCurrentThread] MR_saveNestedContexts];
 	[self syncAllEntities];
 }
 
@@ -54,7 +54,7 @@
 #pragma mark - sync
 - (void)syncAllEntities
 {
-	SyncOperation *syncOp = [[JSObjection globalInjector] getObject:[SyncOperation class]];
+	SyncOperation *syncOp = [[JSObjection defaultInjector] getObject:[SyncOperation class]];
 	syncOp.baseURL = self.baseURL;
 	[syncOp setCompletionBlock:^{
 		[self performSelectorOnMainThread:@selector(syncComplete) withObject:nil waitUntilDone:NO];

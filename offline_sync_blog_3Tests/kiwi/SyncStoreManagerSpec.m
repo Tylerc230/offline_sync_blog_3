@@ -155,14 +155,14 @@ SPEC_END
 	
 	SyncStorageManager *syncStorageManager = [[SyncStorageManager alloc] initWithBaseURL:@"http://www.example.com"];
 	[SyncObject MR_truncateAll];
-	[[NSManagedObjectContext MR_contextForCurrentThread] MR_save];
+	[[NSManagedObjectContext MR_contextForCurrentThread] MR_saveNestedContexts];
 	return  syncStorageManager;
 }
 
 + (void)endTest:(SyncStorageManager *)manager
 {
 	[SyncObject MR_truncateAll];
-	[[NSManagedObjectContext MR_contextForCurrentThread] MR_save];
+	[[NSManagedObjectContext MR_contextForCurrentThread] MR_saveNestedContexts];
 	[manager cleanup];
 }
 

@@ -87,6 +87,8 @@ objection_requires(@"baseURL")
                                                                       failure:^(AFHTTPRequestOperation *op, NSError *error) {
                                                                           [self syncFailedWithResponse:error];
 					  }];
+    operation.successCallbackQueue = dispatch_get_current_queue();
+    operation.failureCallbackQueue = dispatch_get_current_queue();
     [self.httpClient enqueueHTTPRequestOperation:operation];
 }
 
@@ -98,7 +100,7 @@ objection_requires(@"baseURL")
 	
 	NSArray *conflictedEntities = [responseObject objectForKey:kConflictedEntitiesKey];
 	[self markConflictedAndNotify:conflictedEntities];
-	[[NSManagedObjectContext MR_contextForCurrentThread] MR_saveOnBackgroundThread];
+	[[NSManagedObjectContext MR_contextForCurrentThread] MR_saveNestedContexts];
     [self completeOperation];
 }
 

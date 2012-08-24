@@ -19,7 +19,7 @@
 {
 	
 	JSObjectionInjector *injector = [JSObjection createInjector:[[DependencyModule alloc] init]];
-	[JSObjection setGlobalInjector:injector];
+	[JSObjection setDefaultInjector:injector];
 	
     return YES;
 }

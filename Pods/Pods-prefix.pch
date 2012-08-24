@@ -2,5 +2,6 @@
 #import <UIKit/UIKit.h>
 #endif
 #ifdef __OBJC__
+#define MR_SHORTHAND
 #import "CoreData+MagicalRecord.h"
 #endif

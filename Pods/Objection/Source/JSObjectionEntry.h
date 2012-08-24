@@ -1,9 +1,9 @@
 #import <Foundation/Foundation.h>
 
 typedef enum {
-  JSObjectionInstantiationRuleNone = -1,
-  JSObjectionInstantiationRuleNormal,
-  JSObjectionInstantiationRuleSingleton  
+      JSObjectionInstantiationRuleNone = -1,
+      JSObjectionInstantiationRuleNormal,
+      JSObjectionInstantiationRuleSingleton  
 } JSObjectionInstantiationRule;
 
 
@@ -12,13 +12,13 @@ typedef enum {
 @protocol JSObjectionEntry<NSObject>
 @property (nonatomic, readonly) JSObjectionInstantiationRule lifeCycle;
 @property (nonatomic, assign) JSObjectionInjector *injector;
-- (id)extractObject;
+- (id)extractObject:(NSArray *)arguments;
 + (id)entryWithEntry:(JSObjectionEntry *)entry;
 @end
 
 @interface JSObjectionEntry : NSObject<JSObjectionEntry>
 {
-  id _injector;  
+    id _injector;  
 }
 
 @end

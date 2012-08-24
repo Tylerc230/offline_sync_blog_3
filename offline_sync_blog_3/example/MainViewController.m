@@ -53,7 +53,7 @@
 - (IBAction)newPostTapped:(id)sender
 {
     [Post MR_createEntity];
-    [[NSManagedObjectContext MR_contextForCurrentThread] MR_save];
+    [[NSManagedObjectContext MR_contextForCurrentThread] MR_saveNestedContexts];
 }
 
 #pragma mark - NSFetchedResultsController delegate methods
@@ -136,7 +136,7 @@
         default:
             break;
     }
-    [[NSManagedObjectContext MR_contextForCurrentThread] MR_save];
+    [[NSManagedObjectContext MR_contextForCurrentThread] MR_saveNestedContexts];
 
 }
 
