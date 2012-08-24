@@ -130,7 +130,7 @@
     SyncObject *editedObject = [self.fetchController objectAtIndexPath:indexPath];
     switch (editingStyle) {
         case UITableViewCellEditingStyleDelete:
-            editedObject.isGloballyDeleted = YES;
+            [editedObject deleteUnsynced];
             break;
             
         default:

@@ -59,8 +59,9 @@ typedef enum {
 + (NSTimeInterval)lastSyncTime;
 + (NSArray *)jsonRepresentationOfObjects:(NSArray *)objects;
 - (void)updateWithJSON:(NSDictionary *)json;
-- (void)deleteGlobalEntity;
 - (NSMutableDictionary *)toJson;
+
+- (void)deleteUnsynced;
 /**
  * This method is meant to be overridden by all subclasses. This method will compute
  * the differences between 2 objects of the same type; returning a hash of the differences.

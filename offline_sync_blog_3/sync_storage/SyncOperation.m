@@ -20,7 +20,6 @@
 {
 	BOOL finished_;
 	BOOL executing_;
-	NSManagedObjectContext *managedObjectContext_;
 }
 @property (nonatomic, strong) AFHTTPClient *httpClient;
 @end
@@ -53,7 +52,6 @@ objection_requires(@"baseURL")
 	[self willChangeValueForKey:kExecutingKey];
 	executing_ = YES;
 	[self didChangeValueForKey:kExecutingKey];
-	managedObjectContext_ = [NSManagedObjectContext MR_contextForCurrentThread];
 	NSArray *modifiedEntities = [SyncObject findUnsyncedObjects];
 	NSArray *jsonRepresentation = [SyncObject jsonRepresentationOfObjects:modifiedEntities];
 	NSTimeInterval lastSyncTime = [SyncObject lastSyncTime];
@@ -89,8 +87,6 @@ objection_requires(@"baseURL")
                                                                       failure:^(AFHTTPRequestOperation *op, NSError *error) {
                                                                           [self syncFailedWithResponse:error];
 					  }];
-    operation.successCallbackQueue = dispatch_get_current_queue();
-    operation.failureCallbackQueue = dispatch_get_current_queue();
     [self.httpClient enqueueHTTPRequestOperation:operation];
 }
 
@@ -102,8 +98,8 @@ objection_requires(@"baseURL")
 	
 	NSArray *conflictedEntities = [responseObject objectForKey:kConflictedEntitiesKey];
 	[self markConflictedAndNotify:conflictedEntities];
-	[managedObjectContext_ MR_save];
-	[self completeOperation];
+	[[NSManagedObjectContext MR_contextForCurrentThread] MR_saveOnBackgroundThread];
+    [self completeOperation];
 }
 
 - (void)syncFailedWithResponse:(NSError *)error
@@ -139,14 +135,14 @@ objection_requires(@"baseURL")
 - (SyncObject *)createManagedObject:(NSString *)className
 {
 	Class managedObjectClass = NSClassFromString(className);
-	return [managedObjectClass MR_createInContext:managedObjectContext_];
+	return [managedObjectClass MR_createInContext:[NSManagedObjectContext MR_contextForCurrentThread]];
 }
 
 #pragma mark - update
 - (void)updateWithJSON:(NSArray *)json
 {	
 	NSArray *allGuids = [SyncObject collectGUIDS:json];
-	NSDictionary *managedObjectsByGuid = [SyncObject findAllByGUID:allGuids inContext:managedObjectContext_];
+	NSDictionary *managedObjectsByGuid = [SyncObject findAllByGUID:allGuids inContext:[NSManagedObjectContext MR_contextForCurrentThread]];
 	
 	for (NSDictionary * jsonObject in json) 
 	{

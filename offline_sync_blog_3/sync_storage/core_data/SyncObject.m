@@ -100,11 +100,6 @@
 	self.guid = [SyncObject createGUID];
 }
 
-- (void)deleteGlobalEntity
-{
-	self.isGloballyDeleted = YES;
-}
-
 - (NSMutableDictionary *)toJson
 {
 	NSMutableDictionary *object = [NSMutableDictionary dictionaryWithCapacity:20];
@@ -138,6 +133,10 @@
 	[dict setObject:attributeDict forKey:key];
 }
 
-
-
+#pragma mark - Setters
+- (void)deleteUnsynced
+{
+    self.isGloballyDeleted = YES;
+    self.syncStatus = SONeedsSync;
+}
 @end
