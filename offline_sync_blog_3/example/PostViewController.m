@@ -9,35 +9,20 @@
 #import "PostViewController.h"
 
 @interface PostViewController ()
-
+@property (nonatomic, weak) IBOutlet UITextField *textTitleInput;
+@property (nonatomic, weak) IBOutlet UITextView *textBodyInput;
 @end
 
 @implementation PostViewController
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (void)viewWillAppear:(BOOL)animated
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+    [super viewWillAppear:animated];
+    [self setTitle:self.post.title andBody:self.post.body];
 }
-
-- (void)viewDidLoad
+- (void)setTitle:(NSString *)title andBody:(NSString *)body
 {
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
-}
-
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    self.textTitleInput.text = title;
+    self.textBodyInput.text = body;
 }
 
 @end

@@ -10,6 +10,7 @@
 #import "SyncStorageManager.h"
 #import "Post.h"
 #import "SyncCell.h"
+#import "PostViewController.h"
 @interface MainViewController ()
 @property (nonatomic, strong) SyncStorageManager *syncManager;
 @property (nonatomic, strong) NSFetchedResultsController * fetchController;
@@ -44,6 +45,15 @@
     [super viewDidLoad];
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    Post * post = [self.fetchController objectAtIndexPath:[self.tableView indexPathForSelectedRow]];
+    PostViewController * dest = (PostViewController *)segue.destinationViewController;
+    dest.post = post;
+}
+
+#pragma mark - IBActions
 
 - (IBAction)syncTapped:(id)sender
 {
