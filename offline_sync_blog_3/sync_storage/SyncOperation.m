@@ -100,9 +100,9 @@ objection_requires(@"baseURL")
 	
 	NSArray *conflictedEntities = [responseObject objectForKey:kConflictedEntitiesKey];
 	[self markConflictedAndNotify:conflictedEntities];
-	[[NSManagedObjectContext MR_contextForCurrentThread] MR_saveInBackgroundCompletion:^{
-        [self completeOperation];        
-    }];
+	[[NSManagedObjectContext MR_contextForCurrentThread] MR_saveNestedContexts];
+    [self completeOperation];
+
 
 }
 
