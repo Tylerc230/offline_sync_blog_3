@@ -25,4 +25,13 @@
     self.textBodyInput.text = body;
 }
 
+- (void)willMoveToParentViewController:(UIViewController *)parent
+{
+    if (parent == nil) {
+        self.post.title = self.textTitleInput.text;
+        self.post.body = self.textBodyInput.text;
+        [[NSManagedObjectContext defaultContext] save];
+    }
+}
+
 @end
