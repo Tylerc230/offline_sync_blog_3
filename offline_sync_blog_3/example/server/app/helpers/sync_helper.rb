@@ -8,11 +8,10 @@ module SyncHelper
   def self.sync_entities client_modified_entities, client_last_sync
     conflicts = self.sync_client_modifications client_modified_entities
     response = {}
-    response[MODIFIED_ENTITIES_KEY] = SyncObject.modified_since client_last_sync
+    response[MODIFIED_ENTITIES_KEY] = SyncObject.modified_since( client_last_sync).all
     response[CONFLICTED_ENTITIES_KEY] = conflicts
     response
   end
-
   def self.sync_client_modifications client_modified_entities
     conflicts = []
     client_modified_entities.each do |entity|
@@ -22,6 +21,7 @@ module SyncHelper
       exists = SyncObject.exists? :guid => server_record.guid
       if exists
         server_record = SyncObject.find_by_guid server_record.guid
+        server_record.update_attributes attributes
         client_modification_timestamp = server_record.updated_at
         conflicted = self.conflicted? client_modification_timestamp, server_record
         if conflicted

@@ -39,4 +39,20 @@
 	return diff;
 }
 
+- (void)setTitleUnsynced:(NSString *)title
+{
+    if (![title isEqualToString:self.title]) {
+        self.title = title;
+        self.syncStatus = SONeedsSync;
+    }
+}
+
+- (void)setBodyUnsynced:(NSString *)body
+{
+    if (![body isEqualToString:self.body]) {
+        self.body = body;
+        self.syncStatus = SONeedsSync;
+    }
+}
+
 @end

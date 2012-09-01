@@ -28,8 +28,8 @@
 - (void)willMoveToParentViewController:(UIViewController *)parent
 {
     if (parent == nil) {
-        self.post.title = self.textTitleInput.text;
-        self.post.body = self.textBodyInput.text;
+        [self.post setTitleUnsynced:self.textTitleInput.text];
+        [self.post setBodyUnsynced:self.textBodyInput.text];
         [[NSManagedObjectContext defaultContext] save];
     }
 }

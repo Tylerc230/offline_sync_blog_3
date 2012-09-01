@@ -22,7 +22,8 @@
 {
     self = [super initWithCoder:aDecoder];
     if (self) {
-        self.syncManager = [[SyncStorageManager alloc] initWithBaseURL:@"http://localhost:3000"];
+        self.syncManager = [[SyncStorageManager alloc] initWithBaseURL:@"http://192.168.1.59:3000"];
+//        self.syncManager = [[SyncStorageManager alloc] initWithBaseURL:@"http://localhost:3000"];
         NSFetchRequest * request = [NSFetchRequest fetchRequestWithEntityName:@"Post"];
         NSPredicate * predicate = [NSPredicate predicateWithFormat:@"isGloballyDeleted == NO"];
         request.predicate = predicate;

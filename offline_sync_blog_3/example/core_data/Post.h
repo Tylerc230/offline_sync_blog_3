@@ -33,4 +33,7 @@
 - (void)addComments:(NSSet *)values;
 - (void)removeComments:(NSSet *)values;
 
+- (void)setTitleUnsynced:(NSString *)title;
+- (void)setBodyUnsynced:(NSString *)body;
+
 @end
