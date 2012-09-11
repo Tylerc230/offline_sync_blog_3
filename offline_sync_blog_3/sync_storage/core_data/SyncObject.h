@@ -45,11 +45,10 @@ typedef enum {
 + (NSDictionary *)findUnconflictedByGUID:(NSArray *)guids;
 
 /**
- * @param entities an NSArray of objects which are KV complient
- * for the key 'guid'.
+ * @param entities an NSArray of NSDictionaries of the form {'class_name" : {attribute1: 'attrib', attribute2:'attrib'}};
  */
-+ (NSArray *)collectGUIDS:(NSArray *)entities;
-
++ (NSArray *)collectGUIDSFromJSON:(NSArray *)entities;
++ (NSArray *)collectGUIDSFromSyncObjects:(NSArray *)entities;
 /**
  * @returns an array of SyncObjects which have the syncStatus 
  * set to SOConflicted. This represents the version that the

@@ -11,6 +11,7 @@
 #import "Post.h"
 #import "SyncCell.h"
 #import "PostViewController.h"
+#import "Conflict.h"
 @interface MainViewController ()
 @property (nonatomic, strong) SyncStorageManager *syncManager;
 @property (nonatomic, strong) NSFetchedResultsController * fetchController;
@@ -37,6 +38,11 @@
         [self.fetchController performFetch:&error];
         NSAssert(error ==  nil, @"error");
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(syncCompleteCallback:) name:kSyncCompleteNotif object:nil];
+        self.syncManager.resolveConflicts = ^(NSArray * conflicts){
+            for (Conflict *conflict in conflicts) {
+                NSLog(@"conflicts: %@", [conflict diffs]);
+            }
+        };
     }
     return self;
 }

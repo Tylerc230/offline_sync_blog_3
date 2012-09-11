@@ -56,8 +56,8 @@ objection_requires(@"baseURL")
 	NSArray *jsonRepresentation = [SyncObject jsonRepresentationOfObjects:modifiedEntities];
 	NSTimeInterval lastSyncTime = [SyncObject lastSyncTime];
 	NSDictionary *payload = [NSDictionary dictionaryWithObjectsAndKeys:
-							 jsonRepresentation, kModifiedEntitiesKey,
-							 [NSNumber numberWithDouble:lastSyncTime], kLastSyncTimeKey,
+							 jsonRepresentation, kJSONModifiedEntitiesKey,
+							 [NSNumber numberWithDouble:lastSyncTime], kJSONLastSyncTimeKey,
 							 nil];
 	[self syncPayload:payload];
 }
@@ -95,10 +95,11 @@ objection_requires(@"baseURL")
 #pragma mark - sync response
 - (void)syncSucceededWithResponse:(NSDictionary *) responseObject
 {
-	NSArray *modifiedEntities = [responseObject objectForKey:kModifiedEntitiesKey];
+	NSArray *modifiedEntities = [responseObject objectForKey:kJSONModifiedEntitiesKey];
 	[self updateWithJSON:modifiedEntities];
 	
-	NSArray *conflictedEntities = [responseObject objectForKey:kConflictedEntitiesKey];
+	NSArray *conflictedEntities = [responseObject objectForKey:kJSONConflictedEntitiesKey];
+    NSLog(@"conf: %@", conflictedEntities);
 	[self markConflictedAndNotify:conflictedEntities];
 	[[NSManagedObjectContext MR_contextForCurrentThread] MR_saveNestedContexts];
     [self completeOperation];
@@ -126,9 +127,10 @@ objection_requires(@"baseURL")
 - (void)markConflictedAndNotify:(NSArray *)conflictedEntities
 {
 	for (NSDictionary *conflictedEntity in conflictedEntities) {
-		NSString *className = [conflictedEntity objectForKey:kClassNameKey];
-		SyncObject *conflictedObject = [self createManagedObject:className];
-		[conflictedObject updateWithJSON:conflictedEntity];
+		NSString *className = [[conflictedEntity allKeys] lastObject];
+        NSDictionary *attributes = [conflictedEntity objectForKey:className];
+		SyncObject *conflictedObject = [self createManagedObject:[className capitalizedString]];
+		[conflictedObject updateWithJSON:attributes];
 		conflictedObject.syncStatus = SOConflicted;
 	}
 
@@ -145,7 +147,7 @@ objection_requires(@"baseURL")
 #pragma mark - update
 - (void)updateWithJSON:(NSArray *)json
 {	
-	NSArray *allGuids = [SyncObject collectGUIDS:json];
+	NSArray *allGuids = [SyncObject collectGUIDSFromJSON:json];
 	NSDictionary *managedObjectsByGuid = [SyncObject findAllByGUID:allGuids inContext:[NSManagedObjectContext MR_contextForCurrentThread]];
 	
 	for (NSDictionary * jsonObject in json) 

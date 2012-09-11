@@ -73,7 +73,7 @@
 - (NSArray *)createConflictObjects
 {
 	NSArray *serverVersions = [SyncObject findConflictedObjects];
-	NSArray *guids = [SyncObject collectGUIDS:serverVersions];
+	NSArray *guids = [SyncObject collectGUIDSFromSyncObjects:serverVersions];
 	NSDictionary *localVersions = [SyncObject findUnconflictedByGUID:guids];
 	
 	NSMutableArray *conflicts = [NSMutableArray arrayWithCapacity:serverVersions.count];

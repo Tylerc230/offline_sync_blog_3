@@ -76,7 +76,7 @@
 	return entitiesByGuid;
 }
 
-+ (NSArray *)collectGUIDS:(NSArray *)entities
++ (NSArray *)collectGUIDSFromJSON:(NSArray *)entities
 {
 	NSMutableArray * guids = [NSMutableArray arrayWithCapacity:entities.count];
 	for (NSDictionary* object in entities) {
@@ -85,6 +85,16 @@
 	}
 	return guids;
 
+}
+
++ (NSArray *)collectGUIDSFromSyncObjects:(NSArray *)entities
+{
+	NSMutableArray * guids = [NSMutableArray arrayWithCapacity:entities.count];
+	for (SyncObject* object in entities) {
+		[guids addObject:object.guid];
+	}
+	return guids;
+    
 }
 
 - (void)updateWithJSON:(NSDictionary *)jsonObject

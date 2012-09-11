@@ -9,9 +9,9 @@
 #ifndef offline_sync_blog_3_keys_h
 #define offline_sync_blog_3_keys_h
 
-#define kModifiedEntitiesKey @"modified_entities"
-#define kConflictedEntitiesKey @"conflictedEntities"
-#define kLastSyncTimeKey @"last_sync_time"
+#define kJSONModifiedEntitiesKey @"modified_entities"
+#define kJSONConflictedEntitiesKey @"conflicted_entities"
+#define kJSONLastSyncTimeKey @"last_sync_time"
 #define kClassNameKey @"className"
 
 
