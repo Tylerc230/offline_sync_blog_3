@@ -10,5 +10,6 @@
 
 @interface SyncCell : UITableViewCell
 @property (nonatomic, assign) BOOL synced;
+@property (nonatomic, assign) BOOL conflicted;
 @property (nonatomic, weak) IBOutlet UILabel *titleLabel;
 @end

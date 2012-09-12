@@ -143,6 +143,11 @@
 	[dict setObject:attributeDict forKey:key];
 }
 
+- (BOOL)isConflicted
+{
+    return [SyncObject MR_findByAttribute:kGUIDKey withValue:self.guid].count > 1;
+}
+
 #pragma mark - Setters
 - (void)deleteUnsynced
 {

@@ -34,6 +34,7 @@ typedef enum {
 @property (nonatomic) int16_t syncStatus;
 @property (nonatomic) NSTimeInterval lastModified;
 @property (nonatomic) BOOL isGloballyDeleted;
+@property (nonatomic, readonly) BOOL isConflicted;
 
 /**
  * @param guids an array of guid strings of format 8-4-4-4-12

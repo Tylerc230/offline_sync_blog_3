@@ -12,6 +12,9 @@
 #import "SyncCell.h"
 #import "PostViewController.h"
 #import "Conflict.h"
+
+#define kConflictAlertTitle @"Conflict - All your changes were not saved."
+#define kConflictAlertMessage @"The post you modified was also modified by another person or device. Fix the coflicts and resync."
 @interface MainViewController ()
 @property (nonatomic, strong) SyncStorageManager *syncManager;
 @property (nonatomic, strong) NSFetchedResultsController * fetchController;
@@ -26,7 +29,9 @@
         self.syncManager = [[SyncStorageManager alloc] initWithBaseURL:@"http://192.168.1.59:3000"];
 //        self.syncManager = [[SyncStorageManager alloc] initWithBaseURL:@"http://localhost:3000"];
         NSFetchRequest * request = [NSFetchRequest fetchRequestWithEntityName:@"Post"];
-        NSPredicate * predicate = [NSPredicate predicateWithFormat:@"isGloballyDeleted == NO"];
+        //We don't want to show the conflicted objects because they are duplicates of another row.
+        //The conflicted object represents our local changes, the synced object w the same guid represents the server version
+        NSPredicate * predicate = [NSPredicate predicateWithFormat:@"isGloballyDeleted == NO AND syncStatus != %@", [NSNumber numberWithInt:SOConflicted]];
         request.predicate = predicate;
         request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:kLastModifiedKey ascending:YES]];
         self.fetchController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
@@ -39,9 +44,8 @@
         NSAssert(error ==  nil, @"error");
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(syncCompleteCallback:) name:kSyncCompleteNotif object:nil];
         self.syncManager.resolveConflicts = ^(NSArray * conflicts){
-            for (Conflict *conflict in conflicts) {
-                NSLog(@"conflicts: %@", [conflict diffs]);
-            }
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:kConflictAlertTitle message:kConflictAlertMessage delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+            [alert show];
         };
     }
     return self;
@@ -161,7 +165,15 @@
 {
     Post *post = [self.fetchController.fetchedObjects objectAtIndex:indexPath.row];
     cell.titleLabel.text = [NSString stringWithFormat:@"%@ %@", post.title, post.guid];
-    cell.synced = post.syncStatus == SOSynced;
+    if (post.isConflicted) {
+        cell.conflicted = YES;
+    } else if (post.syncStatus == SOSynced)
+    {
+        cell.synced = YES;
+    } else{
+        cell.synced = NO;
+    }
+
 }
 
 

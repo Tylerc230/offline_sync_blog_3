@@ -32,6 +32,7 @@
 		70777FB01524E097007F5C87 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 70777FAD1524E097007F5C87 /* Comment.m */; };
 		70777FB21524E097007F5C87 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 70777FAF1524E097007F5C87 /* Post.m */; };
 		70777FB61524E0AE007F5C87 /* SyncObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 70777FB51524E0AE007F5C87 /* SyncObject.m */; };
+		70E7AAB016001225003414D5 /* red_c_button_image_500_clr.png in Resources */ = {isa = PBXBuildFile; fileRef = 70E7AAAF16001225003414D5 /* red_c_button_image_500_clr.png */; };
 		70E7CA9F15DB6EF800D78CBE /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70E7CA9E15DB6EF800D78CBE /* Storyboard.storyboard */; };
 		70E7CAA215DB6F6000D78CBE /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E7CAA115DB6F6000D78CBE /* MainViewController.m */; };
 		70E7CAA515DB7A0D00D78CBE /* PostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E7CAA415DB7A0D00D78CBE /* PostViewController.m */; };
@@ -91,6 +92,7 @@
 		70777FAF1524E097007F5C87 /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Post.m; path = example/core_data/Post.m; sourceTree = "<group>"; };
 		70777FB41524E0AE007F5C87 /* SyncObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SyncObject.h; path = sync_storage/core_data/SyncObject.h; sourceTree = "<group>"; };
 		70777FB51524E0AE007F5C87 /* SyncObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SyncObject.m; path = sync_storage/core_data/SyncObject.m; sourceTree = "<group>"; };
+		70E7AAAF16001225003414D5 /* red_c_button_image_500_clr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = red_c_button_image_500_clr.png; path = example/red_c_button_image_500_clr.png; sourceTree = "<group>"; };
 		70E7CA9E15DB6EF800D78CBE /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Storyboard.storyboard; path = example/Storyboard.storyboard; sourceTree = "<group>"; };
 		70E7CAA015DB6F6000D78CBE /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = example/MainViewController.h; sourceTree = "<group>"; };
 		70E7CAA115DB6F6000D78CBE /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = example/MainViewController.m; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				70E7CAB315DBF81E00D78CBE /* green_check_mark_button_image_500_clr.png */,
+				70E7AAAF16001225003414D5 /* red_c_button_image_500_clr.png */,
 				70777FAB1524DFDD007F5C87 /* core_data */,
 				70E7CA9E15DB6EF800D78CBE /* Storyboard.storyboard */,
 				70E7CAA015DB6F6000D78CBE /* MainViewController.h */,
@@ -364,6 +367,7 @@
 				70777F2A15238BD3007F5C87 /* InfoPlist.strings in Resources */,
 				70E7CA9F15DB6EF800D78CBE /* Storyboard.storyboard in Resources */,
 				70E7CAB415DBF81E00D78CBE /* green_check_mark_button_image_500_clr.png in Resources */,
+				70E7AAB016001225003414D5 /* red_c_button_image_500_clr.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
