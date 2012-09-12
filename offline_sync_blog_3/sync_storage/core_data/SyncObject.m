@@ -7,8 +7,6 @@
 //
 
 #import "SyncObject.h"
-
-
 @implementation SyncObject
 
 @dynamic guid;

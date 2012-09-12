@@ -13,6 +13,7 @@
 @property (nonatomic, strong) SyncObject *clientVersion;
 @property (nonatomic, strong) SyncObject *serverVersion;
 
++ (Conflict *)conflictForGuid:(NSString *)guid;
 - (id)initWithLocalVersion:(SyncObject *)localVersion serverVersion:(SyncObject *)serverVersion;
 - (NSDictionary *)diffs;
 - (void)resolve:(NSDictionary *)resolution;

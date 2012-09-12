@@ -11,10 +11,14 @@
 #import "Post.h"
 #import "SyncCell.h"
 #import "PostViewController.h"
+#import "PostConflictViewController.h"
 #import "Conflict.h"
 
 #define kConflictAlertTitle @"Conflict - All your changes were not saved."
 #define kConflictAlertMessage @"The post you modified was also modified by another person or device. Fix the coflicts and resync."
+
+#define kConflictedPostSegueId @"ConflictedPostSegue"
+#define kEditPostSegueId @"EditPostSegue"
 @interface MainViewController ()
 @property (nonatomic, strong) SyncStorageManager *syncManager;
 @property (nonatomic, strong) NSFetchedResultsController * fetchController;
@@ -60,8 +64,13 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     Post * post = [self.fetchController objectAtIndexPath:[self.tableView indexPathForSelectedRow]];
-    PostViewController * dest = (PostViewController *)segue.destinationViewController;
-    dest.post = post;
+    if (post.isConflicted) {
+        PostConflictViewController *conflictVC = (PostConflictViewController *)segue.destinationViewController;
+        conflictVC.conflict = [Conflict conflictForGuid:post.guid];
+    } else {
+        PostViewController * editVC = (PostViewController *)segue.destinationViewController;
+        editVC.post = post;
+    }
 }
 
 #pragma mark - IBActions
@@ -176,6 +185,15 @@
 
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Post *selectedPost = [self.fetchController objectAtIndexPath:indexPath];
+    if (selectedPost.isConflicted) {
+        [self performSegueWithIdentifier:kConflictedPostSegueId sender:self];
+    } else{
+        [self performSegueWithIdentifier:kEditPostSegueId sender:self];
+    }
+}
 
 - (void)syncCompleteCallback:(NSNotification *)notif
 {

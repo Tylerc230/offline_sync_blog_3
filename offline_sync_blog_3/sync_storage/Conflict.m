@@ -12,6 +12,19 @@
 @synthesize clientVersion;
 @synthesize serverVersion;
 
++ (Conflict *)conflictForGuid:(NSString *)guid
+{
+    NSArray *objects = [SyncObject MR_findByAttribute:kGUIDKey withValue:guid];
+    if (objects.count == 2) {
+        SyncObject *firstObject = [objects objectAtIndex:0];
+        SyncObject *lastObject = [objects lastObject];
+        SyncObject *localVersion = lastObject.syncStatus == SOConflicted ? lastObject : firstObject;
+        SyncObject *serverVersion = lastObject.syncStatus != SOConflicted ? lastObject : firstObject;
+        return [[Conflict alloc] initWithLocalVersion:localVersion serverVersion:serverVersion];
+    }
+    return nil;
+}
+
 - (id)initWithLocalVersion:(SyncObject *)localVersion serverVersion:(SyncObject *)remoteVersion
 {
 	if (self = [super init]) {
