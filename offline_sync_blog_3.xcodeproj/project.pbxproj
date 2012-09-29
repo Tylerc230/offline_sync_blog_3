@@ -39,6 +39,9 @@
 		70E7CAA515DB7A0D00D78CBE /* PostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E7CAA415DB7A0D00D78CBE /* PostViewController.m */; };
 		70E7CAB215DBF6EA00D78CBE /* SyncCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E7CAB115DBF6EA00D78CBE /* SyncCell.m */; };
 		70E7CAB415DBF81E00D78CBE /* green_check_mark_button_image_500_clr.png in Resources */ = {isa = PBXBuildFile; fileRef = 70E7CAB315DBF81E00D78CBE /* green_check_mark_button_image_500_clr.png */; };
+		70E7F15C16121E610033537E /* TitleConflictView.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E7F15B16121E610033537E /* TitleConflictView.m */; };
+		70E7F16016121E7F0033537E /* BodyConflictView.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E7F15F16121E7F0033537E /* BodyConflictView.m */; };
+		70E7F16316121F600033537E /* ConflictView.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E7F16216121F600033537E /* ConflictView.m */; };
 		A2E8D1A7C4E14DD499A6FC58 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 419E5BCA83464321ABC86C71 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -104,6 +107,12 @@
 		70E7CAB015DBF6E900D78CBE /* SyncCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SyncCell.h; path = example/SyncCell.h; sourceTree = "<group>"; };
 		70E7CAB115DBF6EA00D78CBE /* SyncCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SyncCell.m; path = example/SyncCell.m; sourceTree = "<group>"; };
 		70E7CAB315DBF81E00D78CBE /* green_check_mark_button_image_500_clr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = green_check_mark_button_image_500_clr.png; path = example/green_check_mark_button_image_500_clr.png; sourceTree = "<group>"; };
+		70E7F15A16121E610033537E /* TitleConflictView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TitleConflictView.h; path = example/TitleConflictView.h; sourceTree = "<group>"; };
+		70E7F15B16121E610033537E /* TitleConflictView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TitleConflictView.m; path = example/TitleConflictView.m; sourceTree = "<group>"; };
+		70E7F15E16121E7E0033537E /* BodyConflictView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BodyConflictView.h; path = example/BodyConflictView.h; sourceTree = "<group>"; };
+		70E7F15F16121E7F0033537E /* BodyConflictView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BodyConflictView.m; path = example/BodyConflictView.m; sourceTree = "<group>"; };
+		70E7F16116121F600033537E /* ConflictView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConflictView.h; path = example/ConflictView.h; sourceTree = "<group>"; };
+		70E7F16216121F600033537E /* ConflictView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConflictView.m; path = example/ConflictView.m; sourceTree = "<group>"; };
 		973FA2A9F5FC4024BF85C4BD /* Pods.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -281,6 +290,12 @@
 				70E7CAB115DBF6EA00D78CBE /* SyncCell.m */,
 				70E7AAB216001962003414D5 /* PostConflictViewController.h */,
 				70E7AAB316001962003414D5 /* PostConflictViewController.m */,
+				70E7F15A16121E610033537E /* TitleConflictView.h */,
+				70E7F15B16121E610033537E /* TitleConflictView.m */,
+				70E7F15E16121E7E0033537E /* BodyConflictView.h */,
+				70E7F15F16121E7F0033537E /* BodyConflictView.m */,
+				70E7F16116121F600033537E /* ConflictView.h */,
+				70E7F16216121F600033537E /* ConflictView.m */,
 			);
 			name = example;
 			sourceTree = "<group>";
@@ -435,6 +450,9 @@
 				70E7CAA515DB7A0D00D78CBE /* PostViewController.m in Sources */,
 				70E7CAB215DBF6EA00D78CBE /* SyncCell.m in Sources */,
 				70E7AAB416001962003414D5 /* PostConflictViewController.m in Sources */,
+				70E7F15C16121E610033537E /* TitleConflictView.m in Sources */,
+				70E7F16016121E7F0033537E /* BodyConflictView.m in Sources */,
+				70E7F16316121F600033537E /* ConflictView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
