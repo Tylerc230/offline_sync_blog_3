@@ -1,0 +1,29 @@
+
+---
+posts:
+  columns:
+  - id
+  - body
+  - title
+  records: 
+  - - 1
+    - Post Bodyp
+    - post title
+
+---
+sync_objects:
+  columns:
+  - id
+  - type
+  - is_deleted
+  - guid
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - Post
+    - false
+    - EA8C1DEA-1027-418B-8A74-56F9A07B0883
+    - '2012-09-25 17:01:02.798545'
+    - '2012-09-25 17:02:22.232411'
+
