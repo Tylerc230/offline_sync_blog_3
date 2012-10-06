@@ -12,8 +12,8 @@ describe "Sync" do
   end
 
   it "should return all modified objects since date" do
-    modified_entity = Factory(:post, {:updated_at => 1.day.ago})
-    Factory(:post, {:updated_at => 2.day.ago})
+    modified_entity = FactoryGirl.create(:post, {:updated_at => 1.day.ago})
+    FactoryGirl.create(:post, {:updated_at => 2.day.ago})
     response = SyncHelper.sync_entities [], 1.day.ago - 60
     entities_modified_since_date = response[SyncHelper::MODIFIED_ENTITIES_KEY]
 
@@ -23,7 +23,7 @@ describe "Sync" do
   end
 
   it "should detect conflicts when they occur" do
-    Factory(:post, {:updated_at => 1.day.ago, :guid => @shared_guid})
+    FactoryGirl.create(:post, {:updated_at => 1.day.ago, :guid => @shared_guid})
     client_entities = [entity_with_guid(@shared_guid)]
     response = SyncHelper.sync_entities client_entities, 0
     conflicted_entities = response[SyncHelper::CONFLICTED_ENTITIES_KEY]
@@ -31,7 +31,7 @@ describe "Sync" do
   end
 
   it "should not detect any conflicts if they are not present" do
-    Factory(:post, {:updated_at => 12345, :guid => @shared_guid})
+    FactoryGirl.create(:post, {:updated_at => 12345, :guid => @shared_guid})
     client_entities = [entity_with_guid(@shared_guid)]
     response = SyncHelper.sync_entities client_entities, 0
     conflicted_entities = response[SyncHelper::CONFLICTED_ENTITIES_KEY]
