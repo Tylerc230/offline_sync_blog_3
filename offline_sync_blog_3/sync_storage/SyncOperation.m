@@ -99,7 +99,6 @@ objection_requires(@"baseURL")
 	[self updateWithJSON:modifiedEntities];
 	
 	NSArray *conflictedEntities = [responseObject objectForKey:kJSONConflictedEntitiesKey];
-    NSLog(@"conf: %@", conflictedEntities);
 	[self markConflictedAndNotify:conflictedEntities];
 	[[NSManagedObjectContext MR_contextForCurrentThread] MR_saveNestedContexts];
     [self completeOperation];

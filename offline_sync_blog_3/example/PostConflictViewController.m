@@ -10,6 +10,9 @@
 #import "TitleConflictView.h"
 #import "BodyConflictView.h"
 #import "Post.h"
+
+#define kAreYouSure @"Are you sure?"
+#define kAreYouSureBody @"Are you sure you want to replace the server version with this version?"
 @interface PostConflictViewController ()
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet TitleConflictView *titleEditView;
@@ -45,7 +48,9 @@
 
 - (IBAction)resolveTapped:(id)sender
 {
-    
+    NSString *body = kAreYouSureBody;
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:kAreYouSure message:body delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Resolve Conflict", nil];
+    [alert show];
 }
 
 - (void)updateScrollContentSize
@@ -59,6 +64,28 @@
     }
     scrollHeight += self.bodyEditView.hidden ? 0.f : self.bodyEditView.frame.size.height;
     self.scrollView.contentSize = CGSizeMake(0.f, scrollHeight);
-    
 }
+
+- (NSDictionary *)resolutionDictionary
+{
+    NSDictionary *clientJson = [[self.conflict.clientVersion toJson] objectForKey:kPostKey];
+    NSMutableDictionary * json = [NSMutableDictionary dictionaryWithDictionary:clientJson];
+    if (!self.titleEditView.hidden) {
+        [json setObject:[self.titleEditView resolution] forKey:kTitleKey];
+    }
+    if (!self.bodyEditView.hidden) {
+        [json setObject:[self.bodyEditView resolution] forKey:kBodyKey];
+    }
+    return json;
+}
+
+#pragma mark - UIAlertDelegate
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1) {
+        [self.conflict resolve:[self resolutionDictionary]];
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
+
 @end

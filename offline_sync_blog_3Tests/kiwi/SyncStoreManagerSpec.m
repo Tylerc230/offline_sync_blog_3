@@ -37,8 +37,8 @@ describe(@"SyncStorageManager", ^{
 
 		
 		NSMutableDictionary *mockEntity = [NSMutableDictionary dictionaryWithDictionary:[newPost toJson]];
-		[mockEntity setObject:[NSNumber numberWithDouble:[[NSDate date] timeIntervalSince1970]] forKey:kLastModifiedKey];
-		NSDictionary *mockServerResponse = [NSDictionary dictionaryWithObjectsAndKeys:[NSArray arrayWithObject:mockEntity], kModifiedEntitiesKey, nil];
+        [[mockEntity objectForKey:kJSONPostKey] setObject:[NSNumber numberWithDouble:[[NSDate date] timeIntervalSince1970]] forKey:kJSONLastModifiedKey];
+		NSDictionary *mockServerResponse = @{kJSONModifiedEntitiesKey : @[mockEntity]};
 		[DummySyncOperation setResponseObject:mockServerResponse];
 		syncStorageManager.resolveConflicts = ^(NSArray * empty){};
 		[syncStorageManager syncNow];
@@ -55,15 +55,14 @@ describe(@"SyncStorageManager", ^{
 	
 	it(@"should sync newly created objects from the server", ^{
 		NSString *postBody = @"post body from another device";
-		NSMutableDictionary * serverPost = [NSDictionary dictionaryWithObjectsAndKeys:
-											@"Post", kClassNameKey,
-											postBody, kBodyKey,
-											@"post title", kTitleKey,
-											kFakeGUID, kGUIDKey,
-											[NSNumber numberWithDouble:[[NSDate date] timeIntervalSince1970]], kLastModifiedKey,
-											[NSNumber numberWithBool:NO], kIsGloballyDeletedKey,
-											nil];
-		NSDictionary *serverResponse = [NSDictionary dictionaryWithObject:[NSArray arrayWithObject:serverPost] forKey:kModifiedEntitiesKey];
+		NSDictionary * serverPost = @{kJSONPostKey : [NSDictionary dictionaryWithObjectsAndKeys:
+											postBody, kJSONBodyKey,
+											@"post title", kJSONTitleKey,
+											kFakeGUID, kJSONGUIDKey,
+											[NSNumber numberWithDouble:[[NSDate date] timeIntervalSince1970]], kJSONLastModifiedKey,
+											[NSNumber numberWithBool:NO], kJSONIsGloballyDeletedKey,
+                                                             nil]};
+		NSDictionary *serverResponse = [NSDictionary dictionaryWithObject:[NSArray arrayWithObject:serverPost] forKey:kJSONModifiedEntitiesKey];
 		[DummySyncOperation setResponseObject:serverResponse];
 		
 		[syncStorageManager syncNow];
@@ -151,7 +150,7 @@ SPEC_END
 + (SyncStorageManager *)startTest
 {
 	JSObjectionInjector *testInjector = [JSObjection createInjector:[[TestModule alloc] init]];
-	[JSObjection setGlobalInjector:testInjector];
+	[JSObjection setDefaultInjector:testInjector];
 	
 	SyncStorageManager *syncStorageManager = [[SyncStorageManager alloc] initWithBaseURL:@"http://www.example.com"];
 	[SyncObject MR_truncateAll];
@@ -179,16 +178,15 @@ SPEC_END
 	conflictedPost.lastModified = [localLastModifiedTime doubleValue];
 	
 	
-	NSDictionary *conflictedEntity = [NSDictionary dictionaryWithObjectsAndKeys:
-									  @"Post", kClassNameKey,
-									  serverPostBody, kBodyKey,
-									  postTitle, kTitleKey,
-									  conflictedPost.guid, kGUIDKey,
-									  serverLastModifiedTime, kLastModifiedKey,
-									  [NSNumber numberWithBool:NO], kIsGloballyDeletedKey,
-									  nil];
+	NSDictionary *conflictedEntity = @{kJSONPostKey : [NSDictionary dictionaryWithObjectsAndKeys:
+									  serverPostBody, kJSONBodyKey,
+									  postTitle, kJSONTitleKey,
+									  conflictedPost.guid, kJSONGUIDKey,
+									  serverLastModifiedTime, kJSONLastModifiedKey,
+									  [NSNumber numberWithBool:NO], kJSONIsGloballyDeletedKey,
+                                                       nil]};
 	
-	NSDictionary *serverResponse = [NSDictionary dictionaryWithObject:[NSArray arrayWithObject:conflictedEntity] forKey:kConflictedEntitiesKey];
+	NSDictionary *serverResponse = [NSDictionary dictionaryWithObject:[NSArray arrayWithObject:conflictedEntity] forKey:kJSONConflictedEntitiesKey];
 	[DummySyncOperation setResponseObject:serverResponse];
 }
 

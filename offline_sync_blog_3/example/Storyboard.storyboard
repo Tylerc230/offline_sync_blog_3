@@ -257,7 +257,14 @@
                             </view>
                         </subviews>
                     </scrollView>
-                    <navigationItem key="navigationItem" id="GbD-w9-kqa"/>
+                    <navigationItem key="navigationItem" id="GbD-w9-kqa">
+                        <barButtonItem key="rightBarButtonItem" title="Resolve" id="fZS-9g-xej">
+                            <color key="tintColor" red="0.43137258290000002" green="0.70980393890000004" blue="0.25490197539999998" alpha="1" colorSpace="deviceRGB"/>
+                            <connections>
+                                <action selector="resolveTapped:" destination="SCw-Jh-vyC" id="l76-hV-9qy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="bodyEditView" destination="m5i-0z-rB8" id="KGc-HZ-JoO"/>
                         <outlet property="scrollView" destination="PdS-uv-6rP" id="9hp-4V-wwa"/>

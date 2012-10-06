@@ -12,8 +12,4 @@
 #define kJSONModifiedEntitiesKey @"modified_entities"
 #define kJSONConflictedEntitiesKey @"conflicted_entities"
 #define kJSONLastSyncTimeKey @"last_sync_time"
-#define kClassNameKey @"className"
-
-
-
 #endif
