@@ -98,7 +98,13 @@
 - (void)updateWithJSON:(NSDictionary *)jsonObject
 {
 	self.guid = [jsonObject objectForKey:kJSONGUIDKey];
-	self.lastModified = [[jsonObject objectForKey:kJSONLastModifiedKey] doubleValue];
+    id timestamp = [jsonObject objectForKey:kJSONLastModifiedKey];
+    if ([timestamp isKindOfClass:[NSString class]]) {
+        self.lastModified = [[self timestampFromString:timestamp] timeIntervalSince1970];
+    } else {
+        self.lastModified = 0;
+    }
+
 	self.isGloballyDeleted = [[jsonObject objectForKey:kJSONIsGloballyDeletedKey] boolValue];
 }
 
@@ -112,7 +118,9 @@
 {
 	NSMutableDictionary *object = [NSMutableDictionary dictionaryWithCapacity:20];
 	[object setObject:self.guid forKey:kJSONGUIDKey];
-	[object setObject:[NSNumber numberWithDouble:self.lastModified] forKey:kJSONLastModifiedKey];
+    if (self.lastModified > 0) {
+        [object setObject:[self stringFromTimestamp:self.lastModified] forKey:kJSONLastModifiedKey];
+    }
 	[object setObject:[NSNumber numberWithBool:self.isGloballyDeleted] forKey:kJSONIsGloballyDeletedKey];
 	return object;
 }
@@ -151,5 +159,27 @@
 {
     self.isGloballyDeleted = YES;
     self.syncStatus = SONeedsSync;
+}
+/*
+ * Takes time string w format "2012-10-14T22:19:33Z"
+ */
+- (NSDate *)timestampFromString:(NSString *)timeString
+{
+    NSDate *timestamp = [[self jsonDateFormatter] dateFromString:timeString];
+    return timestamp;
+}
+
+- (NSString *)stringFromTimestamp:(NSTimeInterval)timestamp
+{
+    NSString *timeString = [[self jsonDateFormatter] stringFromDate:[NSDate dateWithTimeIntervalSince1970:timestamp]];
+    return timeString;
+}
+
+- (NSDateFormatter *)jsonDateFormatter
+{
+    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];
+    [formatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
+    return formatter;
 }
 @end

@@ -21,7 +21,7 @@ module SyncHelper
       exists = SyncObject.exists? :guid => client_record.guid
       if exists
         server_record = SyncObject.find_by_guid client_record.guid
-        conflicted = client_record.updated_at != server_record.updated_at
+        conflicted = client_record.updated_at.to_i != server_record.updated_at.to_i
         if conflicted
           conflicts << client_record
         else
