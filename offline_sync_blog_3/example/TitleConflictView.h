@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 #import "ConflictView.h"
 @interface TitleConflictView : ConflictView
-
++ (TitleConflictView *)titleConflictView;
 @end

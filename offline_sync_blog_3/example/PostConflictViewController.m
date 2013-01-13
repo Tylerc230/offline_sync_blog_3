@@ -15,37 +15,25 @@
 #define kAreYouSureBody @"Are you sure you want to replace the server version with this version?"
 @interface PostConflictViewController ()
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (weak, nonatomic) IBOutlet TitleConflictView *titleEditView;
-@property (weak, nonatomic) IBOutlet BodyConflictView *bodyEditView;
-
+@property (strong, nonatomic) NSMutableArray *conflictViews;
 @end
 
 @implementation PostConflictViewController
-- (void)setConflict:(Conflict *)conflict
+- (id)initWithCoder:(NSCoder *)aDecoder
 {
-    _conflict = conflict;
-    self.view;
-    NSDictionary *conflictedFields = [conflict diffs];
-    NSDictionary *bodyConflict = [conflictedFields objectForKey:kBodyKey];
-    if (bodyConflict) {
-        self.bodyEditView.hidden = NO;
-        [self.bodyEditView setConflict:bodyConflict];
-    } else
-    {
-        self.bodyEditView.hidden = YES;
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        self.conflictViews = [NSMutableArray arrayWithCapacity:2];
     }
-    
-    NSDictionary *titleConflict = [conflictedFields objectForKey:kTitleKey];
-    if (titleConflict) {
-        self.titleEditView.hidden = NO;
-        [self.titleEditView setConflict:titleConflict];
-    } else
-    {
-        self.titleEditView.hidden = YES;
-    }
-    [self updateScrollContentSize];
+    return self;
 }
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    self.scrollView.translatesAutoresizingMaskIntoConstraints = NO;
+    [self setupUI];
+}
 - (IBAction)resolveTapped:(id)sender
 {
     NSString *body = kAreYouSureBody;
@@ -53,28 +41,14 @@
     [alert show];
 }
 
-- (void)updateScrollContentSize
-{
-    float scrollHeight = 0;
-    scrollHeight += self.titleEditView.hidden ? 0.f : self.titleEditView.frame.size.height;
-    if (self.titleEditView.hidden) {
-        CGRect frame = self.bodyEditView.frame;
-        frame.origin.y = 0.f;
-        self.bodyEditView.frame = frame;
-    }
-    scrollHeight += self.bodyEditView.hidden ? 0.f : self.bodyEditView.frame.size.height;
-    self.scrollView.contentSize = CGSizeMake(0.f, scrollHeight);
-}
-
 - (NSDictionary *)resolutionDictionary
 {
     NSDictionary *clientJson = [[self.conflict.clientVersion toJson] objectForKey:kPostKey];
     NSMutableDictionary * json = [NSMutableDictionary dictionaryWithDictionary:clientJson];
-    if (!self.titleEditView.hidden) {
-        [json setObject:[self.titleEditView resolution] forKey:kTitleKey];
-    }
-    if (!self.bodyEditView.hidden) {
-        [json setObject:[self.bodyEditView resolution] forKey:kBodyKey];
+    for (ConflictView *conflictView in self.conflictViews) {
+        NSString *conflictKey = [[conflictView class] key];
+        NSDictionary *conflictResolution = [conflictView resolution];
+        [json setObject:conflictResolution forKey:conflictKey];        
     }
     return json;
 }
@@ -86,6 +60,58 @@
         [self.conflict resolve:[self resolutionDictionary]];
         [self.navigationController popViewControllerAnimated:YES];
     }
+}
+
+#pragma mark - Private methods
+
+- (void)setupUI
+{
+    NSDictionary *conflictedFields = [self.conflict diffs];
+    ConflictView *conflictView = nil;
+    
+//    NSDictionary *bodyConflict = [conflictedFields objectForKey:[BodyConflictView key]];
+//    if (bodyConflict) {
+//        conflictView = [BodyConflictView bodyConflictView];
+//        [conflictView setConflict:bodyConflict];
+//        [self addSubviewToScroller:conflictView];
+//    }
+    
+    NSDictionary *titleConflict = [conflictedFields objectForKey:[TitleConflictView key]];
+    if (titleConflict) {
+        conflictView = [TitleConflictView titleConflictView];
+        [conflictView setConflict:titleConflict];
+        [self addSubviewToScroller:conflictView];
+    }
+    
+    NSLog(@"%i", [self.scrollView hasAmbiguousLayout]);
+    [self.scrollView setNeedsUpdateConstraints];
+}
+
+- (void)addSubviewToScroller:(UIView *)newView
+{
+    ConflictView *previousView = [self.conflictViews lastObject];
+    [newView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self.scrollView addSubview:newView];
+    NSDictionary *views = nil;
+    NSString *layoutString = nil;
+    if (previousView) {
+        views = NSDictionaryOfVariableBindings(previousView, newView);
+        layoutString = @"V:[previousView][newView]";
+    } else {
+        views = NSDictionaryOfVariableBindings(newView);
+        layoutString = @"V:|[newView]";
+    }
+    NSArray *constraints = [NSLayoutConstraint constraintsWithVisualFormat:layoutString options:0 metrics:nil views:views];
+    [self.scrollView addConstraints:constraints];
+    layoutString = @"H:|[newView]|";
+    constraints = [NSLayoutConstraint constraintsWithVisualFormat:layoutString options:0 metrics:nil views:views];
+    [self.scrollView addConstraints:constraints];
+
+//    CGSize contentSize = self.scrollView.contentSize;
+//    contentSize.height += newView.frame.size.height;
+//    self.scrollView.contentSize = contentSize;
+
+    [self.conflictViews addObject:newView];
 }
 
 @end

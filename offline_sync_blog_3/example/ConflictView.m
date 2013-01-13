@@ -9,6 +9,11 @@
 #import "ConflictView.h"
 #import "SyncObject.h"
 @implementation ConflictView
++ (NSString *)key
+{
+    return nil;
+}
+
 - (void)setConflict:(NSDictionary *)conflict
 {
     self.theirVersion = [conflict objectForKey:kOtherKey];

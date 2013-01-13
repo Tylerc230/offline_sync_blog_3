@@ -9,12 +9,21 @@
 #import "BodyConflictView.h"
 
 @interface BodyConflictView ()
-@property (nonatomic, weak) IBOutlet UITextView *theirBody;
-@property (nonatomic, weak) IBOutlet UITextView *yourBody;
+@property (nonatomic, weak) IBOutlet UILabel *theirBody;
+@property (nonatomic, weak) IBOutlet UILabel *yourBody;
 @property (nonatomic, weak) IBOutlet UITextView *resolutionField;
 @end
 
 @implementation BodyConflictView
++ (NSString *)key
+{
+    return kBodyKey;
+}
+
++ (BodyConflictView *)bodyConflictView
+{
+    return [[[NSBundle mainBundle] loadNibNamed:@"BodyConflictView" owner:nil options:nil] lastObject];
+}
 
 - (void)setTheirVersion:(id)theirVersion
 {

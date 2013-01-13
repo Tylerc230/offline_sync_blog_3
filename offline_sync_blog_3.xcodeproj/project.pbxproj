@@ -32,6 +32,8 @@
 		70777FB01524E097007F5C87 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 70777FAD1524E097007F5C87 /* Comment.m */; };
 		70777FB21524E097007F5C87 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 70777FAF1524E097007F5C87 /* Post.m */; };
 		70777FB61524E0AE007F5C87 /* SyncObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 70777FB51524E0AE007F5C87 /* SyncObject.m */; };
+		709CF8E916310DC00096205C /* BodyConflictView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 709CF8E816310DC00096205C /* BodyConflictView.xib */; };
+		709CF8EC16310E650096205C /* TitleConflictView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 709CF8EB16310E650096205C /* TitleConflictView.xib */; };
 		70E7AAB016001225003414D5 /* red_c_button_image_500_clr.png in Resources */ = {isa = PBXBuildFile; fileRef = 70E7AAAF16001225003414D5 /* red_c_button_image_500_clr.png */; };
 		70E7AAB416001962003414D5 /* PostConflictViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E7AAB316001962003414D5 /* PostConflictViewController.m */; };
 		70E7CA9F15DB6EF800D78CBE /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70E7CA9E15DB6EF800D78CBE /* Storyboard.storyboard */; };
@@ -96,6 +98,8 @@
 		70777FAF1524E097007F5C87 /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Post.m; path = example/core_data/Post.m; sourceTree = "<group>"; };
 		70777FB41524E0AE007F5C87 /* SyncObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SyncObject.h; path = sync_storage/core_data/SyncObject.h; sourceTree = "<group>"; };
 		70777FB51524E0AE007F5C87 /* SyncObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SyncObject.m; path = sync_storage/core_data/SyncObject.m; sourceTree = "<group>"; };
+		709CF8E816310DC00096205C /* BodyConflictView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BodyConflictView.xib; path = example/BodyConflictView.xib; sourceTree = "<group>"; };
+		709CF8EB16310E650096205C /* TitleConflictView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TitleConflictView.xib; path = example/TitleConflictView.xib; sourceTree = "<group>"; };
 		70E7AAAF16001225003414D5 /* red_c_button_image_500_clr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = red_c_button_image_500_clr.png; path = example/red_c_button_image_500_clr.png; sourceTree = "<group>"; };
 		70E7AAB216001962003414D5 /* PostConflictViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostConflictViewController.h; path = example/PostConflictViewController.h; sourceTree = "<group>"; };
 		70E7AAB316001962003414D5 /* PostConflictViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostConflictViewController.m; path = example/PostConflictViewController.m; sourceTree = "<group>"; };
@@ -292,8 +296,10 @@
 				70E7AAB316001962003414D5 /* PostConflictViewController.m */,
 				70E7F15A16121E610033537E /* TitleConflictView.h */,
 				70E7F15B16121E610033537E /* TitleConflictView.m */,
+				709CF8EB16310E650096205C /* TitleConflictView.xib */,
 				70E7F15E16121E7E0033537E /* BodyConflictView.h */,
 				70E7F15F16121E7F0033537E /* BodyConflictView.m */,
+				709CF8E816310DC00096205C /* BodyConflictView.xib */,
 				70E7F16116121F600033537E /* ConflictView.h */,
 				70E7F16216121F600033537E /* ConflictView.m */,
 			);
@@ -388,6 +394,8 @@
 				70E7CA9F15DB6EF800D78CBE /* Storyboard.storyboard in Resources */,
 				70E7CAB415DBF81E00D78CBE /* green_check_mark_button_image_500_clr.png in Resources */,
 				70E7AAB016001225003414D5 /* red_c_button_image_500_clr.png in Resources */,
+				709CF8E916310DC00096205C /* BodyConflictView.xib in Resources */,
+				709CF8EC16310E650096205C /* TitleConflictView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -550,14 +558,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 973FA2A9F5FC4024BF85C4BD /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Tyler Casselman (MRBZS63J54)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Tyler Casselman (Y664ZN78C6)";
 				DSTROOT = /tmp/xcodeproj.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "offline_sync_blog_3/offline_sync_blog_3-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "offline_sync_blog_3/offline_sync_blog_3-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9A3D9B71-7B59-43BA-91B4-6CD7FB782DEF";
+				PROVISIONING_PROFILE = "AEF8D6C2-4EAC-4080-B7A3-B644348C8968";
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -567,14 +575,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 973FA2A9F5FC4024BF85C4BD /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Tyler Casselman (MRBZS63J54)";
 				DSTROOT = /tmp/xcodeproj.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "offline_sync_blog_3/offline_sync_blog_3-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "offline_sync_blog_3/offline_sync_blog_3-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9A3D9B71-7B59-43BA-91B4-6CD7FB782DEF";
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -585,6 +591,7 @@
 			baseConfigurationReference = 973FA2A9F5FC4024BF85C4BD /* Pods.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/offline_sync_blog_3.app/offline_sync_blog_3";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Tyler Casselman (6SH7ETF8D4)";
 				DSTROOT = /tmp/xcodeproj.dst;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -595,6 +602,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "offline_sync_blog_3Tests/offline_sync_blog_3Tests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D3491C04-ED4E-491D-913F-07421B933B72";
 				SKIP_INSTALL = YES;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;

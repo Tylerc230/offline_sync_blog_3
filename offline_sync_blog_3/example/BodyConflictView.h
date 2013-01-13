@@ -9,4 +9,5 @@
 #import <UIKit/UIKit.h>
 #import "ConflictView.h"
 @interface BodyConflictView : ConflictView
++ (BodyConflictView *)bodyConflictView;
 @end

@@ -14,6 +14,15 @@
 @end
 
 @implementation TitleConflictView
++ (NSString *)key
+{
+    return kTitleKey;
+}
+
++ (TitleConflictView *)titleConflictView
+{
+    return [[[NSBundle mainBundle] loadNibNamed:@"TitleConflictView" owner:nil options:nil] lastObject];
+}
 
 - (void)setTheirVersion:(id)theirVersion
 {

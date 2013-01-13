@@ -1,6 +1,9 @@
 class SyncController < ApplicationController
   def sync
     client_modified_entities = params[SyncHelper::MODIFIED_ENTITIES_KEY]
+    if client_modified_entities.nil?
+      client_modified_entities = []
+    end
     client_last_sync = params[SyncHelper::LAST_SYNC_TIME_KEY]
     response = SyncHelper.sync_entities client_modified_entities, client_last_sync
     respond_to do |format|

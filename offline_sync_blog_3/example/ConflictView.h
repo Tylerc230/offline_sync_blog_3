@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "Post.h"
 @interface ConflictView : UIView
 @property (nonatomic, strong) id theirVersion;
 @property (nonatomic, strong) id yourVersion;
++ (NSString *)key;
 - (void)setConflict:(NSDictionary *)conflict;
 - (id)resolution;
 @end
