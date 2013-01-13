@@ -30,8 +30,8 @@
 {
     self = [super initWithCoder:aDecoder];
     if (self) {
-        self.syncManager = [[SyncStorageManager alloc] initWithBaseURL:@"http://10.3.98.0:3000"];
-//        self.syncManager = [[SyncStorageManager alloc] initWithBaseURL:@"http://192.168.1.59:3000"];
+//        self.syncManager = [[SyncStorageManager alloc] initWithBaseURL:@"http://10.3.98.0:3000"];
+        self.syncManager = [[SyncStorageManager alloc] initWithBaseURL:@"http://192.168.1.3:3000"];
 //        self.syncManager = [[SyncStorageManager alloc] initWithBaseURL:@"http://localhost:3000"];
         NSFetchRequest * request = [NSFetchRequest fetchRequestWithEntityName:@"Post"];
         //We don't want to show the conflicted objects because they are duplicates of another row.
@@ -65,8 +65,6 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     Post * post = [self.fetchController objectAtIndexPath:[self.tableView indexPathForSelectedRow]];
-//        PostConflictViewController *conflictVC = (PostConflictViewController *)segue.destinationViewController;
-//        conflictVC.conflict = [Conflict conflictForGuid:post.guid];
     if (post.isConflicted) {
         PostConflictViewController *conflictVC = (PostConflictViewController *)segue.destinationViewController;
         conflictVC.conflict = [Conflict conflictForGuid:post.guid];

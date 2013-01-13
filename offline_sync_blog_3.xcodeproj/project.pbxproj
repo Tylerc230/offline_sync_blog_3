@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7039D177153533D400ACA30B /* SyncObjectSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 7039D176153533D400ACA30B /* SyncObjectSpec.m */; };
+		703DF96616A286F700BDB745 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 703DF96516A286F700BDB745 /* Default-568h@2x.png */; };
 		7060214E152D0F5F0087A4DC /* SyncOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7060214D152D0F5F0087A4DC /* SyncOperation.m */; };
 		70602157152D37140087A4DC /* DependencyModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 70602156152D37140087A4DC /* DependencyModule.m */; };
 		7060215B152D3FDE0087A4DC /* TestModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 7060215A152D3FDE0087A4DC /* TestModule.m */; };
@@ -60,6 +61,7 @@
 /* Begin PBXFileReference section */
 		419E5BCA83464321ABC86C71 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7039D176153533D400ACA30B /* SyncObjectSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SyncObjectSpec.m; path = kiwi/SyncObjectSpec.m; sourceTree = "<group>"; };
+		703DF96516A286F700BDB745 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		7060214C152D0F5F0087A4DC /* SyncOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SyncOperation.h; path = sync_storage/SyncOperation.h; sourceTree = "<group>"; };
 		7060214D152D0F5F0087A4DC /* SyncOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SyncOperation.m; path = sync_storage/SyncOperation.m; sourceTree = "<group>"; };
 		70602150152D171C0087A4DC /* keys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = keys.h; path = sync_storage/keys.h; sourceTree = "<group>"; };
@@ -282,6 +284,7 @@
 		70777FA61524DF6F007F5C87 /* example */ = {
 			isa = PBXGroup;
 			children = (
+				703DF96516A286F700BDB745 /* Default-568h@2x.png */,
 				70E7CAB315DBF81E00D78CBE /* green_check_mark_button_image_500_clr.png */,
 				70E7AAAF16001225003414D5 /* red_c_button_image_500_clr.png */,
 				70777FAB1524DFDD007F5C87 /* core_data */,
@@ -396,6 +399,7 @@
 				70E7AAB016001225003414D5 /* red_c_button_image_500_clr.png in Resources */,
 				709CF8E916310DC00096205C /* BodyConflictView.xib in Resources */,
 				709CF8EC16310E650096205C /* TitleConflictView.xib in Resources */,
+				703DF96616A286F700BDB745 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

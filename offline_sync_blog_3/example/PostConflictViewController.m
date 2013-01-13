@@ -81,7 +81,10 @@
         [conflictView setConflict:bodyConflict];
         [self addSubviewToScroller:conflictView];
     }
-        
+    UIView *lastView = [self.conflictViews lastObject];
+    NSDictionary *views = NSDictionaryOfVariableBindings(lastView);
+    NSArray *bottomConstraint = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[lastView]|" options:0 metrics:0 views:views];
+    [self.view addConstraints:bottomConstraint];
     NSLog(@"%i", [self.view hasAmbiguousLayout]);
     [self.view setNeedsUpdateConstraints];
 }
@@ -105,11 +108,6 @@
     layoutString = @"H:|[newView]|";
     constraints = [NSLayoutConstraint constraintsWithVisualFormat:layoutString options:0 metrics:nil views:views];
     [self.view addConstraints:constraints];
-
-//    CGSize contentSize = self.scrollView.contentSize;
-//    contentSize.height += newView.frame.size.height;
-//    self.scrollView.contentSize = contentSize;
-
     [self.conflictViews addObject:newView];
 }
 

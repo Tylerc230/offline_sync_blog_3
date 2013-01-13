@@ -7,9 +7,9 @@
         <!--Main View Controller - Posts-->
         <scene sceneID="YVz-Vf-PyA">
             <objects>
-                <tableViewController title="Posts" id="7zT-9k-YT7" customClass="MainViewController" sceneMemberID="viewController">
+                <tableViewController title="Posts" wantsFullScreenLayout="YES" id="7zT-9k-YT7" customClass="MainViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="fYS-wS-aDH">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="F9d-pD-R3u">
@@ -36,8 +36,8 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstItem="BtR-bs-Ilj" firstAttribute="leading" secondItem="F9d-pD-R3u" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="1pz-Oi-oPV"/>
+                                <constraint firstItem="BtR-bs-Ilj" firstAttribute="top" secondItem="F9d-pD-R3u" secondAttribute="top" constant="-1" id="OeH-85-p3e"/>
                                 <constraint firstAttribute="trailing" secondItem="BtR-bs-Ilj" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="iaN-51-uug"/>
-                                <constraint firstItem="BtR-bs-Ilj" firstAttribute="top" secondItem="F9d-pD-R3u" secondAttribute="top" type="default" id="sc0-zC-y5i"/>
                             </constraints>
                         </view>
                         <prototypes>
@@ -94,11 +94,11 @@
         <scene sceneID="Bza-HC-Iya">
             <objects>
                 <viewController id="SCw-Jh-vyC" customClass="PostConflictViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="919-P1-eOH">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                    <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="8LS-NC-iQH">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.94117647059999998" green="0.87843137250000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
+                    </scrollView>
                     <navigationItem key="navigationItem" id="GbD-w9-kqa">
                         <barButtonItem key="rightBarButtonItem" title="Resolve" id="fZS-9g-xej">
                             <color key="tintColor" red="0.43137258290000002" green="0.70980393890000004" blue="0.25490197539999998" alpha="1" colorSpace="deviceRGB"/>
@@ -107,17 +107,20 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="scrollView" destination="8LS-NC-iQH" id="sE9-f8-9ag"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="44Q-vw-Cph" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1034" y="-216"/>
+            <point key="canvasLocation" x="1032" y="-284"/>
         </scene>
         <!--Post View Controller-->
         <scene sceneID="jbU-mx-8r5">
             <objects>
                 <viewController id="rWr-Ij-wjp" customClass="PostViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fZK-Fs-TUU">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DlZ-ao-YeS">
@@ -160,7 +163,7 @@
         <!--Navigation Controller-->
         <scene sceneID="nbl-EU-hp3">
             <objects>
-                <navigationController definesPresentationContext="YES" id="OfC-e9-Qtw" sceneMemberID="viewController">
+                <navigationController wantsFullScreenLayout="YES" definesPresentationContext="YES" id="OfC-e9-Qtw" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="P3t-IQ-drE">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -212,6 +215,6 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
 </document>
