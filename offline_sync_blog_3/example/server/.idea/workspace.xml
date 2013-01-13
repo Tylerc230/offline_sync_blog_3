@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cbf810d3-900c-46f9-97db-8407186d19e3" name="Default" comment="" />
+    <list default="true" id="cbf810d3-900c-46f9-97db-8407186d19e3" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../BodyConflictView.xib" afterPath="$PROJECT_DIR$/../BodyConflictView.xib" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TitleConflictView.xib" afterPath="$PROJECT_DIR$/../TitleConflictView.xib" />
+    </list>
     <ignored path="server.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
