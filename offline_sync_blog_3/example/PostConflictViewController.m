@@ -31,7 +31,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.scrollView.translatesAutoresizingMaskIntoConstraints = NO;
+    self.view.translatesAutoresizingMaskIntoConstraints = NO;
     [self setupUI];
 }
 - (IBAction)resolveTapped:(id)sender
@@ -69,29 +69,28 @@
     NSDictionary *conflictedFields = [self.conflict diffs];
     ConflictView *conflictView = nil;
     
-//    NSDictionary *bodyConflict = [conflictedFields objectForKey:[BodyConflictView key]];
-//    if (bodyConflict) {
-//        conflictView = [BodyConflictView bodyConflictView];
-//        [conflictView setConflict:bodyConflict];
-//        [self addSubviewToScroller:conflictView];
-//    }
-    
     NSDictionary *titleConflict = [conflictedFields objectForKey:[TitleConflictView key]];
     if (titleConflict) {
         conflictView = [TitleConflictView titleConflictView];
         [conflictView setConflict:titleConflict];
         [self addSubviewToScroller:conflictView];
     }
-    
-    NSLog(@"%i", [self.scrollView hasAmbiguousLayout]);
-    [self.scrollView setNeedsUpdateConstraints];
+    NSDictionary *bodyConflict = [conflictedFields objectForKey:[BodyConflictView key]];
+    if (bodyConflict) {
+        conflictView = [BodyConflictView bodyConflictView];
+        [conflictView setConflict:bodyConflict];
+        [self addSubviewToScroller:conflictView];
+    }
+        
+    NSLog(@"%i", [self.view hasAmbiguousLayout]);
+    [self.view setNeedsUpdateConstraints];
 }
 
 - (void)addSubviewToScroller:(UIView *)newView
 {
     ConflictView *previousView = [self.conflictViews lastObject];
     [newView setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [self.scrollView addSubview:newView];
+    [self.view addSubview:newView];
     NSDictionary *views = nil;
     NSString *layoutString = nil;
     if (previousView) {
@@ -102,10 +101,10 @@
         layoutString = @"V:|[newView]";
     }
     NSArray *constraints = [NSLayoutConstraint constraintsWithVisualFormat:layoutString options:0 metrics:nil views:views];
-    [self.scrollView addConstraints:constraints];
+    [self.view addConstraints:constraints];
     layoutString = @"H:|[newView]|";
     constraints = [NSLayoutConstraint constraintsWithVisualFormat:layoutString options:0 metrics:nil views:views];
-    [self.scrollView addConstraints:constraints];
+    [self.view addConstraints:constraints];
 
 //    CGSize contentSize = self.scrollView.contentSize;
 //    contentSize.height += newView.frame.size.height;

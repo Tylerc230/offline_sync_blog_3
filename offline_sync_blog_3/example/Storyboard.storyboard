@@ -94,11 +94,11 @@
         <scene sceneID="Bza-HC-Iya">
             <objects>
                 <viewController id="SCw-Jh-vyC" customClass="PostConflictViewController" sceneMemberID="viewController">
-                    <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="bQE-YV-FAG">
+                    <view key="view" contentMode="scaleToFill" id="919-P1-eOH">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.94117647059999998" green="0.87843137250000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    </scrollView>
+                    </view>
                     <navigationItem key="navigationItem" id="GbD-w9-kqa">
                         <barButtonItem key="rightBarButtonItem" title="Resolve" id="fZS-9g-xej">
                             <color key="tintColor" red="0.43137258290000002" green="0.70980393890000004" blue="0.25490197539999998" alpha="1" colorSpace="deviceRGB"/>
@@ -107,9 +107,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="scrollView" destination="bQE-YV-FAG" id="MSy-QQ-5ul"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="44Q-vw-Cph" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

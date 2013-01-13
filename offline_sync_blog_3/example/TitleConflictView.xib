@@ -401,7 +401,7 @@
 								<float key="scoringTypeFloat">40</float>
 								<int key="contentType">2</int>
 							</object>
-							<object class="IBNSLayoutConstraint" id="507107812">
+							<object class="IBNSLayoutConstraint" id="13464250">
 								<reference key="firstItem" ref="1011954257"/>
 								<int key="firstAttribute">9</int>
 								<int key="relation">0</int>
@@ -417,7 +417,7 @@
 								<float key="scoringTypeFloat">40</float>
 								<int key="contentType">2</int>
 							</object>
-							<object class="IBNSLayoutConstraint" id="1033399479">
+							<object class="IBNSLayoutConstraint" id="1037222774">
 								<reference key="firstItem" ref="814996729"/>
 								<int key="firstAttribute">9</int>
 								<int key="relation">0</int>
@@ -918,12 +918,12 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">45</int>
-						<reference key="object" ref="1033399479"/>
+						<reference key="object" ref="1037222774"/>
 						<reference key="parent" ref="1011954257"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">46</int>
-						<reference key="object" ref="507107812"/>
+						<reference key="object" ref="13464250"/>
 						<reference key="parent" ref="1011954257"/>
 					</object>
 				</array>
@@ -1019,8 +1019,8 @@
 					<reference ref="456147943"/>
 					<reference ref="613437048"/>
 					<reference ref="78311985"/>
-					<reference ref="1033399479"/>
-					<reference ref="507107812"/>
+					<reference ref="1037222774"/>
+					<reference ref="13464250"/>
 					<reference ref="840808386"/>
 					<reference ref="970727161"/>
 					<reference ref="349469132"/>
@@ -1085,17 +1085,25 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">TitleConflictView</string>
 					<string key="superclassName">ConflictView</string>
-					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">useBothTitles:</string>
-						<string key="NS.object.0">id</string>
-					</object>
-					<object class="NSMutableDictionary" key="actionInfosByName">
-						<string key="NS.key.0">useBothTitles:</string>
-						<object class="IBActionInfo" key="NS.object.0">
+					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="useBothTitles:">id</string>
+						<string key="useTheirTitle:">id</string>
+						<string key="useYourTitle:">id</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="useBothTitles:">
 							<string key="name">useBothTitles:</string>
 							<string key="candidateClassName">id</string>
 						</object>
-					</object>
+						<object class="IBActionInfo" key="useTheirTitle:">
+							<string key="name">useTheirTitle:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="useYourTitle:">
+							<string key="name">useYourTitle:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="resolutionField">UITextField</string>
 						<string key="theirTitle">UILabel</string>
