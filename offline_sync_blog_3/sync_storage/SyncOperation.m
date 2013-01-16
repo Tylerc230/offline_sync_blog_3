@@ -147,7 +147,7 @@ objection_requires(@"baseURL")
 - (void)updateWithJSON:(NSArray *)json
 {	
 	NSArray *allGuids = [SyncObject collectGUIDSFromJSON:json];
-	NSDictionary *managedObjectsByGuid = [SyncObject findAllByGUID:allGuids inContext:[NSManagedObjectContext MR_contextForCurrentThread]];
+	NSDictionary *managedObjectsByGuid = [SyncObject findUnconflictedByGUID:allGuids];
 	
 	for (NSDictionary * jsonObject in json) 
 	{
