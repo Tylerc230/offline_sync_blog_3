@@ -34,6 +34,7 @@
     self.view.translatesAutoresizingMaskIntoConstraints = NO;
     [self setupUI];
 }
+
 - (IBAction)resolveTapped:(id)sender
 {
     NSString *body = kAreYouSureBody;
@@ -85,8 +86,6 @@
     NSDictionary *views = NSDictionaryOfVariableBindings(lastView);
     NSArray *bottomConstraint = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[lastView]|" options:0 metrics:0 views:views];
     [self.view addConstraints:bottomConstraint];
-    NSLog(@"%i", [self.view hasAmbiguousLayout]);
-    [self.view setNeedsUpdateConstraints];
 }
 
 - (void)addSubviewToScroller:(UIView *)newView
