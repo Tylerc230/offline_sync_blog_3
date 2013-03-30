@@ -1,13 +1,26 @@
-PODS:
-  - AFNetworking (1.0RC1)
-  - Kiwi (1.1.0)
-  - MagicalRecord (2.0.3)
-  - OCMock (2.0.1)
-  - Objection (0.13.0)
 
-DEPENDENCIES:
-  - AFNetworking
-  - Kiwi
-  - MagicalRecord (= 2.0.3)
-  - OCMock
-  - Objection
+PODS: 
+- AFNetworking (1.0RC1)
+- CocoaLumberjack (1.6)
+- Kiwi (1.1.0)
+- MagicalRecord (2.0.3)
+- OCMock (2.0.1)
+- Objection (0.13.0)
+
+DEPENDENCIES: 
+- AFNetworking
+- CocoaLumberjack (= 1.6)
+- Kiwi
+- MagicalRecord (= 2.0.3)
+- OCMock
+- Objection
+
+SPEC CHECKSUMS: 
+  AFNetworking: b21c1252d437fd322e7db1caa93b163d76a362cb
+  CocoaLumberjack: 0f2fa7090a23f13261072d882e017c688300efbe
+  Kiwi: 9141d15cf4f52a2178139ea16722f021b4059906
+  MagicalRecord: bab76c152f93668a25cf1b697e1f469f4c3bf691
+  OCMock: 77a9c4c57af6bf258a537d34cf09abf422affede
+  Objection: 793451d512874f11983b651acd483814a3f53623
+
+COCOAPODS: 0.16.4

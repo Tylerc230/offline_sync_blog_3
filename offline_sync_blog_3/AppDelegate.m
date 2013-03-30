@@ -11,17 +11,29 @@
 #import "Objection.h"
 #import "DependencyModule.h"
 #import "SyncStorageManager.h"
+#import "DDASLLogger.h"
+#import "DDFileLogger.h"
+#import "DDTTYLogger.h"
 
+static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 @implementation AppDelegate
 
 @synthesize window = _window;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-	
 	JSObjectionInjector *injector = [JSObjection createInjector:[[DependencyModule alloc] init]];
 	[JSObjection setDefaultInjector:injector];
-	
+    [self configureLogger];
     return YES;
+}
+
+- (void)configureLogger
+{
+    [DDLog addLogger:[DDASLLogger sharedInstance]];
+    [DDLog addLogger:[DDTTYLogger sharedInstance]];
+    DDFileLogger *fileLogger = [[DDFileLogger alloc] init];
+    [DDLog addLogger:fileLogger];
+    DDLogInfo(@"logging init");
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

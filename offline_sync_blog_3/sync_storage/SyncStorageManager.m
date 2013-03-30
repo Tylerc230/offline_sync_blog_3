@@ -12,6 +12,8 @@
 #import "SyncObject.h"
 #import "Conflict.h"
 #import "JSObjection.h"
+
+static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 @interface SyncStorageManager ()
 @property (nonatomic, strong) NSOperationQueue *operationQueue;
 @end
@@ -27,6 +29,7 @@
 		[MagicalRecord setupCoreDataStack];
 		self.operationQueue = [[NSOperationQueue alloc] init];
 		self.baseURL = aBaseURL;
+        DDLogInfo(@"Use server at %@", self.baseURL);
 	}
 	return self;
 }

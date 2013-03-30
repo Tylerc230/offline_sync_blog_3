@@ -15,7 +15,7 @@
 
 #define kExecutingKey @"isExecuting"
 #define kFinishedKey @"isFinished"
-
+static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 @interface SyncOperation ()
 {
 	BOOL finished_;
@@ -41,6 +41,7 @@ objection_requires(@"baseURL")
 
 - (void)setBaseURL:(NSString *)baseURL
 {
+    DDLogInfo(@"Set sync URL %@", baseURL);
 	self.httpClient = [AFHTTPClient clientWithBaseURL:[NSURL URLWithString:baseURL]];
 	self.httpClient.parameterEncoding = AFJSONParameterEncoding;
 	[self.httpClient setDefaultHeader:@"Accept" value:@"application/json"];
@@ -79,6 +80,7 @@ objection_requires(@"baseURL")
 
 - (void)syncPayload:(NSDictionary *)payload
 {
+    DDLogInfo(@"Syncing payload %@", payload);
 	NSURLRequest *request = [self.httpClient requestWithMethod:@"POST" path:@"/sync" parameters:payload];
 	AFHTTPRequestOperation *operation = [self.httpClient HTTPRequestOperationWithRequest:request
                                                                       success:^(AFHTTPRequestOperation *op, id responseObject) {
@@ -95,6 +97,7 @@ objection_requires(@"baseURL")
 #pragma mark - sync response
 - (void)syncSucceededWithResponse:(NSDictionary *) responseObject
 {
+    DDLogInfo(@"Sync response %@", responseObject);
 	NSArray *modifiedEntities = [responseObject objectForKey:kJSONModifiedEntitiesKey];
 	[self updateWithJSON:modifiedEntities];
 	
@@ -102,8 +105,6 @@ objection_requires(@"baseURL")
 	[self markConflictedAndNotify:conflictedEntities];
 	[[NSManagedObjectContext MR_contextForCurrentThread] MR_saveNestedContexts];
     [self completeOperation];
-
-
 }
 
 - (void)syncFailedWithResponse:(NSError *)error
