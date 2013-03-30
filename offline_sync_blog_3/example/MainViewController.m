@@ -110,10 +110,13 @@
             break;
             
         case NSFetchedResultsChangeUpdate:
-            [self configureCell:(SyncCell*)[tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
+            NSLog(@"update index %@, new %@", indexPath, newIndexPath);
+            [self configureCell:(SyncCell*)[tableView cellForRowAtIndexPath:indexPath] atIndexPath:newIndexPath ? newIndexPath : indexPath];
             break;
             
         case NSFetchedResultsChangeMove:
+            NSLog(@"move index %@, new %@", indexPath, newIndexPath);
+//            [tableView moveRowAtIndexPath:indexPath toIndexPath:newIndexPath];
             [tableView deleteRowsAtIndexPaths:[NSArray
                                                arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
             [tableView insertRowsAtIndexPaths:[NSArray
@@ -173,7 +176,7 @@
 
 - (void)configureCell:(SyncCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    Post *post = [self.fetchController.fetchedObjects objectAtIndex:indexPath.row];
+    Post *post = [self.fetchController objectAtIndexPath:indexPath];
     cell.titleLabel.text = [NSString stringWithFormat:@"%@ %@", post.title, post.guid];
     if (post.isConflicted) {
         cell.conflicted = YES;
